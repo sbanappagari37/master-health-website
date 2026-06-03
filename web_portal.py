@@ -249,7 +249,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ── 2. NEW RESTURCTURED MULTI-ELEMENT NAVIGATION ROW ──────────────────────────
+# Navigation Row Layout
 nav_col1, nav_col2, nav_col3, nav_col4, nav_col5 = st.columns([1.2, 2.0, 3.2, 2.2, 1.2])
 
 with nav_col1:
@@ -282,7 +282,6 @@ st.markdown("<br><hr style='border:0; border-top:1px solid #F0F2F5; margin-top:-
 
 # ── 3. DYNAMIC RENDERING MATRIX ───────────────────────────────────────────────
 
-# Handle Explicit Selection Changes to Drive Content Views
 if go_home:
     st.session_state.current_view = "Home"
 elif about_selection in ["Overview", "Founder"]:
@@ -293,7 +292,6 @@ elif services_selection != "Services Offered":
 if "current_view" not in st.session_state:
     st.session_state.current_view = "Home"
 
-# Render Dynamic Page Components
 if st.session_state.current_view == "Home":
     st.markdown("""
     <div class="hero-container">
@@ -327,11 +325,10 @@ elif st.session_state.current_view == "Founder":
     st.markdown('<p class="hero-subtitle">Driven by advanced clinical, technical, and compliance insights, our executive framework bridges the gap between domestic clinical operations and secure high-efficiency processing systems.</p>', unsafe_allow_html=True)
 
 else:
-    # Catch-all view for dynamic specialty rendering
     st.markdown(f'<p class="hero-title">{st.session_state.current_view} RCM Solutions</p>', unsafe_allow_html=True)
     st.markdown(f'<p class="hero-subtitle">Dedicated revenue cycle management workflows configured specifically to handle the structural modifiers, provider schedules, and payer rules engines unique to {st.session_state.current_view} medical practices.</p>', unsafe_allow_html=True)
 
-# ── 4. ENTERPRISE FOOTER STRUCTURE ───────────────────────────────────────────
+# ── 4. ENTERPRISE FOOTER STRUCTURE WITH UPDATED SPECIALTIES ─────────────────
 st.markdown("""
 <div class="enterprise-footer">
     <div class="footer-content">
@@ -346,8 +343,13 @@ st.markdown("""
         </div>
         <div class="footer-links-column">
             <div class="footer-header">Expertise</div>
-            <div class="footer-item">OB-GYN Operations</div>
-            <div class="footer-item">Otolaryngology (ENT)</div>
+            <div class="footer-item">Cardiology</div>
+            <div class="footer-item">Ophthalmology</div>
+            <div class="footer-item">GI</div>
+            <div class="footer-item">Oncology</div>
+            <div class="footer-item">Dermatology</div>
+            <div class="footer-item">Orthopedic</div>
+            <div class="footer-item">Mental & Behavioral Health</div>
         </div>
         <div class="footer-links-column">
             <div class="footer-header">Contact & Info</div>
