@@ -1,6 +1,6 @@
 import streamlit as st
 
-# ── 1. GLOBAL INITIALIZATION & DESIGN OVERRIDES ──────────────────────────────────
+# ── 1. GLOBAL INITIALIZATION & DESIGN FLAGS ──────────────────────────────────
 st.set_page_config(
     page_title="Master Health | Enterprise Revenue Cycle Management", 
     page_icon="🏦", 
@@ -8,7 +8,8 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# ── 2. UNIFIED STYLING & HORIZONTAL NAVBAR LAYER ────────────────────
+# ── 2. UNIFIED STYLING & HORIZONTAL NAVBAR MARKDOWN BLOCK ────────────────────
+# Unifying the complete UI ruleset prevents Streamlit from breaking the script canvas.
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -18,7 +19,7 @@ st.markdown("""
         background-color: #FFFFFF !important;
     }
     
-    /* Strict eradication of app infrastructure watermarks and headers */
+    /* Strict eradication of app infrastructure sidebars and padding rails */
     [data-testid="stSidebar"] { display: none !important; }
     [data-testid="stSidebarCollapsedControl"] { display: none !important; }
     header { visibility: hidden !important; height: 0px !important; }
@@ -132,7 +133,29 @@ st.markdown("""
         color: #1F7A8C !important;
     }
     
-    /* CORPORATE LAYOUT STRIPS */
+    /* ── PURE REPLICATED CUSTOM WEB GRIDS ── */
+    .web-grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        width: 100%;
+    }
+    
+    .web-grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        width: 100%;
+    }
+    
+    .web-split-leadership {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 40px;
+        align-items: start;
+        margin-top: 40px;
+    }
+    
     .hero-container {
         display: flex;
         justify-content: space-between;
@@ -223,7 +246,6 @@ st.markdown("""
         box-shadow: 0 4px 16px rgba(0,0,0,0.02);
         border: 1px solid #EFEFEF;
         height: 100%;
-        margin-bottom: 20px;
     }
     
     .card-heading {
@@ -313,6 +335,7 @@ st.markdown("""
     }
     </style>
 
+    <!-- CORE NAVBAR LAYOUT CONTAINER -->
     <div class="premium-navbar">
         <div class="nav-brand-wrapper">
             <a href="?view=Home" class="nav-brand-main" target="_self">Master Health</a>
@@ -365,53 +388,72 @@ if current_view == "Home":
             <img class="hero-img-frame" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80">
         </div>
     </div>
-    """, unsafe_allow_html=True)
     
-    st.markdown('<p class="section-title">Why Independent Groups Choose Master Health</p>', unsafe_allow_html=True)
-    st.markdown('<p class="section-tagline">We combine airtight security standards with accelerated reimbursement lifecycles.</p>', unsafe_allow_html=True)
+    <p class="section-title">Why Independent Groups Choose Master Health</p>
+    <p class="section-tagline">We combine airtight security standards with accelerated reimbursement lifecycles.</p>
     
-    c1, c2, c3 = st.columns(3)
-    with c1:
-        st.markdown('<div class="corporate-card"><div class="card-heading">🔒 Airtight HIPAA Vaults</div><div class="card-text">Our workflows strictly follow Office of Inspector General (OIG) guidelines. We deploy ongoing chart reviews to catch structural coding errors before they flag clearinghouse audits.</div></div>', unsafe_allow_html=True)
-    with c2:
-        st.markdown('<div class="corporate-card"><div class="card-heading">💻 Technology-Agnostic</div><div class="card-text">We work directly inside your existing PM or EHR system. Whether your group utilizes Athenahealth, eClinicalWorks, AdvancedMD, or Epic, our teams log in via secure, encrypted pathways.</div></div>', unsafe_allow_html=True)
-    with c3:
-        st.markdown('<div class="corporate-card"><div class="card-heading">🎓 AAPC Certified Experts</div><div class="card-text">All charge routing and documentation checks are overlooked by specialists holding formal credentials (AAPC/AHIMA), ensuring accurate modifier tracking for multi-specialty practices.</div></div>', unsafe_allow_html=True)
-
-    # Exprimunt Operational Process Loop Strip
-    st.markdown("""
-    <div class="section-block-grey">
+    <!-- FIXED: Using native pure-web CSS grid mapping to secure simultaneous rendering -->
+    <div class="web-grid-3">
+        <div class="corporate-card">
+            <div class="card-heading">🔒 Airtight HIPAA Vaults</div>
+            <div class="card-text">Our workflows strictly follow Office of Inspector General (OIG) guidelines. We deploy ongoing chart reviews to catch structural coding errors before they flag clearinghouse audits.</div>
+        </div>
+        <div class="corporate-card">
+            <div class="card-heading">💻 Technology-Agnostic</div>
+            <div class="card-text">We work directly inside your existing PM or EHR system. Whether your group utilizes Athenahealth, eClinicalWorks, AdvancedMD, or Epic, our teams log in via secure, encrypted pathways.</div>
+        </div>
+        <div class="corporate-card">
+            <div class="card-heading">🎓 AAPC Certified Experts</div>
+            <div class="card-text">All charge routing and documentation checks are overlooked by specialists holding formal credentials (AAPC/AHIMA), ensuring accurate modifier tracking for multi-specialty practices.</div>
+        </div>
+    </div>
+    
+    <!-- Exprimunt Operational Process Loop Panel Section -->
+    <div class="section-block-grey" style="margin-top: 60px;">
         <div class="inner-content-wrapper">
             <p class="section-title" style="text-align:center;">Our 4-Stage Revenue Optimization Framework</p>
             <p class="section-tagline" style="text-align:center; margin-bottom:50px;">A relentless workflow cycle built to identify documentation leakage points and accelerate processing speed.</p>
+            
+            <div class="web-grid-4">
+                <div class="corporate-card">
+                    <div class="flow-step-num">01</div>
+                    <div class="card-heading">Intake Audit</div>
+                    <div class="card-text">Encounter checks and verification of insurance configurations to eliminate front-end clearinghouse rejections.</div>
+                </div>
+                <div class="corporate-card">
+                    <div class="flow-step-num">02</div>
+                    <div class="card-heading">Scrub & Code</div>
+                    <div class="card-text">Line-by-line validation of specialty coding and modifier rules before routing to clearinghouses.</div>
+                </div>
+                <div class="corporate-card">
+                    <div class="flow-step-num">03</div>
+                    <div class="card-heading">Payment Post</div>
+                    <div class="card-text">Line item allocation of incoming ERAs against localized payer fee directories to capture underpayments.</div>
+                </div>
+                <div class="corporate-card">
+                    <div class="flow-step-num">04</div>
+                    <div class="card-heading">A/R Recovery</div>
+                    <div class="card-text">Persistent, structured follow-up campaigns targeting outstanding balances past the 30 and 60-day thresholds.</div>
+                </div>
+            </div>
+        </div>
+    </div>
     """, unsafe_allow_html=True)
-    
-    p1, p2, p3, p4 = st.columns(4)
-    with p1:
-        st.markdown('<div class="corporate-card"><div class="flow-step-num">01</div><div class="card-heading">Intake Audit</div><div class="card-text">Encounter checks and verification of insurance configurations to eliminate front-end clearinghouse rejections.</div></div>', unsafe_allow_html=True)
-    with p2:
-        st.markdown('<div class="corporate-card"><div class="flow-step-num">02</div><div class="card-heading">Scrub & Code</div><div class="card-text">Line-by-line validation of specialty coding and modifier rules before routing to clearinghouses.</div></div>', unsafe_allow_html=True)
-    with p3:
-        st.markdown('<div class="corporate-card"><div class="flow-step-num">03</div><div class="card-heading">Payment Post</div><div class="card-text">Line item allocation of incoming ERAs against localized payer fee directories to capture underpayments.</div></div>', unsafe_allow_html=True)
-    with p4:
-        st.markdown('<div class="corporate-card"><div class="flow-step-num">04</div><div class="card-heading">A/R Recovery</div><div class="card-text">Persistent, structured follow-up campaigns targeting outstanding balances past the 30 and 60-day thresholds.</div></div>', unsafe_allow_html=True)
-        
-    st.markdown('</div></div>', unsafe_allow_html=True)
 
 elif current_view == "Overview":
     st.markdown('<p class="hero-title" style="margin-top:60px;">Corporate Overview</p>', unsafe_allow_html=True)
     st.markdown('<p class="hero-subtitle">Master Health delivers institutional-grade revenue operation infrastructures engineered specifically to shield modern medical groups from overhead bloat, structural coding errors, and clearinghouse audit friction.</p>', unsafe_allow_html=True)
 
 elif current_view == "Founder":
-    st.markdown('<p class="hero-title" style="margin-top:60px;">Executive Leadership</p>', unsafe_allow_html=True)
-    st.markdown('<p class="hero-subtitle">Driven by advanced clinical, technical, and compliance insights, our corporate structure isolates administrative overhead and establishes high-efficiency processing tunnels.</p>', unsafe_allow_html=True)
+    st.markdown("""
+    <p class="hero-title" style="margin-top:60px;">Executive Leadership</p>
+    <p class="hero-subtitle">Driven by advanced clinical, technical, and compliance insights, our corporate structure isolates administrative overhead and establishes high-efficiency processing tunnels.</p>
     
-    lead_col1, lead_col2 = st.columns([1, 2])
-    with lead_col1:
-        st.markdown('<img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=400&q=80" style="width:100%; border-radius:8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">', unsafe_allow_html=True)
-    with lead_col2:
-        st.markdown("""
-        <div class="corporate-card" style="height:100%;">
+    <div class="web-split-leadership">
+        <div>
+            <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=400&q=80" style="width:100%; border-radius:8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+        </div>
+        <div class="corporate-card">
             <div class="card-heading" style="font-size:24px; color:#0A2540; margin-bottom:4px;">Dr. Sashi</div>
             <div class="card-text" style="color:#1F7A8C; font-weight:600; font-size:15px; margin-bottom:20px; text-transform:uppercase;">Founder & Chief Executive</div>
             <div class="card-text" style="font-size:15.5px; line-height:1.8; color:#333333;">
@@ -421,18 +463,17 @@ elif current_view == "Founder":
                 isolated under strict HIPAA and OIG parameters.
             </div>
         </div>
-        """, unsafe_allow_html=True)
+    </div>
+    """, unsafe_allow_html=True)
 
 else:
     # ── LEVERAGING TAILORED SPECIALTY PATHWAYS (ASSEMBLY HEALTH STYLE) ──
     clean_title = current_view.replace("_", " & ")
-    st.markdown(f'<p class="hero-title" style="margin-top:60px;">{clean_title} Revenue Optimization</p>', unsafe_allow_html=True)
     
-    # Map high-end technical criteria per specialty to reflect true domain expertise
     specialty_copy_matrix = {
         "Cardiology": "Mastery of documentation guidelines for complex cardiac procedures, including device checks, cardiac catheterizations, diagnostic imaging bundling, and specialized peripheral vascular modifier sets.",
         "Ophthalmology": "Precision execution for global surgical windows, bilateral surgical modifiers, complex diagnostic injections, optometry testing cross-walks, and highly specific premium intraocular lens billing metrics.",
-        "GI": "Rigorous claim optimization metrics for screening vs. diagnostic endoscopy pathways, anesthesia bundling variations, multiple polyp extraction technique modifier protocols, and institutional compliance routing.",
+        "GI": "Rigorous claim optimization metrics for screening vs. diagnostic endoscopy pathways, anesthesia bundling variations, multiple polyp extraction technique modifier protocols, and phantom compliance checks.",
         "Oncology": "Expert compliance routing for high-complexity infusion coding, therapeutic hydration sequence tracking, toxic drug waste code calculation requirements, and concurrent chemotherapy management mapping.",
         "Dermatology": "Advanced tracking workflows constructed around multi-lesion destruction algorithms, global surgical package intervals, complex wound closures, skin biopsy bundling, and cosmetic-medical care classification borders.",
         "Orthopedic": "Flawless coding precision across major joint arthroplasties, spinal instrumentation sequences, multi-surgeon fracture repair modifier cross-walks, and comprehensive physical therapy tracking.",
@@ -440,10 +481,12 @@ else:
     }
     
     active_copy = specialty_copy_matrix.get(current_view, "Dedicated revenue cycle management workflows configured specifically to handle provider schedules, modifier requirements, and specific payer rules directories.")
-    st.markdown(f'<p class="hero-subtitle">{active_copy}</p>', unsafe_allow_html=True)
     
     st.markdown(f"""
-    <div class="corporate-card" style="border-top: 4px solid #1F7A8C;">
+    <p class="hero-title" style="margin-top:60px;">{clean_title} Revenue Optimization</p>
+    <p class="hero-subtitle">{active_copy}</p>
+    
+    <div class="corporate-card" style="border-top: 4px solid #1F7A8C; margin-top: 30px;">
         <div class="card-heading">{clean_title} Tactical Priorities</div>
         <div class="card-text" style="line-height:2;">
             • Specialized ICD-10 crosswalk monitoring ensuring error-free documentation posting.<br>
