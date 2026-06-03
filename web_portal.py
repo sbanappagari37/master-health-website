@@ -1,7 +1,41 @@
 import streamlit as st
 
 # ── STREAMLIT CORPORATE DESIGN CONFIGURATION ──────────────────────────────────
-st.set_page_config(page_title="Master Health | Enterprise Revenue Cycle Management", page_icon="🏦", layout="wide")
+import streamlit as st
+
+# ── ENHANCED CORPORATE CONFIGURATION ──────────────────────────────────────────
+st.set_page_config(
+    page_title="Master Health | Enterprise Revenue Cycle Management", 
+    page_icon="🏦", 
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+# Custom CSS to force Streamlit to hide its default top header lines and look cleaner
+st.markdown("""
+    <style>
+    /* Hide the default Streamlit header bar completely */
+    header {visibility: hidden;}
+    footer {visibility: hidden;}
+    #MainMenu {visibility: hidden;}
+    
+    .main { background-color: #FFFFFF; }
+    .hero-box { padding: 20px 0px 40px 0px; text-align: left; }
+    .hero-title { color: #1F3864; font-family: 'Arial'; font-size: 46px; font-weight: bold; line-height: 1.15; }
+    .hero-subtitle { color: #404040; font-size: 20px; font-weight: normal; margin-top: 15px; margin-bottom: 25px; max-width: 850px; line-height: 1.4; }
+    .section-header { color: #1F3864; font-size: 28px; font-weight: bold; margin-top: 40px; margin-bottom: 20px; }
+    
+    /* Assembly Style Metric Grid */
+    .metric-card { background-color: #F8F9FA; padding: 25px; border-radius: 6px; text-align: center; border: 1px solid #E9ECEF; }
+    .metric-value { color: #1F7A8C; font-size: 36px; font-weight: bold; margin-bottom: 2px; }
+    .metric-label { color: #1F3864; font-size: 14px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
+    
+    /* Expanded Pillar Grid Layout */
+    .pillar-box { background-color: #FFFFFF; padding: 24px; border-radius: 8px; border-left: 5px solid #1F7A8C; box-shadow: 0 4px 12px rgba(0,0,0,0.05); height: 100%; }
+    .pillar-title { color: #1F3864; font-size: 18px; font-weight: bold; margin-bottom: 8px; }
+    .pillar-body { color: #5A5A5A; font-size: 13.5px; line-height: 1.5; }
+    </style>
+    """, unsafe_allow_html=True)
 
 # Custom CSS to mimic a premium corporate aesthetic
 st.markdown("""
