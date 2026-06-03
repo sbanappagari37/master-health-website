@@ -791,6 +791,8 @@
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
     }
     @media (max-width: 768px) {
+      .hero-two-col { grid-template-columns: 1fr !important; }
+      .hero-two-col img { display: none; }
       .nav-links, .nav-cta { display: none; }
       .hamburger { display: flex; }
       .why-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -861,10 +863,10 @@
         </div>
       </li>
       <li class="nav-item">
-        <a href="mailto:operations@masterhealth.us" id="nav-consult">Free Consultation</a>
+        <a onclick="showPage('consult')" id="nav-consult" style="cursor:pointer;">Free Consultation</a>
       </li>
       <li class="nav-item">
-        <a href="mailto:info@masterhealth.us" id="nav-contact">Contact</a>
+        <a onclick="showPage('contact')" id="nav-contact" style="cursor:pointer;">Contact</a>
       </li>
     </ul>
 
@@ -914,8 +916,8 @@
         <a onclick="showPage('services'); closeMobileMenu()">Mental &amp; Behavioral Health</a>
       </div>
     </div>
-    <a href="mailto:operations@masterhealth.us" onclick="closeMobileMenu()">Free Consultation</a>
-    <a href="mailto:info@masterhealth.us" onclick="closeMobileMenu()">Contact</a>
+    <a onclick="showPage('consult'); closeMobileMenu()">Free Consultation</a>
+    <a onclick="showPage('contact'); closeMobileMenu()">Contact</a>
   </div>
 </header>
 
@@ -925,18 +927,25 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-tag">Trusted RCM Partner</div>
-        <h1>Your Trusted RCM &amp;<br /><em>Medical Billing Partner</em></h1>
-        <p>Getting paid for the care you deliver shouldn't be this hard. Master Health streamlines your revenue cycle so you can focus on what matters most — your patients.</p>
-        <div class="hero-actions">
-          <a class="btn-primary" onclick="showPage('contact')" style="cursor:pointer;">Contact Master Health</a>
-          <a class="btn-outline" onclick="showPage('about-overview')">Learn More</a>
+    <div class="container" style="width:100%;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;position:relative;z-index:1;">
+        <div class="hero-content" style="max-width:100%;">
+          <div class="hero-tag">Trusted RCM Partner</div>
+          <h1>Your Trusted RCM &amp;<br /><em>Medical Billing Partner</em></h1>
+          <p>Getting paid for the care you deliver shouldn't be this hard. Master Health streamlines your revenue cycle so you can focus on what matters most — your patients.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" onclick="showPage('contact')" style="cursor:pointer;">Contact Master Health</a>
+            <a class="btn-outline" onclick="showPage('about-overview')">Learn More</a>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center;">
+          <img src="hero.jpg"
+               alt="Healthcare professionals team"
+               style="width:100%;max-width:520px;border-radius:20px;box-shadow:0 24px 64px rgba(0,0,0,.4);border:4px solid rgba(255,255,255,.15);object-fit:cover;aspect-ratio:4/3;" />
         </div>
       </div>
     </div>
-    <div class="hero-blob"></div>
+    <div class="hero-blob" style="display:none;"></div>
   </section>
 
   <!-- Stats -->
@@ -1814,52 +1823,154 @@
       <p>Speak with a Master Health RCM specialist and discover how much revenue your practice could be leaving on the table.</p>
     </div>
   </div>
-  <section class="consult-page">
+  <section style="padding:80px 0;background:var(--light);">
     <div class="container">
-      <div class="consult-card">
-        <div class="consult-card-top">
-          <div class="consult-icon-wrap">
-            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <div style="display:grid;grid-template-columns:1fr 1.6fr;gap:64px;align-items:start;">
+
+        <!-- Left info panel -->
+        <div style="background:linear-gradient(160deg,var(--navy),#0d4d40);border-radius:16px;padding:48px 36px;color:var(--white);">
+          <h2 style="font-size:1.8rem;font-weight:800;margin-bottom:16px;line-height:1.2;">Schedule a Free Consultation</h2>
+          <p style="color:rgba(255,255,255,.75);font-size:.98rem;line-height:1.75;margin-bottom:36px;">Our RCM specialists will review your current billing process, identify revenue leakage, and present a customized action plan — at no cost and with no obligation.</p>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div style="width:28px;height:28px;background:rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="#4dd9c4" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span style="font-size:.9rem;color:rgba(255,255,255,.85);">Specialty-specific revenue cycle assessment</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div style="width:28px;height:28px;background:rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="#4dd9c4" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span style="font-size:.9rem;color:rgba(255,255,255,.85);">Identification of billing and coding gaps</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div style="width:28px;height:28px;background:rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="#4dd9c4" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span style="font-size:.9rem;color:rgba(255,255,255,.85);">Payer contract and reimbursement benchmarking</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div style="width:28px;height:28px;background:rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="#4dd9c4" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span style="font-size:.9rem;color:rgba(255,255,255,.85);">Customized improvement roadmap</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div style="width:28px;height:28px;background:rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="#4dd9c4" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span style="font-size:.9rem;color:rgba(255,255,255,.85);">No cost, no obligation, no commitment required</span>
+            </div>
           </div>
-          <div>
-            <h2>Schedule Your Free Consultation</h2>
-            <p>Talk to our experts about your revenue cycle challenges — completely free.</p>
+          <div style="margin-top:36px;padding-top:28px;border-top:1px solid rgba(255,255,255,.15);">
+            <div style="font-size:.75rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;">Consultation Email</div>
+            <a href="mailto:operations@masterhealth.us" style="color:#4dd9c4;font-weight:600;font-size:.95rem;">operations@masterhealth.us</a>
           </div>
         </div>
-        <div class="consult-card-body">
-          <p>Our RCM specialists will review your current billing process, identify areas of revenue leakage, and present a customized action plan — all at no cost and with no obligation to you. We're confident in the value we deliver.</p>
-          <div class="consult-benefits">
-            <div class="benefit-row">
-              <div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-              <span>Specialty-specific revenue cycle assessment</span>
+
+        <!-- Right form panel -->
+        <div style="background:var(--white);border-radius:16px;padding:48px 40px;box-shadow:0 4px 32px rgba(0,0,0,.07);border:1px solid var(--border);">
+          <h2 style="font-size:1.6rem;font-weight:800;color:var(--navy);margin-bottom:8px;">Request Your Free Consultation</h2>
+          <p style="font-size:.9rem;color:var(--mid);margin-bottom:32px;">Please provide the required information so we can reach you.</p>
+          <form id="consultForm" onsubmit="submitConsultForm(event)" style="display:flex;flex-direction:column;gap:20px;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div>
+                <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Full Name *</label>
+                <input type="text" id="con-name" placeholder="Full Name" required style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--navy);outline:none;transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'"/>
+              </div>
+              <div>
+                <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Business Name</label>
+                <input type="text" id="con-business" placeholder="Business Name" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--navy);outline:none;transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'"/>
+              </div>
             </div>
-            <div class="benefit-row">
-              <div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-              <span>Identification of billing and coding gaps</span>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div>
+                <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Email *</label>
+                <input type="email" id="con-email" placeholder="Email" required style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--navy);outline:none;transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'"/>
+              </div>
+              <div>
+                <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Phone</label>
+                <input type="tel" id="con-phone" placeholder="Phone" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--navy);outline:none;transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'"/>
+              </div>
             </div>
-            <div class="benefit-row">
-              <div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-              <span>Payer contract and reimbursement benchmarking</span>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div>
+                <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Monthly Billing</label>
+                <select id="con-billing" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--mid);outline:none;background:var(--white);transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'">
+                  <option value="">Select range</option>
+                  <option>$1k – $15k</option>
+                  <option>$15k – $30k</option>
+                  <option>$30k – $50k</option>
+                  <option>$50k – $75k</option>
+                  <option>$75k – $100k</option>
+                  <option>Above $100k</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">No. of Specialties</label>
+                <select id="con-specialties" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--mid);outline:none;background:var(--white);transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'">
+                  <option value="">Select range</option>
+                  <option>1</option>
+                  <option>2 – 3</option>
+                  <option>4 – 5</option>
+                  <option>Above 5</option>
+                </select>
+              </div>
             </div>
-            <div class="benefit-row">
-              <div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-              <span>Customized improvement roadmap</span>
+            <div>
+              <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Total AR</label>
+              <select id="con-ar" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--mid);outline:none;background:var(--white);transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'">
+                <option value="">Select range</option>
+                <option>Under $50k</option>
+                <option>$50k – $100k</option>
+                <option>$100k – $250k</option>
+                <option>$250k – $500k</option>
+                <option>Above $500k</option>
+              </select>
             </div>
-            <div class="benefit-row">
-              <div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-              <span>No cost, no obligation, no commitment required</span>
+            <div>
+              <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Your Message</label>
+              <textarea id="con-message" placeholder="Tell us about your practice and what challenges you'd like help with..." rows="4" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--navy);outline:none;resize:vertical;font-family:inherit;transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'"></textarea>
             </div>
-          </div>
-          <a class="consult-email-btn" href="mailto:operations@masterhealth.us?subject=Free Consultation Request&body=Hello Master Health, I would like to schedule a free consultation to discuss our revenue cycle management needs.">
-            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Email Us: operations@masterhealth.us
-          </a>
-          <p class="consult-note">We typically respond within one business day. For urgent inquiries, reference "URGENT" in your subject line.</p>
+            <button type="submit" class="btn-primary" style="padding:15px;font-size:1rem;border-radius:8px;width:100%;justify-content:center;">Request Free Consultation</button>
+            <p id="con-success" style="display:none;text-align:center;color:var(--teal);font-weight:600;font-size:.95rem;">✓ Request sent! Our team will be in touch within one business day.</p>
+          </form>
         </div>
+
       </div>
     </div>
   </section>
 </div><!-- end consult -->
+
+<script>
+function submitConsultForm(e) {
+  e.preventDefault();
+  const name       = document.getElementById('con-name').value;
+  const business   = document.getElementById('con-business').value;
+  const email      = document.getElementById('con-email').value;
+  const phone      = document.getElementById('con-phone').value;
+  const billing    = document.getElementById('con-billing').value;
+  const specialties= document.getElementById('con-specialties').value;
+  const ar         = document.getElementById('con-ar').value;
+  const message    = document.getElementById('con-message').value;
+
+  const body = `Free Consultation Request from masterhealth.us%0D%0A%0D%0A`
+    + `Full Name: ${encodeURIComponent(name)}%0D%0A`
+    + `Business Name: ${encodeURIComponent(business)}%0D%0A`
+    + `Email: ${encodeURIComponent(email)}%0D%0A`
+    + `Phone: ${encodeURIComponent(phone)}%0D%0A`
+    + `Monthly Billing: ${encodeURIComponent(billing)}%0D%0A`
+    + `No. of Specialties: ${encodeURIComponent(specialties)}%0D%0A`
+    + `Total AR: ${encodeURIComponent(ar)}%0D%0A%0D%0A`
+    + `Message:%0D%0A${encodeURIComponent(message)}`;
+
+  window.location.href = `mailto:operations@masterhealth.us?subject=Free Consultation Request – ${encodeURIComponent(name)}&body=${body}`;
+
+  document.getElementById('con-success').style.display = 'block';
+  document.getElementById('consultForm').reset();
+}
+</script>
 
 
 <!-- ===== CONTACT PAGE ===== -->
