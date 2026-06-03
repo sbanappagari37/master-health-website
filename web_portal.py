@@ -1,6 +1,6 @@
 import streamlit as st
 
-# ── 1. GLOBAL INITIALIZATION & DESIGN OVERRIDES ──────────────────────────────────
+# ── 1. GLOBAL INITIALIZATION & DESIGN FLAGS ──────────────────────────────────
 st.set_page_config(
     page_title="Master Health | Enterprise Revenue Cycle Management", 
     page_icon="🏦", 
@@ -8,7 +8,8 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Global CSS Master Layer for High-End Corporate Website Aesthetics
+# ── 2. UNIFIED STYLING & HORIZONTAL NAVBAR MARKDOWN LAYER ────────────────────
+# We bind the CSS and HTML structures together to guarantee simultaneous browser rendering
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -18,11 +19,11 @@ st.markdown("""
         background-color: #FFFFFF !important;
     }
     
-    /* Strict eradication of app infrastructure watermarks and sidebar padding */
+    /* Strict eradication of app infrastructure sidebars and padding rails */
     [data-testid="stSidebar"] { display: none !important; }
     [data-testid="stSidebarCollapsedControl"] { display: none !important; }
     header { visibility: hidden !important; height: 0px !important; }
-    footer { visibility: hidden !important; }
+    footer { visibility: hidden !important; height: 0px !important; }
     [data-testid="stHeader"] { display: none !important; }
     
     .block-container {
@@ -31,7 +32,7 @@ st.markdown("""
         max-width: 1200px !important;
     }
     
-    /* ── COMPLETE PURE-WEB HORIZONTAL NAVIGATION HEADER ── */
+    /* COMPLETE PURE-WEB HORIZONTAL NAVIGATION HEADER */
     .premium-navbar {
         display: flex;
         justify-content: space-between;
@@ -71,7 +72,7 @@ st.markdown("""
         gap: 4px;
     }
     
-    /* Hover Dropdown Architecture */
+    /* Dropdown Hover Framework */
     .menu-dropdown {
         position: relative;
         display: inline-block;
@@ -97,7 +98,7 @@ st.markdown("""
         color: #1F7A8C !important;
     }
     
-    /* Popover Dropdown Styling Overlay */
+    /* Popover Menu Dropdown Box Properties */
     .dropdown-overlay-box {
         display: none;
         position: absolute;
@@ -132,7 +133,7 @@ st.markdown("""
         color: #1F7A8C !important;
     }
     
-    /* ── PREMIUM CORPORATE HERO SPLIT (ASSEMBLY REPLICATION) ── */
+    /* PREMIUM CORPORATE HERO SPLIT */
     .hero-container {
         display: flex;
         justify-content: space-between;
@@ -185,10 +186,9 @@ st.markdown("""
         padding: 15px 32px !important;
         border-radius: 6px !important;
         text-decoration: none !important;
-        box-shadow: 0px 4px 10px rgba(45, 156, 219, 0.2);
     }
     
-    /* Premium Grid Cards Content */
+    /* Content Layout Elements */
     .section-title {
         color: #0A2540;
         font-size: 28px;
@@ -221,7 +221,7 @@ st.markdown("""
         line-height: 1.65;
     }
     
-    /* ── DEEP FOOTER MATRIX ── */
+    /* DEEP FOOTER MATRIX */
     .enterprise-footer {
         background-color: #0A2540;
         color: #FFFFFF;
@@ -287,52 +287,46 @@ st.markdown("""
         font-size: 12.5px;
     }
     </style>
-    """, unsafe_allow_html=True)
 
-# ── 2. ISOLATED NAVBAR RENDERING DATA BLOCK ──────────────────────────────────
-navbar_html_content = """
-<div class="premium-navbar">
-    <div class="nav-brand-wrapper">
-        <a href="?view=Home" class="nav-brand-main" target="_self">Master Health</a>
-        <div class="nav-brand-sub">Enterprise Revenue Operations</div>
-    </div>
-    <div class="nav-menu-links">
-        <a href="?view=Home" class="menu-tab-link" target="_self">Home</a>
-        
-        <div class="menu-dropdown">
-            <button class="menu-tab-link">About Us ▾</button>
-            <div class="dropdown-overlay-box">
-                <a href="?view=Overview" target="_self">Overview</a>
-                <a href="?view=Founder" target="_self">Founder</a>
-            </div>
+    <div class="premium-navbar">
+        <div class="nav-brand-wrapper">
+            <a href="?view=Home" class="nav-brand-main" target="_self">Master Health</a>
+            <div class="nav-brand-sub">Enterprise Revenue Operations</div>
         </div>
-        
-        <div class="menu-dropdown">
-            <button class="menu-tab-link">Services ▾</button>
-            <div class="dropdown-overlay-box">
-                <a href="?view=Cardiology" target="_self">Cardiology</a>
-                <a href="?view=Ophthalmology" target="_self">Ophthalmology</a>
-                <a href="?view=GI" target="_self">GI</a>
-                <a href="?view=Oncology" target="_self">Oncology</a>
-                <a href="?view=Dermatology" target="_self">Dermatology</a>
-                <a href="?view=Orthopedic" target="_self">Orthopedic</a>
-                <a href="?view=Mental_Behavioral" target="_self">Mental & Behavioral Health</a>
+        <div class="nav-menu-links">
+            <a href="?view=Home" class="menu-tab-link" target="_self">Home</a>
+            
+            <div class="menu-dropdown">
+                <button class="menu-tab-link">About Us ▾</button>
+                <div class="dropdown-overlay-box">
+                    <a href="?view=Overview" target="_self">Overview</a>
+                    <a href="?view=Founder" target="_self">Founder</a>
+                </div>
             </div>
+            
+            <div class="menu-dropdown">
+                <button class="menu-tab-link">Services ▾</button>
+                <div class="dropdown-overlay-box">
+                    <a href="?view=Cardiology" target="_self">Cardiology</a>
+                    <a href="?view=Ophthalmology" target="_self">Ophthalmology</a>
+                    <a href="?view=GI" target="_self">GI</a>
+                    <a href="?view=Oncology" target="_self">Oncology</a>
+                    <a href="?view=Dermatology" target="_self">Dermatology</a>
+                    <a href="?view=Orthopedic" target="_self">Orthopedic</a>
+                    <a href="?view=Mental_Behavioral" target="_self">Mental & Behavioral Health</a>
+                </div>
+            </div>
+            
+            <a class="menu-tab-link" href="mailto:operations@masterhealth.us?subject=Free Consultation Request">Free Consultation</a>
+            <a class="menu-tab-link" href="mailto:info@masterhealth.us?subject=Corporate Inquiry">Contact</a>
         </div>
-        
-        <a class="menu-tab-link" href="mailto:operations@masterhealth.us?subject=Free Consultation Request">Free Consultation</a>
-        <a class="menu-tab-link" href="mailto:info@masterhealth.us?subject=Corporate Inquiry">Contact</a>
     </div>
-</div>
-"""
+""", unsafe_allow_html=True)
 
-# Send clean variable to Streamlit parser safely
-st.markdown(navbar_html_content, unsafe_allow_html=True)
-
-# Detect state parameters
+# Capture view router parameters safely from active URL matrices
 current_view = st.query_params.get("view", "Home")
 
-# ── 3. DYNAMIC CONTENT VIEWS ─────────────────────────────────────────────────
+# ── 3. DYNAMIC CONTENT VIEWPORTS ─────────────────────────────────────────────
 
 if current_view == "Home":
     st.markdown("""
@@ -366,7 +360,7 @@ elif current_view == "Founder":
     st.markdown('<p class="hero-subtitle">Driven by advanced clinical, technical, and compliance insights, our executive framework bridges the gap between domestic clinical operations and secure high-efficiency processing systems.</p>', unsafe_allow_html=True)
 
 else:
-    # Handle Medical Specialties Views cleanly
+    # Specialty Data Views
     clean_title = current_view.replace("_", " & ")
     st.markdown(f'<p class="hero-title" style="margin-top:60px;">{clean_title} Revenue Management</p>', unsafe_allow_html=True)
     st.markdown(f'<p class="hero-subtitle">Master Health provides tailored billing guidelines, claim scrubbing sub-routines, and optimization protocols built explicitly to support institutional practices specializing in {clean_title}.</p>', unsafe_allow_html=True)
