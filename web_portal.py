@@ -8,8 +8,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# ── 2. UNIFIED STYLING & HORIZONTAL NAVBAR MARKDOWN LAYER ────────────────────
-# We bind the CSS and HTML structures together to guarantee simultaneous browser rendering
+# ── 2. UNIFIED STYLING & HORIZONTAL NAVBAR LAYER ────────────────────
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -19,7 +18,7 @@ st.markdown("""
         background-color: #FFFFFF !important;
     }
     
-    /* Strict eradication of app infrastructure sidebars and padding rails */
+    /* Eradicate native Streamlit headers, footers, and sidebars */
     [data-testid="stSidebar"] { display: none !important; }
     [data-testid="stSidebarCollapsedControl"] { display: none !important; }
     header { visibility: hidden !important; height: 0px !important; }
@@ -32,7 +31,7 @@ st.markdown("""
         max-width: 1200px !important;
     }
     
-    /* COMPLETE PURE-WEB HORIZONTAL NAVIGATION HEADER */
+    /* HORIZONTAL NAVIGATION BAR HEADER */
     .premium-navbar {
         display: flex;
         justify-content: space-between;
@@ -72,7 +71,7 @@ st.markdown("""
         gap: 4px;
     }
     
-    /* Dropdown Hover Framework */
+    /* Custom Dropdown Triggers */
     .menu-dropdown {
         position: relative;
         display: inline-block;
@@ -98,7 +97,7 @@ st.markdown("""
         color: #1F7A8C !important;
     }
     
-    /* Popover Menu Dropdown Box Properties */
+    /* Popover Menu Dropdown Boxes */
     .dropdown-overlay-box {
         display: none;
         position: absolute;
@@ -133,7 +132,7 @@ st.markdown("""
         color: #1F7A8C !important;
     }
     
-    /* PREMIUM CORPORATE HERO SPLIT */
+    /* CORPORATE HERO GRIDS */
     .hero-container {
         display: flex;
         justify-content: space-between;
@@ -188,7 +187,6 @@ st.markdown("""
         text-decoration: none !important;
     }
     
-    /* Content Layout Elements */
     .section-title {
         color: #0A2540;
         font-size: 28px;
@@ -221,7 +219,7 @@ st.markdown("""
         line-height: 1.65;
     }
     
-    /* DEEP FOOTER MATRIX */
+    /* CORPORATE DEEP FOOTER */
     .enterprise-footer {
         background-color: #0A2540;
         color: #FFFFFF;
@@ -323,10 +321,10 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-# Capture view router parameters safely from active URL matrices
+# Track active view variables directly through query tokens
 current_view = st.query_params.get("view", "Home")
 
-# ── 3. DYNAMIC CONTENT VIEWPORTS ─────────────────────────────────────────────
+# ── 3. DYNAMIC CONTENT RENDERING MODULES ─────────────────────────────────────
 
 if current_view == "Home":
     st.markdown("""
@@ -347,7 +345,7 @@ if current_view == "Home":
     with c1:
         st.markdown('<div class="corporate-card"><div class="card-heading">🔒 Airtight OIG & HIPAA Compliance</div><div class="card-text">Our workflows strictly follow Office of Inspector General (OIG) guidelines. We deploy ongoing chart reviews to catch structural coding errors before they flag clearinghouse audits.</div></div>', unsafe_allow_html=True)
     with c2:
-        st.markdown('<div class="corporate-card"><div class="card-heading">💻 Technology-Agnostic Framework</div><div class="card-text">We work directly inside your existing PM or EHR system. Whether your group utilizes Athenahealth, eClinicalWorks, AdvancedMD, or Epic, our teams log in via secure, encrypted pathways.</div></div>', unsafe_allow_html=True)
+        st.markdown('<div class="corporate-card"><div class="corporate-card"><div class="card-heading">💻 Technology-Agnostic Framework</div><div class="card-text">We work directly inside your existing PM or EHR system. Whether your group utilizes Athenahealth, eClinicalWorks, AdvancedMD, or Epic, our teams log in via secure, encrypted pathways.</div></div>', unsafe_allow_html=True)
     with c3:
         st.markdown('<div class="corporate-card"><div class="card-heading">🎓 Certified Professional Coders</div><div class="card-text">All charge routing and documentation checks are overlooked by specialists holding formal credentials (AAPC/AHIMA), ensuring accurate modifier tracking for multi-specialty practices.</div></div>', unsafe_allow_html=True)
 
@@ -360,7 +358,7 @@ elif current_view == "Founder":
     st.markdown('<p class="hero-subtitle">Driven by advanced clinical, technical, and compliance insights, our executive framework bridges the gap between domestic clinical operations and secure high-efficiency processing systems.</p>', unsafe_allow_html=True)
 
 else:
-    # Specialty Data Views
+    # Individual Specialty Page Viewport Fallbacks
     clean_title = current_view.replace("_", " & ")
     st.markdown(f'<p class="hero-title" style="margin-top:60px;">{clean_title} Revenue Management</p>', unsafe_allow_html=True)
     st.markdown(f'<p class="hero-subtitle">Master Health provides tailored billing guidelines, claim scrubbing sub-routines, and optimization protocols built explicitly to support institutional practices specializing in {clean_title}.</p>', unsafe_allow_html=True)
