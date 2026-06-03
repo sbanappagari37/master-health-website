@@ -1,6 +1,6 @@
 import streamlit as st
 
-# ── 1. GLOBAL INITIALIZATION & DESIGN FLAGS ──────────────────────────────────
+# ── 1. GLOBAL INITIALIZATION & DESIGN OVERRIDES ──────────────────────────────────
 st.set_page_config(
     page_title="Master Health | Enterprise Revenue Cycle Management", 
     page_icon="🏦", 
@@ -9,6 +9,7 @@ st.set_page_config(
 )
 
 # ── 2. UNIFIED STYLING & HORIZONTAL NAVBAR LAYER ────────────────────
+# Combining the CSS and HTML structures guarantees simultaneous browser rendering
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -345,7 +346,7 @@ if current_view == "Home":
     with c1:
         st.markdown('<div class="corporate-card"><div class="card-heading">🔒 Airtight OIG & HIPAA Compliance</div><div class="card-text">Our workflows strictly follow Office of Inspector General (OIG) guidelines. We deploy ongoing chart reviews to catch structural coding errors before they flag clearinghouse audits.</div></div>', unsafe_allow_html=True)
     with c2:
-        st.markdown('<div class="corporate-card"><div class="corporate-card"><div class="card-heading">💻 Technology-Agnostic Framework</div><div class="card-text">We work directly inside your existing PM or EHR system. Whether your group utilizes Athenahealth, eClinicalWorks, AdvancedMD, or Epic, our teams log in via secure, encrypted pathways.</div></div>', unsafe_allow_html=True)
+        st.markdown('<div class="corporate-card"><div class="card-heading">💻 Technology-Agnostic Framework</div><div class="card-text">We work directly inside your existing PM or EHR system. Whether your group utilizes Athenahealth, eClinicalWorks, AdvancedMD, or Epic, our teams log in via secure, encrypted pathways.</div></div>', unsafe_allow_html=True)
     with c3:
         st.markdown('<div class="corporate-card"><div class="card-heading">🎓 Certified Professional Coders</div><div class="card-text">All charge routing and documentation checks are overlooked by specialists holding formal credentials (AAPC/AHIMA), ensuring accurate modifier tracking for multi-specialty practices.</div></div>', unsafe_allow_html=True)
 
