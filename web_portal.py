@@ -22,7 +22,7 @@ st.markdown("""
     [data-testid="stSidebar"] { display: none !important; }
     [data-testid="stSidebarCollapsedControl"] { display: none !important; }
     header { visibility: hidden !important; height: 0px !important; }
-    footer { visibility: hidden !important; height: 0px !important; }
+    footer { visibility: hidden !important; }
     [data-testid="stHeader"] { display: none !important; }
     
     .block-container {
@@ -87,7 +87,7 @@ st.markdown("""
         color: #1F7A8C !important;
     }
     
-    /* Dropdown item overlays overlaying standard layouts layout */
+    /* Dropdown item overlays */
     .dropdown-overlay-box {
         display: none;
         position: absolute;
@@ -262,7 +262,7 @@ st.markdown("""
 
 # ── 2. RENDER STABLE PURE-HTML NAVIGATION ROW ──────────────────────────────────
 
-# Build a unified HTML header code layout where elements are physically locked side-by-side
+# FIXED: Wrapped completely inside st.markdown with unsafe_allow_html=True so it renders as code
 st.markdown("""
 <div class="premium-navbar">
     <div class="nav-brand">Master Health<span>Enterprise Revenue Operations</span></div>
