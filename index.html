@@ -831,12 +831,21 @@
         <div class="dropdown">
           <a onclick="showPage('about-overview')">Overview</a>
           <a onclick="showPage('about-founder')">Founder</a>
+          <a onclick="showPage('about-values')">Values</a>
         </div>
       </li>
       <li class="nav-item">
         <button id="nav-services">Services <span class="chevron"></span></button>
-        <div class="dropdown">
+        <div class="dropdown" style="min-width:260px;">
           <a onclick="showPage('rcm')">Revenue Cycle Management (RCM)</a>
+          <a onclick="showPage('svc-medical-billing')">Medical Billing</a>
+          <a onclick="showPage('svc-physician-billing')">Physician Billing</a>
+          <a onclick="showPage('svc-medical-coding')">Medical Coding</a>
+          <a onclick="showPage('svc-charge-posting')">Charge Posting</a>
+          <a onclick="showPage('svc-payment-posting')">Payment Posting</a>
+          <a onclick="showPage('svc-denial-management')">Denial Management</a>
+          <a onclick="showPage('svc-accounts-receivable')">Accounts Receivable</a>
+          <a onclick="showPage('svc-lab-billing')">Laboratory Billing</a>
         </div>
       </li>
       <li class="nav-item">
@@ -876,12 +885,21 @@
       <div class="mobile-submenu">
         <a onclick="showPage('about-overview'); closeMobileMenu()">Overview</a>
         <a onclick="showPage('about-founder'); closeMobileMenu()">Founder</a>
+        <a onclick="showPage('about-values'); closeMobileMenu()">Values</a>
       </div>
     </div>
     <div>
       <a>Services</a>
       <div class="mobile-submenu">
         <a onclick="showPage('rcm'); closeMobileMenu()">Revenue Cycle Management (RCM)</a>
+        <a onclick="showPage('svc-medical-billing'); closeMobileMenu()">Medical Billing</a>
+        <a onclick="showPage('svc-physician-billing'); closeMobileMenu()">Physician Billing</a>
+        <a onclick="showPage('svc-medical-coding'); closeMobileMenu()">Medical Coding</a>
+        <a onclick="showPage('svc-charge-posting'); closeMobileMenu()">Charge Posting</a>
+        <a onclick="showPage('svc-payment-posting'); closeMobileMenu()">Payment Posting</a>
+        <a onclick="showPage('svc-denial-management'); closeMobileMenu()">Denial Management</a>
+        <a onclick="showPage('svc-accounts-receivable'); closeMobileMenu()">Accounts Receivable</a>
+        <a onclick="showPage('svc-lab-billing'); closeMobileMenu()">Laboratory Billing</a>
       </div>
     </div>
     <div>
@@ -1274,6 +1292,106 @@
 </div><!-- end founder -->
 
 
+<!-- ===== VALUES PAGE ===== -->
+<div id="page-about-values" class="page">
+  <div class="inner-hero">
+    <div class="container">
+      <div class="section-label" style="color:#4dd9c4;">What We Stand For</div>
+      <h1>Our Values</h1>
+      <p>The principles that guide every decision we make and every partnership we build.</p>
+    </div>
+  </div>
+
+  <!-- Values Grid -->
+  <section style="padding:88px 0;background:var(--white);">
+    <div class="container">
+      <div class="section-label">Our Core Values</div>
+      <h2 class="section-title" style="max-width:560px;">Mission-Driven to Optimize Your Revenue Cycle</h2>
+      <p class="section-body" style="margin-bottom:56px;">Our mission is simple: lift the administrative burden so you can focus on what matters most — your patients. These are the values that shape how we work every day.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;">
+
+        <div class="service-page-card" style="border-top:4px solid var(--teal);padding:40px 32px;">
+          <div class="service-icon" style="width:60px;height:60px;margin-bottom:24px;">
+            <svg viewBox="0 0 24 24" stroke="var(--teal)" fill="none" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <h3 style="font-size:1.2rem;margin-bottom:14px;">Accuracy Drives Everything</h3>
+          <p>Every claim we submit reflects the precision and diligence your practice deserves. We hold ourselves to a 95%+ clean claim rate because we know that billing errors don't just cost money — they erode trust with payers and delay care for patients. Getting it right the first time is not a goal; it's our standard.</p>
+        </div>
+
+        <div class="service-page-card" style="border-top:4px solid var(--teal);padding:40px 32px;">
+          <div class="service-icon" style="width:60px;height:60px;margin-bottom:24px;">
+            <svg viewBox="0 0 24 24" stroke="var(--teal)" fill="none" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 style="font-size:1.2rem;margin-bottom:14px;">Your Practice, Our Priority</h3>
+          <p>We don't manage accounts — we build partnerships. From the moment we onboard your practice, we become an extension of your team, invested in your financial health and operational success. Your revenue goals become our goals, and your challenges become problems we solve together.</p>
+        </div>
+
+        <div class="service-page-card" style="border-top:4px solid var(--teal);padding:40px 32px;">
+          <div class="service-icon" style="width:60px;height:60px;margin-bottom:24px;">
+            <svg viewBox="0 0 24 24" stroke="var(--teal)" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 style="font-size:1.2rem;margin-bottom:14px;">Transparency in Every Transaction</h3>
+          <p>Healthcare providers deserve to understand exactly where their money is and why. We provide full visibility into every claim, denial, payment, and metric — no jargon, no black boxes, no surprises. When you know your numbers, you make better decisions for your practice and your patients.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Partner -->
+  <section style="padding:88px 0;background:var(--light);">
+    <div class="container">
+      <div class="section-label">Our Approach</div>
+      <h2 class="section-title">How We Partner With You</h2>
+      <p class="section-body" style="margin-bottom:56px;">We don't just hand you a software login and wish you luck. We show up, roll up our sleeves, and stay by your side.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;">
+        <div class="value-item" style="flex-direction:column;gap:16px;padding:32px 28px;">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" stroke="var(--teal)" fill="none" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+          </div>
+          <div>
+            <h4 style="font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px;">We Listen First</h4>
+            <p style="font-size:.9rem;color:var(--mid);line-height:1.7;">Before making any recommendations, we spend time with your team — understanding your challenges, your workflows, and the nuances that make your practice unique.</p>
+          </div>
+        </div>
+        <div class="value-item" style="flex-direction:column;gap:16px;padding:32px 28px;">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" stroke="var(--teal)" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <div>
+            <h4 style="font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px;">We Roll Up Our Sleeves</h4>
+            <p style="font-size:.9rem;color:var(--mid);line-height:1.7;">From day one, we collaborate directly with your staff to untangle workflows, improve billing processes, and build the reporting you need. You gain a true extension of your team.</p>
+          </div>
+        </div>
+        <div class="value-item" style="flex-direction:column;gap:16px;padding:32px 28px;">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" stroke="var(--teal)" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <h4 style="font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px;">We Stay By Your Side</h4>
+            <p style="font-size:.9rem;color:var(--mid);line-height:1.7;">Whether it's an urgent coding question or a compliance issue, our specialists are just an email away — ready to troubleshoot, strategize, and deliver real answers fast.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-strip">
+    <div class="container">
+      <div class="cta-inner">
+        <div>
+          <h2>Ready to Work With a Partner Who Shares Your Values?</h2>
+          <p>Schedule a free consultation with Master Health today.</p>
+        </div>
+        <a class="btn-outline" href="mailto:operations@masterhealth.us">Get Started</a>
+      </div>
+    </div>
+  </section>
+</div><!-- end values -->
+
+
 <!-- ===== RCM PAGE ===== -->
 <div id="page-rcm" class="page">
   <div class="inner-hero">
@@ -1356,6 +1474,241 @@
     </div>
   </section>
 </div><!-- end rcm -->
+
+
+<!-- ===== SERVICE DETAIL PAGES ===== -->
+
+<!-- Medical Billing -->
+<div id="page-svc-medical-billing" class="page">
+  <div class="inner-hero"><div class="container">
+    <div class="section-label" style="color:#4dd9c4;">Services</div>
+    <h1>Medical Billing</h1>
+    <p>Accurate claim submission and optimized reimbursement for your practice.</p>
+  </div></div>
+  <section style="padding:80px 0;background:var(--white);"><div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+      <div>
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">End-to-End Medical Billing You Can Rely On</h2>
+        <p class="section-body">Master Health manages the full medical billing cycle — from charge capture and claim submission to payment posting and denial resolution. We work with all major payers across all 50 states, ensuring claims go out clean, get paid faster, and your practice collects every dollar it's owed.</p>
+        <p class="section-body" style="margin-top:16px;">Our billing specialists stay current on payer-specific rules, fee schedule changes, and coding updates so your team never has to. We handle the complexity so you can focus on care.</p>
+        <div class="about-values" style="margin-top:32px;">
+          <div class="value-item"><div class="value-dot"></div><div><h4>Clean Claim Submission</h4><p>95%+ first-pass acceptance rate, reducing denials and accelerating cash flow.</p></div></div>
+          <div class="value-item"><div class="value-dot"></div><div><h4>All Payer Types</h4><p>Medicare, Medicaid, commercial, managed care, and self-pay — we handle them all.</p></div></div>
+          <div class="value-item"><div class="value-dot"></div><div><h4>Real-Time Reporting</h4><p>Full visibility into claim status, collections, and AR aging at any time.</p></div></div>
+        </div>
+      </div>
+      <div class="about-right-cards">
+        <div class="about-stat-card"><div><div class="big-num">95%+</div><div class="num-label">Clean Claim Rate</div></div><div class="divider"></div><p>Our first-pass acceptance rate consistently exceeds industry averages.</p></div>
+        <div class="about-stat-card"><div><div class="big-num">&lt;40</div><div class="num-label">Days in A/R</div></div><div class="divider"></div><p>We keep your receivables moving with proactive follow-up on every open claim.</p></div>
+      </div>
+    </div>
+  </div></section>
+  <section class="cta-strip"><div class="container"><div class="cta-inner"><div><h2>Ready to Improve Your Medical Billing?</h2><p>Get a free assessment from our billing specialists.</p></div><a class="btn-outline" href="mailto:operations@masterhealth.us">Request Free Consultation</a></div></div></section>
+</div>
+
+<!-- Physician Billing -->
+<div id="page-svc-physician-billing" class="page">
+  <div class="inner-hero"><div class="container">
+    <div class="section-label" style="color:#4dd9c4;">Services</div>
+    <h1>Physician Billing</h1>
+    <p>Specialized billing for physician practices — minimizing denials, maximizing revenue.</p>
+  </div></div>
+  <section style="padding:80px 0;background:var(--white);"><div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+      <div>
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">Physician Billing Built for Your Practice</h2>
+        <p class="section-body">Physician billing demands precision — from E/M level selection to modifier application and payer-specific documentation requirements. Master Health's physician billing team brings deep specialty knowledge and payer expertise to every claim, ensuring accurate submission and faster reimbursement for your practice.</p>
+        <p class="section-body" style="margin-top:16px;">Whether you run a solo practice or a multi-physician group, we tailor our billing workflows to match your EHR, your payer mix, and your specialty — reducing administrative burden and improving your bottom line.</p>
+        <div class="about-values" style="margin-top:32px;">
+          <div class="value-item"><div class="value-dot"></div><div><h4>E/M Coding Expertise</h4><p>Correct level selection on every encounter to capture full reimbursement without audit risk.</p></div></div>
+          <div class="value-item"><div class="value-dot"></div><div><h4>Payer Contract Compliance</h4><p>We apply payer-specific rules and fee schedules to every claim automatically.</p></div></div>
+          <div class="value-item"><div class="value-dot"></div><div><h4>Dedicated Account Manager</h4><p>One point of contact who knows your practice inside and out.</p></div></div>
+        </div>
+      </div>
+      <div class="about-right-cards">
+        <div class="about-stat-card"><div><div class="big-num">50+</div><div class="num-label">Specialties Supported</div></div><div class="divider"></div><p>From primary care to complex surgical subspecialties, we bill for them all.</p></div>
+        <div class="about-stat-card"><div><div class="big-num">100%</div><div class="num-label">HIPAA Compliant</div></div><div class="divider"></div><p>All billing operations meet strict HIPAA security and privacy standards.</p></div>
+      </div>
+    </div>
+  </div></section>
+  <section class="cta-strip"><div class="container"><div class="cta-inner"><div><h2>Let's Optimize Your Physician Billing</h2><p>Schedule a free practice assessment today.</p></div><a class="btn-outline" href="mailto:operations@masterhealth.us">Request Free Consultation</a></div></div></section>
+</div>
+
+<!-- Medical Coding -->
+<div id="page-svc-medical-coding" class="page">
+  <div class="inner-hero"><div class="container">
+    <div class="section-label" style="color:#4dd9c4;">Services</div>
+    <h1>Medical Coding</h1>
+    <p>Accurate, compliant coding to maximize reimbursement and minimize audit risk.</p>
+  </div></div>
+  <section style="padding:80px 0;background:var(--white);"><div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+      <div>
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">Coding Accuracy That Protects Your Revenue</h2>
+        <p class="section-body">Incorrect coding is one of the leading causes of claim denials and compliance risk. Master Health's certified coders apply accurate ICD-10, CPT, and HCPCS codes across all specialties, ensuring every service is captured correctly, every modifier is applied appropriately, and every claim is audit-ready.</p>
+        <p class="section-body" style="margin-top:16px;">Our coders stay continuously updated on annual code changes, payer bulletins, and specialty-specific guidelines — so your practice always reflects current coding standards without burdening your clinical staff.</p>
+        <div class="about-values" style="margin-top:32px;">
+          <div class="value-item"><div class="value-dot"></div><div><h4>ICD-10, CPT & HCPCS</h4><p>Full code set coverage across all major coding systems and payer types.</p></div></div>
+          <div class="value-item"><div class="value-dot"></div><div><h4>Certified Coders</h4><p>CPC and CCS-credentialed coders with specialty-specific expertise.</p></div></div>
+          <div class="value-item"><div class="value-dot"></div><div><h4>Compliance Assurance</h4><p>Regular internal audits to identify and correct coding gaps before payers do.</p></div></div>
+        </div>
+      </div>
+      <div class="about-right-cards">
+        <div class="about-stat-card"><div><div class="big-num">99%+</div><div class="num-label">Coding Accuracy</div></div><div class="divider"></div><p>Our quality review process catches errors before claims are submitted.</p></div>
+        <div class="about-stat-card"><div><div class="big-num">Annual</div><div class="num-label">Code Updates</div></div><div class="divider"></div><p>We stay current on all ICD-10, CPT, and HCPCS changes so you don't have to.</p></div>
+      </div>
+    </div>
+  </div></section>
+  <section class="cta-strip"><div class="container"><div class="cta-inner"><div><h2>Concerned About Coding Accuracy?</h2><p>Request a free coding audit from our certified team.</p></div><a class="btn-outline" href="mailto:operations@masterhealth.us">Request Free Consultation</a></div></div></section>
+</div>
+
+<!-- Charge Posting -->
+<div id="page-svc-charge-posting" class="page">
+  <div class="inner-hero"><div class="container">
+    <div class="section-label" style="color:#4dd9c4;">Services</div>
+    <h1>Charge Posting</h1>
+    <p>Timely, accurate charge capture to prevent revenue leakage at the source.</p>
+  </div></div>
+  <section style="padding:80px 0;background:var(--white);"><div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+      <div>
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">Capture Every Billable Service, Every Time</h2>
+        <p class="section-body">Charge posting is where revenue cycles begin — and where revenue is most often lost. Master Health reviews all encounter documentation, applies the correct procedure and diagnosis codes, and posts charges accurately and on time. We ensure no billable service goes uncaptured and no charge is posted incorrectly.</p>
+        <p class="section-body" style="margin-top:16px;">Our charge posting workflows integrate with your EHR and practice management system, enabling rapid turnaround from encounter to claim submission and keeping your billing cycle tight.</p>
+        <div class="about-values" style="margin-top:32px;">
+          <div class="value-item"><div class="value-dot"></div><div><h4>Same-Day Charge Entry</h4><p>Rapid posting turnaround to accelerate your billing cycle and cash flow.</p></div></div>
+          <div class="value-item"><div class="value-dot"></div><div><h4>Zero Revenue Leakage</h4><p>Systematic review ensures every service rendered is captured and billed.</p></div></div>
+          <div class="value-item"><div class="value-dot"></div><div><h4>EHR Integration</h4><p>Compatible with Epic, Cerner, eClinicalWorks, Athena, and more.</p></div></div>
+        </div>
+      </div>
+      <div class="about-right-cards">
+        <div class="about-stat-card"><div><div class="big-num">24hr</div><div class="num-label">Turnaround</div></div><div class="divider"></div><p>Most charges are posted within 24 hours of encounter documentation receipt.</p></div>
+        <div class="about-stat-card"><div><div class="big-num">100%</div><div class="num-label">Charge Capture</div></div><div class="divider"></div><p>Our review process ensures no billable service slips through the cracks.</p></div>
+      </div>
+    </div>
+  </div></section>
+  <section class="cta-strip"><div class="container"><div class="cta-inner"><div><h2>Losing Revenue at the Charge Level?</h2><p>Let us audit your charge capture process for free.</p></div><a class="btn-outline" href="mailto:operations@masterhealth.us">Request Free Consultation</a></div></div></section>
+</div>
+
+<!-- Payment Posting -->
+<div id="page-svc-payment-posting" class="page">
+  <div class="inner-hero"><div class="container">
+    <div class="section-label" style="color:#4dd9c4;">Services</div>
+    <h1>Payment Posting</h1>
+    <p>Accurate, rapid posting of all payments with underpayment identification built in.</p>
+  </div></div>
+  <section style="padding:80px 0;background:var(--white);"><div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+      <div>
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">Clean Books, Fast Reconciliation, No Surprises</h2>
+        <p class="section-body">Accurate payment posting is the foundation of a healthy revenue cycle. Master Health posts all insurance payments, patient payments, EOBs, and electronic remittances quickly and correctly — reconciling every payment to the original claim, flagging underpayments, and maintaining a clean, auditable financial record for your practice.</p>
+        <p class="section-body" style="margin-top:16px;">When payers underpay, we identify and flag the discrepancy immediately so your AR team can pursue the balance. Nothing gets posted and forgotten.</p>
+        <div class="about-values" style="margin-top:32px;">
+          <div class="value-item"><div class="value-dot"></div><div><h4>ERA & Manual EOB Processing</h4><p>We handle both electronic and paper remittances with equal accuracy.</p></div></div>
+          <div class="value-item"><div class="value-dot"></div><div><h4>Underpayment Detection</h4><p>Every payment is compared to contracted rates — discrepancies are flagged immediately.</p></div></div>
+          <div class="value-item"><div class="value-dot"></div><div><h4>Clean Audit Trail</h4><p>Full reconciliation records maintained for compliance and reporting purposes.</p></div></div>
+        </div>
+      </div>
+      <div class="about-right-cards">
+        <div class="about-stat-card"><div><div class="big-num">Daily</div><div class="num-label">Posting Cycles</div></div><div class="divider"></div><p>Payments are posted daily, keeping your AR current and your books accurate.</p></div>
+        <div class="about-stat-card"><div><div class="big-num">100%</div><div class="num-label">Reconciled</div></div><div class="divider"></div><p>Every payment is matched to its original claim before the posting is complete.</p></div>
+      </div>
+    </div>
+  </div></section>
+  <section class="cta-strip"><div class="container"><div class="cta-inner"><div><h2>Is Your Payment Posting Falling Behind?</h2><p>Talk to our team about faster, cleaner posting workflows.</p></div><a class="btn-outline" href="mailto:operations@masterhealth.us">Request Free Consultation</a></div></div></section>
+</div>
+
+<!-- Denial Management -->
+<div id="page-svc-denial-management" class="page">
+  <div class="inner-hero"><div class="container">
+    <div class="section-label" style="color:#4dd9c4;">Services</div>
+    <h1>Denial Management</h1>
+    <p>Recover denied claims and prevent them from recurring.</p>
+  </div></div>
+  <section style="padding:80px 0;background:var(--white);"><div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+      <div>
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">Turn Denials Into Recovered Revenue</h2>
+        <p class="section-body">Claim denials cost the average practice thousands of dollars in lost and delayed revenue every month. Master Health's denial management team systematically identifies, works, and resolves denied claims — pursuing appeals, correcting coding errors, and resubmitting claims with the documentation needed to get paid.</p>
+        <p class="section-body" style="margin-top:16px;">More importantly, we analyze denial patterns to find root causes and fix upstream billing and coding issues — so the same denials stop happening. Our goal is not just recovery, it's prevention.</p>
+        <div class="about-values" style="margin-top:32px;">
+          <div class="value-item"><div class="value-dot"></div><div><h4>Denial Tracking & Reporting</h4><p>Every denial is logged, categorized, and tracked to resolution.</p></div></div>
+          <div class="value-item"><div class="value-dot"></div><div><h4>Appeals Management</h4><p>We write and submit payer appeals with supporting clinical documentation.</p></div></div>
+          <div class="value-item"><div class="value-dot"></div><div><h4>Root Cause Analysis</h4><p>We identify patterns and fix the source — not just the symptoms.</p></div></div>
+        </div>
+      </div>
+      <div class="about-right-cards">
+        <div class="about-stat-card"><div><div class="big-num">90%+</div><div class="num-label">Appeal Success Rate</div></div><div class="divider"></div><p>Our appeals are carefully documented and strategically written for maximum approval.</p></div>
+        <div class="about-stat-card"><div><div class="big-num">30%</div><div class="num-label">Avg. Denial Reduction</div></div><div class="divider"></div><p>Practices typically see a significant drop in denial rates within 90 days.</p></div>
+      </div>
+    </div>
+  </div></section>
+  <section class="cta-strip"><div class="container"><div class="cta-inner"><div><h2>Too Many Denied Claims?</h2><p>Let us review your denial data and build a recovery plan.</p></div><a class="btn-outline" href="mailto:operations@masterhealth.us">Request Free Consultation</a></div></div></section>
+</div>
+
+<!-- Accounts Receivable -->
+<div id="page-svc-accounts-receivable" class="page">
+  <div class="inner-hero"><div class="container">
+    <div class="section-label" style="color:#4dd9c4;">Services</div>
+    <h1>Accounts Receivable</h1>
+    <p>Aggressive AR follow-up to recover every dollar your practice is owed.</p>
+  </div></div>
+  <section style="padding:80px 0;background:var(--white);"><div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+      <div>
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">Reduce Days in AR. Recover More Revenue.</h2>
+        <p class="section-body">Aging accounts receivable represent real money sitting uncollected in your practice. Master Health's AR management team pursues every open balance with structured follow-up workflows, payer escalations, and patient outreach — keeping your days in AR below 40 and your collections on track.</p>
+        <p class="section-body" style="margin-top:16px;">We prioritize AR by age and payer, ensuring the most at-risk balances get immediate attention. Old AR is not written off — it's worked until every recoverable dollar is collected.</p>
+        <div class="about-values" style="margin-top:32px;">
+          <div class="value-item"><div class="value-dot"></div><div><h4>Structured Follow-Up Workflows</h4><p>Systematic outreach at defined intervals for every unpaid and underpaid claim.</p></div></div>
+          <div class="value-item"><div class="value-dot"></div><div><h4>Aged AR Recovery</h4><p>We work claims 90, 120, and 180+ days out — balances most practices write off.</p></div></div>
+          <div class="value-item"><div class="value-dot"></div><div><h4>AR Analytics Dashboard</h4><p>Real-time visibility into your AR by payer, age bucket, and provider.</p></div></div>
+        </div>
+      </div>
+      <div class="about-right-cards">
+        <div class="about-stat-card"><div><div class="big-num">&lt;40</div><div class="num-label">Net Days in A/R</div></div><div class="divider"></div><p>Our clients maintain sub-40 days in AR — well below the industry benchmark.</p></div>
+        <div class="about-stat-card"><div><div class="big-num">98%</div><div class="num-label">Net Collection Rate</div></div><div class="divider"></div><p>We collect nearly everything contractually owed — not just what's easy to collect.</p></div>
+      </div>
+    </div>
+  </div></section>
+  <section class="cta-strip"><div class="container"><div class="cta-inner"><div><h2>Is Your AR Growing Faster Than Your Collections?</h2><p>Get a free AR analysis from our team.</p></div><a class="btn-outline" href="mailto:operations@masterhealth.us">Request Free Consultation</a></div></div></section>
+</div>
+
+<!-- Laboratory Billing -->
+<div id="page-svc-lab-billing" class="page">
+  <div class="inner-hero"><div class="container">
+    <div class="section-label" style="color:#4dd9c4;">Services</div>
+    <h1>Laboratory Billing</h1>
+    <p>Customized lab billing to ensure accurate coding and optimized reimbursement.</p>
+  </div></div>
+  <section style="padding:80px 0;background:var(--white);"><div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+      <div>
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">Lab Billing That Keeps Pace With Your Volume</h2>
+        <p class="section-body">Laboratory billing is uniquely complex — with high claim volumes, strict medical necessity requirements, and payer-specific coverage policies for individual test codes. Master Health's lab billing specialists manage the full cycle from order verification and code assignment to claim submission, remittance posting, and denial resolution.</p>
+        <p class="section-body" style="margin-top:16px;">We ensure every test is billed to the correct payer with the appropriate diagnosis and ABN documentation, minimizing patient liability disputes and maximizing reimbursement for your lab.</p>
+        <div class="about-values" style="margin-top:32px;">
+          <div class="value-item"><div class="value-dot"></div><div><h4>High-Volume Claim Processing</h4><p>Scalable workflows built to handle large daily claim volumes without sacrificing accuracy.</p></div></div>
+          <div class="value-item"><div class="value-dot"></div><div><h4>Medical Necessity Compliance</h4><p>Every claim reviewed against payer LCD/NCD policies before submission.</p></div></div>
+          <div class="value-item"><div class="value-dot"></div><div><h4>ABN Management</h4><p>Proper ABN documentation to protect your lab and inform patients of potential liability.</p></div></div>
+        </div>
+      </div>
+      <div class="about-right-cards">
+        <div class="about-stat-card"><div><div class="big-num">High</div><div class="num-label">Volume Capability</div></div><div class="divider"></div><p>Our team scales to match your lab's daily claim output without missing a beat.</p></div>
+        <div class="about-stat-card"><div><div class="big-num">100%</div><div class="num-label">HIPAA Compliant</div></div><div class="divider"></div><p>All lab billing operations meet strict HIPAA security and privacy standards.</p></div>
+      </div>
+    </div>
+  </div></section>
+  <section class="cta-strip"><div class="container"><div class="cta-inner"><div><h2>Need a Better Lab Billing Partner?</h2><p>Talk to our lab billing specialists — free consultation.</p></div><a class="btn-outline" href="mailto:operations@masterhealth.us">Request Free Consultation</a></div></div></section>
+</div>
 
 
 <!-- ===== SERVICES PAGE ===== -->
@@ -1515,52 +1868,141 @@
     <div class="container">
       <div class="section-label" style="color:#4dd9c4;">Get in Touch</div>
       <h1>Contact Master Health</h1>
-      <p>We'd love to hear from you. Reach out to learn how we can help your practice.</p>
+      <p>Have questions or need assistance? We're here to help.</p>
     </div>
   </div>
-  <section class="contact-page">
+  <section style="padding:80px 0;background:var(--light);">
     <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h3>How Can We Help?</h3>
-          <p>Whether you have questions about our services, want to learn more about how RCM works for your specialty, or are ready to get started, our team is here and ready to assist you.</p>
-          <div class="contact-methods">
-            <div class="contact-method">
-              <div class="method-icon">
-                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <div style="display:grid;grid-template-columns:1fr 1.6fr;gap:64px;align-items:start;">
+
+        <!-- Left info panel -->
+        <div style="background:linear-gradient(160deg,var(--navy),#0d4d40);border-radius:16px;padding:48px 36px;color:var(--white);">
+          <h2 style="font-size:1.8rem;font-weight:800;margin-bottom:16px;line-height:1.2;">Contact Us Today!</h2>
+          <p style="color:rgba(255,255,255,.75);font-size:.98rem;line-height:1.75;margin-bottom:36px;">Have questions or need assistance? We're here to help. Reach out to our dedicated medical billing and coding team and let us provide the support you need to optimize your revenue cycle.</p>
+          <div style="display:flex;flex-direction:column;gap:20px;">
+            <div style="display:flex;align-items:center;gap:14px;">
+              <div style="width:40px;height:40px;background:rgba(255,255,255,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="#4dd9c4" fill="none" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               </div>
-              <div class="method-info">
-                <div class="method-label">General Inquiries</div>
-                <a href="mailto:info@masterhealth.us">info@masterhealth.us</a>
+              <div>
+                <div style="font-size:.75rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px;">General Inquiries</div>
+                <a href="mailto:info@masterhealth.us" style="color:#4dd9c4;font-weight:600;font-size:.95rem;">info@masterhealth.us</a>
               </div>
             </div>
-            <div class="contact-method">
-              <div class="method-icon">
-                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <div style="width:40px;height:40px;background:rgba(255,255,255,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="#4dd9c4" fill="none" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               </div>
-              <div class="method-info">
-                <div class="method-label">Free Consultation</div>
-                <a href="mailto:operations@masterhealth.us">operations@masterhealth.us</a>
+              <div>
+                <div style="font-size:.75rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px;">Free Consultation</div>
+                <a href="mailto:operations@masterhealth.us" style="color:#4dd9c4;font-weight:600;font-size:.95rem;">operations@masterhealth.us</a>
               </div>
             </div>
           </div>
         </div>
-        <div class="contact-email-card">
-          <h3>Ready to Get Started?</h3>
-          <p>Send us a message and a Master Health specialist will respond within one business day to discuss your practice's needs.</p>
-          <a class="email-action" href="mailto:info@masterhealth.us?subject=Contact Request from masterhealth.us&body=Hello Master Health,%0D%0A%0D%0AI would like to learn more about your RCM services.%0D%0A%0D%0APractice Name:%0D%0ASpecialty:%0D%0AMessage:">
-            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            info@masterhealth.us
-          </a>
-          <a class="email-action" href="mailto:operations@masterhealth.us?subject=Free Consultation Request&body=Hello Master Health,%0D%0A%0D%0AI would like to schedule a free consultation.%0D%0A%0D%0APractice Name:%0D%0ASpecialty:%0D%0AMessage:">
-            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            operations@masterhealth.us — Free Consultation
-          </a>
+
+        <!-- Right form panel -->
+        <div style="background:var(--white);border-radius:16px;padding:48px 40px;box-shadow:0 4px 32px rgba(0,0,0,.07);border:1px solid var(--border);">
+          <h2 style="font-size:1.6rem;font-weight:800;color:var(--navy);margin-bottom:8px;">Let's Get in Touch</h2>
+          <p style="font-size:.9rem;color:var(--mid);margin-bottom:32px;">Please provide the required information so we can reach you.</p>
+          <form id="contactForm" onsubmit="submitContactForm(event)" style="display:flex;flex-direction:column;gap:20px;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div>
+                <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Full Name *</label>
+                <input type="text" id="cf-name" placeholder="Full Name" required style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--navy);outline:none;transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'"/>
+              </div>
+              <div>
+                <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Business Name</label>
+                <input type="text" id="cf-business" placeholder="Business Name" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--navy);outline:none;transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'"/>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div>
+                <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Email *</label>
+                <input type="email" id="cf-email" placeholder="Email" required style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--navy);outline:none;transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'"/>
+              </div>
+              <div>
+                <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Phone</label>
+                <input type="tel" id="cf-phone" placeholder="Phone" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--navy);outline:none;transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'"/>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div>
+                <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Monthly Billing</label>
+                <select id="cf-billing" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--mid);outline:none;background:var(--white);transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'">
+                  <option value="">Select range</option>
+                  <option>$1k – $15k</option>
+                  <option>$15k – $30k</option>
+                  <option>$30k – $50k</option>
+                  <option>$50k – $75k</option>
+                  <option>$75k – $100k</option>
+                  <option>Above $100k</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">No. of Specialties</label>
+                <select id="cf-providers" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--mid);outline:none;background:var(--white);transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'">
+                  <option value="">Select range</option>
+                  <option>1</option>
+                  <option>2 – 3</option>
+                  <option>4 – 5</option>
+                  <option>Above 5</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Total AR</label>
+              <select id="cf-ar" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--mid);outline:none;background:var(--white);transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'">
+                <option value="">Select range</option>
+                <option>Under $50k</option>
+                <option>$50k – $100k</option>
+                <option>$100k – $250k</option>
+                <option>$250k – $500k</option>
+                <option>Above $500k</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Your Message</label>
+              <textarea id="cf-message" placeholder="Tell us about your practice and what you need help with..." rows="4" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--navy);outline:none;resize:vertical;font-family:inherit;transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="padding:15px;font-size:1rem;border-radius:8px;width:100%;justify-content:center;">Submit Message</button>
+            <p id="cf-success" style="display:none;text-align:center;color:var(--teal);font-weight:600;font-size:.95rem;">✓ Your message has been sent! We'll be in touch within one business day.</p>
+          </form>
         </div>
+
       </div>
     </div>
   </section>
 </div><!-- end contact -->
+
+<script>
+function submitContactForm(e) {
+  e.preventDefault();
+  const name     = document.getElementById('cf-name').value;
+  const business = document.getElementById('cf-business').value;
+  const email    = document.getElementById('cf-email').value;
+  const phone    = document.getElementById('cf-phone').value;
+  const billing  = document.getElementById('cf-billing').value;
+  const providers= document.getElementById('cf-providers').value;
+  const ar       = document.getElementById('cf-ar').value;
+  const message  = document.getElementById('cf-message').value;
+
+  const body = `New Contact Form Submission from masterhealth.us%0D%0A%0D%0A`
+    + `Full Name: ${encodeURIComponent(name)}%0D%0A`
+    + `Business Name: ${encodeURIComponent(business)}%0D%0A`
+    + `Email: ${encodeURIComponent(email)}%0D%0A`
+    + `Phone: ${encodeURIComponent(phone)}%0D%0A`
+    + `Monthly Billing: ${encodeURIComponent(billing)}%0D%0A`
+    + `No. of Specialties: ${encodeURIComponent(providers)}%0D%0A`
+    + `Total AR: ${encodeURIComponent(ar)}%0D%0A%0D%0A`
+    + `Message:%0D%0A${encodeURIComponent(message)}`;
+
+  window.location.href = `mailto:info@masterhealth.us?subject=Contact Form Submission – ${encodeURIComponent(name)}&body=${body}`;
+
+  document.getElementById('cf-success').style.display = 'block';
+  document.getElementById('contactForm').reset();
+}
+</script>
 
 
 <!-- ===== FOOTER ===== -->
@@ -1608,7 +2050,7 @@
 <!-- ===== JAVASCRIPT ===== -->
 <script>
   // --- Page routing ---
-  const pages = ['home','about-overview','about-founder','rcm','services','consult','contact'];
+  const pages = ['home','about-overview','about-founder','about-values','rcm','svc-medical-billing','svc-physician-billing','svc-medical-coding','svc-charge-posting','svc-payment-posting','svc-denial-management','svc-accounts-receivable','svc-lab-billing','services','consult','contact'];
 
   function showPage(id) {
     pages.forEach(p => {
