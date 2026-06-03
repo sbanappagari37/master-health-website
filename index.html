@@ -20,6 +20,7 @@
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
     ul { list-style: none; }
+
     /* ===== COLOR TOKENS ===== */
     :root {
       --navy:    #0d1b3e;
@@ -31,6 +32,7 @@
       --white:   #ffffff;
       --border:  #e2e8f0;
     }
+
     /* ===== UTILITY ===== */
     .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
     .btn-primary {
@@ -79,9 +81,11 @@
       max-width: 640px;
       line-height: 1.75;
     }
+
     /* ===== PAGE VISIBILITY ===== */
     .page { display: none; }
     .page.active { display: block; }
+
     /* ===== NAV ===== */
     header {
       position: sticky;
@@ -115,6 +119,7 @@
     .logo-mark svg { width: 22px; height: 22px; fill: #fff; }
     .logo-text { font-size: 1.25rem; font-weight: 800; color: var(--navy); }
     .logo-text span { color: var(--teal); }
+
     .nav-links {
       display: flex;
       align-items: center;
@@ -140,6 +145,7 @@
     }
     .nav-item > a:hover, .nav-item > button:hover { background: var(--accent); color: var(--teal); }
     .nav-item > a.active-link, .nav-item > button.active-link { color: var(--teal); font-weight: 600; }
+
     /* chevron */
     .chevron {
       width: 14px; height: 14px;
@@ -152,6 +158,7 @@
     .nav-item:hover .chevron, .nav-item.open .chevron {
       transform: rotate(-135deg) translateY(-3px);
     }
+
     /* dropdown */
     .dropdown {
       position: absolute;
@@ -183,9 +190,11 @@
       transition: background .12s, color .12s;
     }
     .dropdown a:hover { background: var(--accent); color: var(--teal); }
+
     /* nav CTA */
     .nav-cta { display: flex; align-items: center; gap: 10px; }
     .nav-cta .btn-primary { padding: 10px 22px; font-size: .88rem; }
+
     /* hamburger */
     .hamburger {
       display: none;
@@ -203,6 +212,7 @@
       border-radius: 2px;
       transition: transform .25s, opacity .25s;
     }
+
     /* mobile menu */
     .mobile-menu {
       display: none;
@@ -227,6 +237,7 @@
     .mobile-menu a:last-child { border-bottom: none; }
     .mobile-submenu { padding-left: 16px; }
     .mobile-submenu a { font-size: .9rem; color: var(--mid); }
+
     /* ===== HOME PAGE ===== */
     /* Hero */
     .hero {
@@ -298,6 +309,7 @@
       line-height: 1.7;
     }
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
     /* Stats strip */
     .stats-strip {
       background: var(--navy);
@@ -329,6 +341,7 @@
       text-transform: uppercase;
       letter-spacing: .06em;
     }
+
     /* Why choose section */
     .why-section { padding: 96px 0; background: var(--white); }
     .why-grid {
@@ -381,6 +394,7 @@
     .why-card h4 { font-size: .95rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
     .why-card p { font-size: .85rem; color: var(--mid); line-height: 1.6; }
     .card-num { font-size: 2rem; font-weight: 800; opacity: .15; float: right; line-height: 1; }
+
     /* Services preview */
     .services-section { padding: 96px 0; background: var(--light); }
     .services-header { text-align: center; margin-bottom: 56px; }
@@ -433,6 +447,7 @@
       margin-top: 14px;
     }
     .service-arrow svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+
     /* CTA strip */
     .cta-strip {
       background: linear-gradient(135deg, var(--teal) 0%, #0d4d40 100%);
@@ -447,6 +462,7 @@
     }
     .cta-inner h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; color: var(--white); max-width: 480px; line-height: 1.25; }
     .cta-inner p { color: rgba(255,255,255,.8); margin-top: 10px; font-size: 1.02rem; }
+
     /* Testimonials */
     .testimonials-section { padding: 96px 0; background: var(--white); }
     .testimonials-header { text-align: center; margin-bottom: 56px; }
@@ -466,6 +482,7 @@
     .testimonial-card blockquote::before { content: '\201C'; font-size: 2.5rem; color: var(--teal); line-height: 0; vertical-align: -0.5em; margin-right: 4px; }
     .author-name { font-weight: 700; color: var(--navy); font-size: .9rem; }
     .author-role { font-size: .82rem; color: var(--mid); }
+
     /* ===== ABOUT PAGE ===== */
     .inner-hero {
       background: linear-gradient(135deg, var(--navy) 0%, #1a3460 100%);
@@ -474,6 +491,7 @@
     }
     .inner-hero h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; color: var(--white); margin-bottom: 16px; }
     .inner-hero p { font-size: 1.1rem; color: rgba(255,255,255,.75); max-width: 560px; margin: 0 auto; }
+
     .about-overview { padding: 88px 0; }
     .about-grid {
       display: grid;
@@ -501,6 +519,7 @@
     }
     .value-item h4 { font-size: .95rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
     .value-item p { font-size: .88rem; color: var(--mid); }
+
     .about-right-cards { display: flex; flex-direction: column; gap: 20px; }
     .about-stat-card {
       background: var(--navy);
@@ -514,6 +533,7 @@
     .about-stat-card .num-label { font-size: .82rem; color: rgba(255,255,255,.7); text-transform: uppercase; letter-spacing: .06em; margin-top: 4px; }
     .about-stat-card .divider { width: 1px; background: rgba(255,255,255,.15); align-self: stretch; }
     .about-stat-card p { font-size: .9rem; color: rgba(255,255,255,.75); line-height: 1.6; }
+
     /* Founder section */
     .founder-section { padding: 88px 0; background: var(--light); }
     .founder-card {
@@ -547,6 +567,7 @@
     .founder-avatar svg { width: 60px; height: 60px; stroke: rgba(255,255,255,.8); fill: none; stroke-width: 1.5; }
     .founder-visual h2 { font-size: 1.4rem; font-weight: 800; color: var(--white); margin-bottom: 6px; }
     .founder-visual span { font-size: .85rem; color: rgba(255,255,255,.65); font-weight: 500; }
+
     .founder-info { padding: 48px 52px; }
     .founder-info .section-label { margin-bottom: 8px; }
     .founder-info h3 { font-size: 1.6rem; font-weight: 800; color: var(--navy); margin-bottom: 20px; }
@@ -562,6 +583,7 @@
     .highlight-item { text-align: center; }
     .highlight-item strong { font-size: 1.6rem; font-weight: 800; color: var(--teal); display: block; }
     .highlight-item span { font-size: .78rem; color: var(--mid); text-transform: uppercase; letter-spacing: .06em; }
+
     /* ===== SERVICES PAGE ===== */
     .services-page { padding: 88px 0; }
     .services-page-grid {
@@ -596,6 +618,7 @@
       text-transform: uppercase;
       letter-spacing: .06em;
     }
+
     /* ===== CONSULTATION PAGE ===== */
     .consult-page { padding: 88px 0; }
     .consult-card {
@@ -626,6 +649,7 @@
     .consult-icon-wrap svg { width: 36px; height: 36px; stroke: #4dd9c4; fill: none; stroke-width: 1.7; }
     .consult-card-top h2 { font-size: 1.7rem; font-weight: 800; color: var(--white); margin-bottom: 8px; }
     .consult-card-top p { color: rgba(255,255,255,.75); font-size: .95rem; }
+
     .consult-card-body { padding: 48px 52px; }
     .consult-card-body p { font-size: .98rem; color: var(--mid); line-height: 1.75; margin-bottom: 28px; }
     .consult-benefits { display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px; }
@@ -659,6 +683,7 @@
     .consult-email-btn:hover { background: var(--teal-lt); transform: translateY(-2px); }
     .consult-email-btn svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; }
     .consult-note { font-size: .83rem; color: var(--mid); margin-top: 16px; }
+
     /* ===== CONTACT PAGE ===== */
     .contact-page { padding: 88px 0; }
     .contact-grid {
@@ -717,6 +742,7 @@
     }
     .email-action:hover { background: rgba(255,255,255,.18); }
     .email-action svg { width: 18px; height: 18px; stroke: #4dd9c4; fill: none; stroke-width: 2; }
+
     /* ===== FOOTER ===== */
     footer {
       background: var(--navy);
@@ -753,6 +779,7 @@
     .footer-bottom p { font-size: .82rem; color: rgba(255,255,255,.4); }
     .footer-bottom a { color: rgba(255,255,255,.5); font-size: .82rem; }
     .footer-bottom a:hover { color: #4dd9c4; }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
@@ -784,6 +811,7 @@
   </style>
 </head>
 <body>
+
 <!-- ===== HEADER / NAV ===== -->
 <header>
   <nav class="container">
@@ -793,6 +821,7 @@
       </div>
       <div class="logo-text">Master<span>Health</span></div>
     </div>
+
     <ul class="nav-links">
       <li class="nav-item">
         <a onclick="showPage('home')" id="nav-home">Home</a>
@@ -806,6 +835,12 @@
       </li>
       <li class="nav-item">
         <button id="nav-services">Services <span class="chevron"></span></button>
+        <div class="dropdown">
+          <a onclick="showPage('rcm')">Revenue Cycle Management (RCM)</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <button id="nav-expertise">Expertise <span class="chevron"></span></button>
         <div class="dropdown">
           <a onclick="showPage('services'); highlightService('cardiology')">Cardiology</a>
           <a onclick="showPage('services'); highlightService('ophthalmology')">Ophthalmology</a>
@@ -823,13 +858,16 @@
         <a href="mailto:info@masterhealth.us" id="nav-contact">Contact</a>
       </li>
     </ul>
+
     <div class="nav-cta">
       <a class="btn-primary" href="mailto:operations@masterhealth.us">Free Consultation</a>
     </div>
+
     <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
+
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobileMenu">
     <a onclick="showPage('home'); closeMobileMenu()">Home</a>
@@ -842,6 +880,12 @@
     </div>
     <div>
       <a>Services</a>
+      <div class="mobile-submenu">
+        <a onclick="showPage('rcm'); closeMobileMenu()">Revenue Cycle Management (RCM)</a>
+      </div>
+    </div>
+    <div>
+      <a>Expertise</a>
       <div class="mobile-submenu">
         <a onclick="showPage('services'); closeMobileMenu()">Cardiology</a>
         <a onclick="showPage('services'); closeMobileMenu()">Ophthalmology</a>
@@ -856,8 +900,11 @@
     <a href="mailto:info@masterhealth.us" onclick="closeMobileMenu()">Contact</a>
   </div>
 </header>
+
+
 <!-- ===== HOME PAGE ===== -->
 <div id="page-home" class="page active">
+
   <!-- Hero -->
   <section class="hero">
     <div class="container">
@@ -873,6 +920,7 @@
     </div>
     <div class="hero-blob"></div>
   </section>
+
   <!-- Stats -->
   <div class="stats-strip">
     <div class="container">
@@ -896,6 +944,7 @@
       </div>
     </div>
   </div>
+
   <!-- Why Choose -->
   <section class="why-section">
     <div class="container">
@@ -956,6 +1005,7 @@
       </div>
     </div>
   </section>
+
   <!-- Services Preview -->
   <section class="services-section">
     <div class="container">
@@ -1000,6 +1050,7 @@
       </div>
     </div>
   </section>
+
   <!-- CTA Strip -->
   <section class="cta-strip">
     <div class="container">
@@ -1015,6 +1066,7 @@
       </div>
     </div>
   </section>
+
   <!-- Testimonials -->
   <section class="testimonials-section">
     <div class="container">
@@ -1044,44 +1096,47 @@
       </div>
     </div>
   </section>
+
 </div><!-- end home page -->
+
+
 <!-- ===== ABOUT OVERVIEW PAGE ===== -->
 <div id="page-about-overview" class="page">
   <div class="inner-hero">
     <div class="container">
       <div class="section-label" style="color:#4dd9c4;">About Master Health</div>
       <h1>Who We Are</h1>
-      <p>A dedicated revenue cycle management partner built for the modern healthcare practice.</p>
+      <p>Specializing in revenue cycle management to improve patient care and operational efficiency.</p>
     </div>
   </div>
   <section class="about-overview">
     <div class="container">
       <div class="about-grid">
         <div class="about-text">
-          <div class="section-label">Our Mission</div>
-          <h2 class="section-title">Transforming Revenue Cycles Across America</h2>
-          <p class="section-body">At Master Health, we believe healthcare providers should spend their energy on patients — not paperwork. We are a full-service Revenue Cycle Management (RCM) and medical billing partner serving physician practices across the United States.</p>
-          <p class="section-body" style="margin-top:16px;">Our team brings deep specialty expertise, modern technology, and a commitment to transparency that ensures you're collecting every dollar you're entitled to.</p>
+          <div class="section-label">About Master Health (MH)</div>
+          <h2 class="section-title">End-to-End RCM Solutions for Healthcare Practices</h2>
+          <p class="section-body">Master Health (MH) specializes in revenue cycle management (RCM) services aimed at improving patient care and operational efficiency for healthcare practices. We provide end-to-end RCM solutions, including medical billing and coding, charge posting, payment posting, accounts receivable management, and analytics, designed to increase profitability and streamline administrative processes.</p>
+          <p class="section-body" style="margin-top:16px;">Our expertise spans various medical specialties, and we serve independent practices and hospital groups seeking financial optimization. With a commitment to maximizing revenue and minimizing paperwork, MH ensures healthcare providers can focus on delivering quality patient care.</p>
           <div class="about-values">
             <div class="value-item">
               <div class="value-dot"></div>
               <div>
-                <h4>Integrity &amp; Transparency</h4>
-                <p>Full visibility into every claim, denial, and payment — no surprises, ever.</p>
+                <h4>Medical Billing &amp; Coding</h4>
+                <p>Accurate, compliant billing and coding across all major specialties to maximize reimbursements.</p>
               </div>
             </div>
             <div class="value-item">
               <div class="value-dot"></div>
               <div>
-                <h4>Specialty Expertise</h4>
-                <p>Deep knowledge across 7 specialties means coding accuracy and payer compliance from day one.</p>
+                <h4>Charge &amp; Payment Posting</h4>
+                <p>Timely charge capture and payment posting to keep your revenue cycle moving without delay.</p>
               </div>
             </div>
             <div class="value-item">
               <div class="value-dot"></div>
               <div>
-                <h4>Partnership Model</h4>
-                <p>We become an extension of your team, aligning our success directly with yours.</p>
+                <h4>AR Management &amp; Analytics</h4>
+                <p>Proactive accounts receivable follow-up and data-driven analytics to optimize your financial performance.</p>
               </div>
             </div>
           </div>
@@ -1115,6 +1170,7 @@
       </div>
     </div>
   </section>
+
   <!-- CTA -->
   <section class="cta-strip">
     <div class="container">
@@ -1128,6 +1184,8 @@
     </div>
   </section>
 </div><!-- end about overview -->
+
+
 <!-- ===== ABOUT FOUNDER PAGE ===== -->
 <div id="page-about-founder" class="page">
   <div class="inner-hero">
@@ -1141,16 +1199,58 @@
     <div class="container">
       <div class="founder-card">
         <div class="founder-visual">
-          <div class="founder-avatar">
-            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <!-- Male doctor illustration -->
+          <div class="founder-avatar" style="width:150px;height:150px;background:none;border:none;margin-bottom:24px;">
+            <svg viewBox="0 0 160 180" xmlns="http://www.w3.org/2000/svg" width="150" height="170">
+              <!-- Background circle -->
+              <circle cx="80" cy="80" r="78" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+              <!-- White coat body -->
+              <rect x="28" y="110" width="104" height="70" rx="12" fill="#ffffff"/>
+              <!-- Coat lapels -->
+              <polygon points="80,115 55,110 45,145 80,135" fill="#e8f5f2"/>
+              <polygon points="80,115 105,110 115,145 80,135" fill="#e8f5f2"/>
+              <!-- Shirt/tie area -->
+              <rect x="70" y="114" width="20" height="30" fill="#0a7e6e"/>
+              <!-- Stethoscope -->
+              <path d="M52,118 Q44,130 48,142 Q52,152 60,150" stroke="#4dd9c4" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <circle cx="60" cy="152" r="5" fill="#4dd9c4"/>
+              <!-- Neck -->
+              <rect x="68" y="95" width="24" height="20" rx="6" fill="#f5c5a3"/>
+              <!-- Head -->
+              <ellipse cx="80" cy="72" rx="28" ry="30" fill="#f5c5a3"/>
+              <!-- Hair -->
+              <ellipse cx="80" cy="46" rx="28" ry="14" fill="#2d1b0e"/>
+              <rect x="52" y="46" width="56" height="10" fill="#2d1b0e"/>
+              <!-- Ears -->
+              <ellipse cx="52" cy="72" rx="5" ry="7" fill="#f5c5a3"/>
+              <ellipse cx="108" cy="72" rx="5" ry="7" fill="#f5c5a3"/>
+              <!-- Eyes -->
+              <ellipse cx="68" cy="70" rx="5" ry="5.5" fill="white"/>
+              <ellipse cx="92" cy="70" rx="5" ry="5.5" fill="white"/>
+              <circle cx="69" cy="71" r="3" fill="#2d1b0e"/>
+              <circle cx="93" cy="71" r="3" fill="#2d1b0e"/>
+              <circle cx="70" cy="70" r="1" fill="white"/>
+              <circle cx="94" cy="70" r="1" fill="white"/>
+              <!-- Eyebrows -->
+              <path d="M62,63 Q68,60 74,63" stroke="#2d1b0e" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M86,63 Q92,60 98,63" stroke="#2d1b0e" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <!-- Nose -->
+              <path d="M78,75 Q80,82 82,75" stroke="#d4956a" stroke-width="1.5" fill="none"/>
+              <!-- Smile -->
+              <path d="M70,85 Q80,93 90,85" stroke="#c0714a" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <!-- Lab coat pocket with pen -->
+              <rect x="98" y="128" width="18" height="22" rx="3" fill="#e8f5f2" stroke="#0a7e6e" stroke-width="1"/>
+              <line x1="103" y1="128" x2="103" y2="118" stroke="#0d1b3e" stroke-width="2"/>
+              <line x1="107" y1="128" x2="107" y2="120" stroke="#e74c3c" stroke-width="2"/>
+            </svg>
           </div>
-          <h2>Master Health</h2>
-          <span>Founder &amp; Chief Executive</span>
+          <h2>Dr. Sashi</h2>
+          <span>Founder &amp; CEO</span>
         </div>
         <div class="founder-info">
           <div class="section-label">Founder's Message</div>
           <h3>A Commitment to Better Healthcare Revenue Management</h3>
-          <p>Master Health was founded on a simple belief: healthcare providers deserve a billing partner who treats their practice as their own. After years working inside healthcare revenue cycle operations, our founder recognized a persistent gap — providers were losing substantial revenue not because of the care they delivered, but because of inefficiencies in how that care was billed and collected.</p>
+          <p>Master Health was founded on a simple belief: healthcare providers deserve a billing partner who treats their practice as their own. After years working inside healthcare revenue cycle operations, Dr. Sashi recognized a persistent gap — providers were losing substantial revenue not because of the care they delivered, but because of inefficiencies in how that care was billed and collected.</p>
           <p>Master Health was built to close that gap. By combining deep specialty expertise with a consultative, transparent approach, we give practices the financial foundation they need to grow, invest in their teams, and most importantly, focus on their patients.</p>
           <p>We are proud to serve providers across Cardiology, Ophthalmology, Gastroenterology, Oncology, Dermatology, Orthopedics, and Mental &amp; Behavioral Health — and we are committed to being the partner you wish you'd found sooner.</p>
           <div class="founder-highlights">
@@ -1172,6 +1272,92 @@
     </div>
   </section>
 </div><!-- end founder -->
+
+
+<!-- ===== RCM PAGE ===== -->
+<div id="page-rcm" class="page">
+  <div class="inner-hero">
+    <div class="container">
+      <div class="section-label" style="color:#4dd9c4;">Our Services</div>
+      <h1>Revenue Cycle Management</h1>
+      <p>End-to-end RCM solutions designed to maximize your revenue and streamline operations.</p>
+    </div>
+  </div>
+  <section class="services-page">
+    <div class="container">
+      <div class="services-page-grid">
+
+        <div class="service-page-card">
+          <span class="service-tag">RCM</span>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3>Medical Billing &amp; Coding</h3>
+          <p>Accurate, compliant medical billing and coding across all major specialties. We ensure every claim is submitted correctly the first time, reducing denials and accelerating reimbursements with a 95%+ clean claim rate.</p>
+        </div>
+
+        <div class="service-page-card">
+          <span class="service-tag">RCM</span>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Charge Posting</h3>
+          <p>Timely and accurate capture of all billable services. Our charge posting team reviews encounter data and ensures every service rendered is properly documented and submitted, preventing revenue leakage at the source.</p>
+        </div>
+
+        <div class="service-page-card">
+          <span class="service-tag">RCM</span>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          </div>
+          <h3>Payment Posting</h3>
+          <p>Accurate and rapid posting of all insurance payments, patient payments, and EOBs. We reconcile remittances, identify underpayments, and maintain a clean audit trail to ensure your books are always accurate.</p>
+        </div>
+
+        <div class="service-page-card">
+          <span class="service-tag">RCM</span>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Accounts Receivable Management</h3>
+          <p>Proactive AR follow-up to reduce your days in receivables below 40. We pursue every unpaid and underpaid claim aggressively, working denials, appeals, and payer disputes to recover every dollar you're owed.</p>
+        </div>
+
+        <div class="service-page-card">
+          <span class="service-tag">RCM</span>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3>Analytics &amp; Reporting</h3>
+          <p>Data-driven dashboards and KPI reporting give you full visibility into your revenue cycle performance. We track clean claim rates, denial rates, collection ratios, and AR aging to keep your practice financially optimized.</p>
+        </div>
+
+        <div class="service-page-card">
+          <span class="service-tag">RCM</span>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Denial Management</h3>
+          <p>Systematic identification, tracking, and resolution of denied claims. We analyze denial patterns, address root causes, and implement process improvements to prevent recurring denials and maximize your net collection rate.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section class="cta-strip">
+    <div class="container">
+      <div class="cta-inner">
+        <div>
+          <h2>Ready to Optimize Your Revenue Cycle?</h2>
+          <p>Speak with a Master Health RCM specialist — completely free.</p>
+        </div>
+        <a class="btn-outline" href="mailto:operations@masterhealth.us">Request Free Consultation</a>
+      </div>
+    </div>
+  </section>
+</div><!-- end rcm -->
+
+
 <!-- ===== SERVICES PAGE ===== -->
 <div id="page-services" class="page">
   <div class="inner-hero">
@@ -1184,6 +1370,7 @@
   <section class="services-page">
     <div class="container">
       <div class="services-page-grid">
+
         <div class="service-page-card" id="svc-cardiology">
           <span class="service-tag">Specialty</span>
           <div class="service-icon">
@@ -1192,6 +1379,7 @@
           <h3>Cardiology</h3>
           <p>Comprehensive billing for the full spectrum of cardiac services — from routine office visits and diagnostic testing (ECG, echocardiography, stress tests) to complex interventional procedures and electrophysiology. We navigate the nuanced cardiology coding landscape to maximize your reimbursements while maintaining strict compliance.</p>
         </div>
+
         <div class="service-page-card" id="svc-ophthalmology">
           <span class="service-tag">Specialty</span>
           <div class="service-icon">
@@ -1200,6 +1388,7 @@
           <h3>Ophthalmology</h3>
           <p>Specialized billing expertise for comprehensive eye exams, refractions, surgical procedures (cataract, LASIK, glaucoma), and retinal treatments. We understand the ophthalmology billing landscape — including the critical distinction between medical and routine vision benefits — to ensure accurate claim submission and superior collection rates.</p>
         </div>
+
         <div class="service-page-card" id="svc-gi">
           <span class="service-tag">Specialty</span>
           <div class="service-icon">
@@ -1208,6 +1397,7 @@
           <h3>Gastroenterology (GI)</h3>
           <p>Expert GI billing for endoscopic procedures, colonoscopies, upper GI studies, liver biopsies, and motility testing. We handle the complex bundling rules, modifier requirements, and facility vs. professional fee distinctions that make GI billing challenging, ensuring you receive proper reimbursement for every procedure performed.</p>
         </div>
+
         <div class="service-page-card" id="svc-oncology">
           <span class="service-tag">Specialty</span>
           <div class="service-icon">
@@ -1216,6 +1406,7 @@
           <h3>Oncology</h3>
           <p>Meticulous billing for medical oncology, including infusion and injection administration, chemotherapy services, and supportive care drugs. We also cover radiation oncology treatment planning and delivery. Our team manages the complex prior authorization requirements, payer-specific drug policies, and compendia reviews that are central to oncology revenue capture.</p>
         </div>
+
         <div class="service-page-card" id="svc-dermatology">
           <span class="service-tag">Specialty</span>
           <div class="service-icon">
@@ -1224,6 +1415,7 @@
           <h3>Dermatology</h3>
           <p>Full-service billing for medical and cosmetic dermatology, including lesion removals, biopsies, MOHS surgery, phototherapy, and cosmetic procedures. We accurately apply the right procedure codes and modifiers, and manage the medical-vs-cosmetic distinction that is pivotal to claim approval and optimal reimbursement.</p>
         </div>
+
         <div class="service-page-card" id="svc-orthopedic">
           <span class="service-tag">Specialty</span>
           <div class="service-icon">
@@ -1232,6 +1424,7 @@
           <h3>Orthopedic</h3>
           <p>Specialized RCM for orthopedic surgery, sports medicine, and musculoskeletal care — including joint replacements, fracture care, spine procedures, and physical therapy coordination. We handle global period tracking, implant billing, and the complex authorization workflows that orthopedic practices face daily.</p>
         </div>
+
         <div class="service-page-card" id="svc-behavioral" style="grid-column: span 1;">
           <span class="service-tag">Specialty</span>
           <div class="service-icon">
@@ -1240,9 +1433,11 @@
           <h3>Mental &amp; Behavioral Health</h3>
           <p>Dedicated billing support for psychiatry, psychology, counseling, substance use disorder treatment, and telehealth mental health services. We navigate the unique parity requirements, prior authorization processes, and time-based coding rules of behavioral health billing to maximize legitimate reimbursements for your practice.</p>
         </div>
+
       </div>
     </div>
   </section>
+
   <section class="cta-strip">
     <div class="container">
       <div class="cta-inner">
@@ -1255,6 +1450,8 @@
     </div>
   </section>
 </div><!-- end services -->
+
+
 <!-- ===== FREE CONSULTATION PAGE ===== -->
 <div id="page-consult" class="page">
   <div class="inner-hero">
@@ -1310,6 +1507,8 @@
     </div>
   </section>
 </div><!-- end consult -->
+
+
 <!-- ===== CONTACT PAGE ===== -->
 <div id="page-contact" class="page">
   <div class="inner-hero">
@@ -1362,6 +1561,8 @@
     </div>
   </section>
 </div><!-- end contact -->
+
+
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="container">
@@ -1402,10 +1603,13 @@
     </div>
   </div>
 </footer>
+
+
 <!-- ===== JAVASCRIPT ===== -->
 <script>
   // --- Page routing ---
-  const pages = ['home','about-overview','about-founder','services','consult','contact'];
+  const pages = ['home','about-overview','about-founder','rcm','services','consult','contact'];
+
   function showPage(id) {
     pages.forEach(p => {
       const el = document.getElementById('page-' + p);
@@ -1419,6 +1623,7 @@
     // Update active nav link
     document.querySelectorAll('.nav-item > a, .nav-item > button').forEach(el => el.classList.remove('active-link'));
   }
+
   function highlightService(id) {
     setTimeout(() => {
       const el = document.getElementById('svc-' + id);
@@ -1429,6 +1634,7 @@
       }
     }, 300);
   }
+
   // --- Mobile menu ---
   function toggleMobileMenu() {
     document.getElementById('mobileMenu').classList.toggle('open');
@@ -1436,6 +1642,7 @@
   function closeMobileMenu() {
     document.getElementById('mobileMenu').classList.remove('open');
   }
+
   // Close mobile menu on outside click
   document.addEventListener('click', function(e) {
     const menu = document.getElementById('mobileMenu');
@@ -1444,8 +1651,10 @@
       menu.classList.remove('open');
     }
   });
+
   // --- Logo click ---
   document.querySelector('.logo').addEventListener('click', () => showPage('home'));
 </script>
+
 </body>
 </html>
