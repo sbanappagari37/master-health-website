@@ -38,7 +38,7 @@ st.markdown("""
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 20px 0px;
+        padding: 45px 0px 20px 0px; /* Increased top padding to clear the floating tag */
         margin-bottom: 40px;
         border-bottom: 1px solid #EAEAEA;
     }
