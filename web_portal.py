@@ -54,6 +54,32 @@ st.markdown("""
         font-size: 14px;
         margin-left: 8px;
     }
+
+    /* ── MINIMALIST CORPORATE NAVBAR LINKS ── */
+    div[data-testid="stButton"] button {
+        background-color: transparent !important;
+        color: #637381 !important;
+        border: none !important;
+        padding: 8px 16px !important;
+        font-weight: 500 !important;
+        font-size: 15px !important;
+        transition: color 0.2s ease-in-out !important;
+        box-shadow: none !important;
+    }
+
+    /* Hover effect for all nav options */
+    div[data-testid="stButton"] button:hover {
+        color: #1F7A8C !important;
+        background-color: transparent !important;
+    }
+
+    /* Accent style for the active page button */
+    div[data-testid="stButton"] button[kind="primary"] {
+        color: #0A2540 !important;
+        font-weight: 700 !important;
+        border-bottom: 2px solid #1F7A8C !important;
+        border-radius: 0px !important;
+    }
     
     /* ── PREMIUM ENTERPRISE TEXT STYLING ── */
     .hero-title {
