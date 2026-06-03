@@ -12,7 +12,7 @@ st.set_page_config(
 st.markdown("""
     <style>
     /* Import Premium Corporate Typography */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     
     html, body, [data-testid="stAppViewContainer"] {
         font-family: 'Inter', sans-serif;
@@ -29,7 +29,7 @@ st.markdown("""
     /* Block Wrapper Resets */
     .block-container {
         padding-top: 0rem !important;
-        padding-bottom: 3rem !important;
+        padding-bottom: 0rem !important;
         max-width: 1200px !important;
     }
     
@@ -38,21 +38,23 @@ st.markdown("""
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 65px 0px 20px 0px; /* Increased to 65px to safely clear the floating badge */
-        margin-bottom: 30px;
+        padding: 65px 0px 20px 0px; 
+        margin-bottom: 20px;
         border-bottom: 1px solid #EAEAEA;
     }
     .nav-brand {
         color: #0A2540;
-        font-size: 24px;
+        font-size: 26px;
         font-weight: 700;
         letter-spacing: -0.5px;
     }
     .nav-brand span {
         color: #1F7A8C;
         font-weight: 400;
-        font-size: 14px;
-        margin-left: 8px;
+        font-size: 13px;
+        margin-left: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
 
     /* ── MINIMALIST CORPORATE NAVBAR LINKS ── */
@@ -66,14 +68,10 @@ st.markdown("""
         transition: color 0.2s ease-in-out !important;
         box-shadow: none !important;
     }
-
-    /* Hover effect for all nav options */
     div[data-testid="stButton"] button:hover {
         color: #1F7A8C !important;
         background-color: transparent !important;
     }
-
-    /* Accent style for the active page button */
     div[data-testid="stButton"] button[kind="primary"] {
         color: #0A2540 !important;
         font-weight: 700 !important;
@@ -84,66 +82,73 @@ st.markdown("""
     /* ── PREMIUM ENTERPRISE TEXT STYLING ── */
     .hero-title {
         color: #0A2540;
-        font-size: 44px;
+        font-size: 46px;
         font-weight: 700;
-        line-height: 1.2;
+        line-height: 1.15;
         letter-spacing: -1px;
-        margin-bottom: 16px;
+        margin-bottom: 18px;
     }
     .hero-subtitle {
         color: #637381;
         font-size: 19px;
         font-weight: 400;
         line-height: 1.5;
-        max-width: 850px;
-        margin-bottom: 35px;
+        max-width: 900px;
+        margin-bottom: 40px;
     }
     .section-title {
         color: #0A2540;
-        font-size: 26px;
+        font-size: 28px;
         font-weight: 700;
-        margin-top: 40px;
-        margin-bottom: 24px;
+        margin-top: 50px;
+        margin-bottom: 25px;
         letter-spacing: -0.5px;
     }
+    .section-subtitle {
+        color: #637381;
+        font-size: 16px;
+        margin-top: -20px;
+        margin-bottom: 30px;
+    }
     
-    /* ── ASSEMBLY-STYLE CARDS & GRIDS ── */
+    /* ── ASSEMBLY-STYLE CARDS ── */
     .corporate-card {
         background-color: #FFFFFF;
-        padding: 30px;
+        padding: 32px;
         border-radius: 8px;
-        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.03);
         border: 1px solid #EFEFEF;
         height: 100%;
+        margin-bottom: 20px;
     }
     .card-icon {
-        font-size: 24px;
-        margin-bottom: 12px;
+        font-size: 26px;
+        margin-bottom: 14px;
     }
     .card-heading {
         color: #0A2540;
-        font-size: 18px;
+        font-size: 19px;
         font-weight: 600;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
     }
     .card-text {
         color: #637381;
-        font-size: 14px;
+        font-size: 14.5px;
         line-height: 1.6;
     }
     
     /* ── METRIC BLOCK STYLING ── */
     .metric-wrapper {
         background-color: #FFFFFF;
-        padding: 20px;
-        border-radius: 6px;
+        padding: 24px;
+        border-radius: 8px;
         border: 1px solid #EFEFEF;
         text-align: center;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.01);
     }
     .metric-num {
         color: #1F7A8C;
-        font-size: 32px;
+        font-size: 36px;
         font-weight: 700;
         margin-bottom: 4px;
     }
@@ -155,7 +160,68 @@ st.markdown("""
         letter-spacing: 0.5px;
     }
     
-    /* Clean up native Streamlit form box outline lines */
+    /* ── HIGH-END CORPORATE FOOTER ── */
+    .enterprise-footer {
+        background-color: #0A2540;
+        color: #FFFFFF;
+        padding: 60px 40px 30px 40px;
+        margin-top: 80px;
+        margin-left: -200px;
+        margin-right: -200px;
+    }
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding-bottom: 40px;
+    }
+    .footer-brand-column {
+        flex: 1.5;
+        min-width: 250px;
+        margin-bottom: 20px;
+    }
+    .footer-logo {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    .footer-tagline {
+        color: #93A0AD;
+        font-size: 14px;
+        max-width: 300px;
+        line-height: 1.5;
+    }
+    .footer-links-column {
+        flex: 1;
+        min-width: 180px;
+        margin-bottom: 20px;
+    }
+    .footer-header {
+        color: #1F7A8C;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+    }
+    .footer-item {
+        color: #93A0AD;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .footer-bottom {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-top: 25px;
+        display: flex;
+        justify-content: space-between;
+        color: #637381;
+        font-size: 12px;
+    }
+    
     div[data-testid="stForm"] {
         border: none !important;
         background-color: #FFFFFF !important;
@@ -174,13 +240,12 @@ def set_page(page_name):
 # Render Fixed Enterprise Top Bar Layout
 st.markdown("""
 <div class="header-nav">
-    <div class="nav-brand">Master Health<span>Enterprise Revenue Cycle Management</span></div>
+    <div class="nav-brand">Master Health<span>Enterprise Revenue Operations</span></div>
 </div>
 """, unsafe_allow_html=True)
 
-# Generate a professional seamless navigation header rows using clear columns
+# Navigation Grid
 nav1, nav2, nav3, nav4, nav5 = st.columns([1.5, 1.8, 1.8, 2.2, 3])
-
 with nav1:
     if st.button("Home & Compliance", key="btn_home", use_container_width=True, type="secondary" if st.session_state.current_page != "Home & Compliance" else "primary"):
         set_page("Home & Compliance")
@@ -194,7 +259,7 @@ with nav4:
     if st.button("ROI & Free Billing Assessment", key="btn_roi", use_container_width=True, type="secondary" if st.session_state.current_page != "ROI & Free Billing Assessment" else "primary"):
         set_page("ROI & Free Billing Assessment")
 
-st.markdown("<br><br>", unsafe_allow_html=True)
+st.markdown("<br>", unsafe_allow_html=True)
 
 # ── 3. INTERACTIVE PAGE CONTAINERS ───────────────────────────────────────────
 
@@ -238,6 +303,33 @@ if st.session_state.current_page == "Home & Compliance":
             <div class="card-icon">🎓</div>
             <div class="card-heading">Certified Professional Coders</div>
             <div class="card-text">All charge routing and documentation checks are overlooked by specialists holding formal credentials (AAPC/AHIMA), ensuring accurate modifier tracking for multi-specialty practices.</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    # NEW SECTION: SPECIALTY INTEGRATION MATRIX (Like Assembly.health)
+    st.markdown('<p class="section-title">Specialty-Specific Revenue Expertise</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-subtitle">We deploy custom rules engines mapped directly to the billing nuances of individual medical specialties.</p>', unsafe_allow_html=True)
+    
+    s1, s2, s3 = st.columns(3)
+    with s1:
+        st.markdown("""
+        <div class="corporate-card">
+            <div class="card-heading">OB-GYN Practices</div>
+            <div class="card-text">Flawless execution of global OB packages, antepartum visit structures, and specialized ultrasound modifier management to completely halt payer delays.</div>
+        </div>
+        """, unsafe_allow_html=True)
+    with s2:
+        st.markdown("""
+        <div class="corporate-card">
+            <div class="card-heading">Otolaryngology (ENT)</div>
+            <div class="card-text">Deep mastery of multi-procedural surgical modifiers, audiology code bundling, and complex in-office surgical coding tracking.</div>
+        </div>
+        """, unsafe_allow_html=True)
+    with s3:
+        st.markdown("""
+        <div class="corporate-card">
+            <div class="card-heading">Multi-Specialty Clinics</div>
+            <div class="card-text">Centralized dashboard management built to route claims across conflicting commercial contracts without cross-contaminating practice tax IDs.</div>
         </div>
         """, unsafe_allow_html=True)
 
@@ -306,8 +398,8 @@ elif st.session_state.current_page == "The Onshore Advantage":
         """, unsafe_allow_html=True)
 
 elif st.session_state.current_page == "ROI & Free Billing Assessment":
-    st.markdown('<p class="hero-title">Request a Free A/R Assessment</p>', unsafe_allow_html=True)
-    st.markdown('<p class="hero-subtitle">Discover where your accounts receivable are hitting friction points. Use our dynamic estimator below, then submit your practice profile to schedule a complete billing leak analysis.</p>', unsafe_allow_html=True)
+    st.markdown('<p class="hero-title">Interactive Operational Financial Estimator</p>', unsafe_allow_html=True)
+    st.markdown('<p class="hero-subtitle">Review the real economic impact of leakage stabilization based on your standard monthly volumes.</p>', unsafe_allow_html=True)
     
     # Calculator Segment in clean Card Wrapper
     st.markdown('<div class="corporate-card">', unsafe_allow_html=True)
@@ -321,21 +413,37 @@ elif st.session_state.current_page == "ROI & Free Billing Assessment":
         st.metric(label="Estimated Monthly Revenue Recovery Potential", value=f"${recovered:,.2f}")
         st.metric(label="Projected Annualized Profit Retention Optimization", value=f"${annualized:,.2f}")
     st.markdown('</div>', unsafe_allow_html=True)
-    
-    st.markdown('<p class="section-title">Secure Practice Registration</p>', unsafe_allow_html=True)
-    
-    st.markdown('<div class="corporate-card">', unsafe_allow_html=True)
-    with st.form("assessment_form"):
-        f1, f2 = st.columns(2)
-        with f1:
-            p_name = st.text_input("Practice / Group Organization Name:")
-            c_name = st.text_input("Contact Full Name & Title:")
-        with f2:
-            ehr_system = st.text_input("Active EHR/Billing Platform (e.g., Athena, eCW):")
-            p_count = st.number_input("Number of Billing Providers:", min_value=1, value=2)
-        notes = st.text_area("Primary Operational Pain Points (e.g., backlogged collections, slow posting):")
-        
-        btn = st.form_submit_button("Submit Assessment Request")
-        if btn:
-            st.success("Thank you. Master Health's corporate executive team will review your practice scale and EHR framework, coordinate with our operations center, and contact you within 1 business day.")
-    st.markdown('</div>', unsafe_allow_html=True)
+
+# ── 4. BRAND NEW ENTERPRISE FOOTER STRUCTURE ────────────────────────────────
+st.markdown("""
+<div class="enterprise-footer">
+    <div class="footer-content">
+        <div class="footer-brand-column">
+            <div class="footer-logo">Master Health</div>
+            <div class="footer-tagline">Institutional Revenue Operations and Enterprise Cycle Management Solutions for Independent Practices.</div>
+        </div>
+        <div class="footer-links-column">
+            <div class="footer-header">Solutions</div>
+            <div class="footer-item">End-to-End Billing</div>
+            <div class="footer-item">Denial Optimization</div>
+            <div class="footer-item">Payer Fee Auditing</div>
+        </div>
+        <div class="footer-links-column">
+            <div class="footer-header">Expertise</div>
+            <div class="footer-item">OB-GYN Operations</div>
+            <div class="footer-item">Otolaryngology (ENT)</div>
+            <div class="footer-item">Multi-Specialty Rules</div>
+        </div>
+        <div class="footer-links-column">
+            <div class="footer-header">Contact & Info</div>
+            <div class="footer-item">sashi@masterhealth.us</div>
+            <div class="footer-item">San Ramon, California</div>
+            <div class="footer-item" style="color: #00D4B2;">🔒 HIPAA Secure Endpoints</div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div>© 2026 Master Health LLC. All rights reserved.</div>
+        <div>Security Framework: OIG Compliant / AAPC Certified</div>
+    </div>
+</div>
+""", unsafe_allow_html=True)
