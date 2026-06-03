@@ -834,6 +834,7 @@
           <a onclick="showPage('about-overview')">Overview</a>
           <a onclick="showPage('about-founder')">Founder</a>
           <a onclick="showPage('about-values')">Values</a>
+          <a onclick="showPage('about-mission')">Our Mission</a>
         </div>
       </li>
       <li class="nav-item">
@@ -888,6 +889,7 @@
         <a onclick="showPage('about-overview'); closeMobileMenu()">Overview</a>
         <a onclick="showPage('about-founder'); closeMobileMenu()">Founder</a>
         <a onclick="showPage('about-values'); closeMobileMenu()">Values</a>
+        <a onclick="showPage('about-mission'); closeMobileMenu()">Our Mission</a>
       </div>
     </div>
     <div>
@@ -1308,6 +1310,74 @@
     </div>
   </section>
 </div><!-- end founder -->
+
+
+<!-- ===== OUR MISSION PAGE ===== -->
+<div id="page-about-mission" class="page">
+  <div class="inner-hero">
+    <div class="container">
+      <div class="section-label" style="color:#4dd9c4;">Why We Exist</div>
+      <h1>Our Mission</h1>
+      <p>Empowering healthcare organizations with precision-driven revenue cycle solutions.</p>
+    </div>
+  </div>
+
+  <section style="padding:88px 0;background:var(--white);">
+    <div class="container">
+
+      <!-- Mission statement block -->
+      <div style="max-width:860px;margin:0 auto;text-align:center;margin-bottom:72px;">
+        <div class="section-label" style="text-align:center;">Our Purpose</div>
+        <h2 class="section-title" style="text-align:center;font-size:clamp(1.6rem,3vw,2.4rem);">Driving Financial Health for Healthcare Organizations</h2>
+        <div style="width:60px;height:4px;background:var(--teal);border-radius:2px;margin:20px auto 32px;"></div>
+        <p style="font-size:1.15rem;color:var(--mid);line-height:1.85;margin-bottom:20px;">Our mission is to support and improve the financial health of healthcare organizations by delivering precision-driven revenue cycle management solutions.</p>
+        <p style="font-size:1.15rem;color:var(--mid);line-height:1.85;margin-bottom:20px;">We exist to minimize billing complexities, maximize reimbursements, and ensure regulatory compliance.</p>
+        <p style="font-size:1.15rem;color:var(--mid);line-height:1.85;">Our extensive industry knowledge empowers medical practices to achieve sustainable financial growth while maintaining the highest ethical billing standards.</p>
+      </div>
+
+      <!-- Three pillars -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;">
+
+        <div class="service-page-card" style="border-top:4px solid var(--teal);padding:40px 32px;text-align:center;">
+          <div class="service-icon" style="width:64px;height:64px;margin:0 auto 24px;">
+            <svg viewBox="0 0 24 24" stroke="var(--teal)" fill="none" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3 style="font-size:1.1rem;font-weight:800;color:var(--navy);margin-bottom:12px;">Minimize Complexity</h3>
+          <p style="font-size:.92rem;color:var(--mid);line-height:1.7;">We cut through the complexity of healthcare billing so your team can operate with clarity, confidence, and less administrative burden.</p>
+        </div>
+
+        <div class="service-page-card" style="border-top:4px solid var(--teal);padding:40px 32px;text-align:center;background:var(--teal);">
+          <div class="service-icon" style="width:64px;height:64px;margin:0 auto 24px;background:rgba(255,255,255,.15);">
+            <svg viewBox="0 0 24 24" stroke="white" fill="none" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3 style="font-size:1.1rem;font-weight:800;color:white;margin-bottom:12px;">Maximize Reimbursements</h3>
+          <p style="font-size:.92rem;color:rgba(255,255,255,.85);line-height:1.7;">We are relentless in ensuring every billable service is captured, every claim is clean, and every dollar owed to your practice is collected.</p>
+        </div>
+
+        <div class="service-page-card" style="border-top:4px solid var(--teal);padding:40px 32px;text-align:center;">
+          <div class="service-icon" style="width:64px;height:64px;margin:0 auto 24px;">
+            <svg viewBox="0 0 24 24" stroke="var(--teal)" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 style="font-size:1.1rem;font-weight:800;color:var(--navy);margin-bottom:12px;">Ensure Compliance</h3>
+          <p style="font-size:.92rem;color:var(--mid);line-height:1.7;">We uphold the highest ethical billing standards and stay current on regulatory requirements, protecting your practice from risk at every step.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-strip">
+    <div class="container">
+      <div class="cta-inner">
+        <div>
+          <h2>Let's Put Our Mission to Work for Your Practice</h2>
+          <p>Schedule a free consultation with Master Health today.</p>
+        </div>
+        <a class="btn-outline" onclick="showPage('consult')" style="cursor:pointer;">Get Started</a>
+      </div>
+    </div>
+  </section>
+</div><!-- end mission -->
 
 
 <!-- ===== VALUES PAGE ===== -->
@@ -2170,7 +2240,7 @@ function submitContactForm(e) {
 <!-- ===== JAVASCRIPT ===== -->
 <script>
   // --- Page routing ---
-  const pages = ['home','about-overview','about-founder','about-values','rcm','svc-medical-billing','svc-physician-billing','svc-medical-coding','svc-charge-posting','svc-payment-posting','svc-denial-management','svc-accounts-receivable','svc-lab-billing','services','consult','contact'];
+  const pages = ['home','about-overview','about-founder','about-values','about-mission','rcm','svc-medical-billing','svc-physician-billing','svc-medical-coding','svc-charge-posting','svc-payment-posting','svc-denial-management','svc-accounts-receivable','svc-lab-billing','services','consult','contact'];
 
   function showPage(id) {
     pages.forEach(p => {
