@@ -1,6 +1,6 @@
 import streamlit as st
 
-# ── 1. GLOBAL INITIALIZATION & REPLICATED DESIGN TOKENS ─────────────────────
+# ── 1. GLOBAL INITIALIZATION & DESIGN OVERRIDES ──────────────────────────────────
 st.set_page_config(
     page_title="Master Health | Enterprise Revenue Cycle Management", 
     page_icon="🏦", 
@@ -8,7 +8,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Global CSS Master Layer for Exprimunt-Style Web Canvas Flow
+# ── 2. UNIFIED STYLING & HORIZONTAL NAVBAR LAYER ────────────────────
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -18,7 +18,7 @@ st.markdown("""
         background-color: #FFFFFF !important;
     }
     
-    /* Strict eradication of app infrastructure sidebars and padding rails */
+    /* Strict eradication of app infrastructure watermarks and headers */
     [data-testid="stSidebar"] { display: none !important; }
     [data-testid="stSidebarCollapsedControl"] { display: none !important; }
     header { visibility: hidden !important; height: 0px !important; }
@@ -31,7 +31,7 @@ st.markdown("""
         max-width: 1200px !important;
     }
     
-    /* ── COMPLETE PURE-WEB HORIZONTAL NAVIGATION HEADER ── */
+    /* HORIZONTAL NAVIGATION BAR HEADER */
     .premium-navbar {
         display: flex;
         justify-content: space-between;
@@ -71,7 +71,7 @@ st.markdown("""
         gap: 4px;
     }
     
-    /* Dropdown Architecture */
+    /* Dropdown Hover Framework */
     .menu-dropdown {
         position: relative;
         display: inline-block;
@@ -97,7 +97,7 @@ st.markdown("""
         color: #1F7A8C !important;
     }
     
-    /* Popover Menu Dropdown Boxes */
+    /* Dropdown Popover Overlays */
     .dropdown-overlay-box {
         display: none;
         position: absolute;
@@ -132,7 +132,7 @@ st.markdown("""
         color: #1F7A8C !important;
     }
     
-    /* ── CORPORATE SECTION STRIPS (EXPRIMUNT RENDERING) ── */
+    /* CORPORATE LAYOUT STRIPS */
     .hero-container {
         display: flex;
         justify-content: space-between;
@@ -141,15 +141,18 @@ st.markdown("""
         background-color: #FFFFFF;
         gap: 60px;
     }
+    
     .hero-left {
         flex: 1.1;
         max-width: 560px;
     }
+    
     .hero-right {
         flex: 0.9;
         display: flex;
         justify-content: flex-end;
     }
+    
     .assembly-title {
         color: #111111;
         font-size: 58px;
@@ -158,6 +161,7 @@ st.markdown("""
         letter-spacing: -1.5px;
         margin-bottom: 22px;
     }
+    
     .assembly-subtitle {
         color: #333333;
         font-size: 19px;
@@ -165,11 +169,13 @@ st.markdown("""
         line-height: 1.55;
         margin-bottom: 35px;
     }
+    
     .hero-img-frame {
         width: 100%;
         max-width: 520px;
         border-radius: 6px;
     }
+    
     .action-btn-link {
         display: inline-block;
         background-color: #2D9CDB !important;
@@ -180,8 +186,22 @@ st.markdown("""
         border-radius: 6px !important;
         text-decoration: none !important;
     }
+    
+    .section-title {
+        color: #0A2540;
+        font-size: 32px;
+        font-weight: 700;
+        margin-top: 40px;
+        margin-bottom: 15px;
+        letter-spacing: -0.5px;
+    }
 
-    /* Full bleed banner panels */
+    .section-tagline {
+        color: #637381;
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+    
     .section-block-grey {
         background-color: #F8F9FA;
         padding: 80px 40px;
@@ -190,24 +210,12 @@ st.markdown("""
         border-top: 1px solid #EAEAEA;
         border-bottom: 1px solid #EAEAEA;
     }
+
     .inner-content-wrapper {
         max-width: 1200px;
         margin: 0 auto;
     }
-    
-    .section-title {
-        color: #0A2540;
-        font-size: 32px;
-        font-weight: 700;
-        margin-bottom: 15px;
-        letter-spacing: -0.5px;
-    }
-    .section-tagline {
-        color: #637381;
-        font-size: 16px;
-        margin-bottom: 40px;
-    }
-    
+
     .corporate-card {
         background-color: #FFFFFF;
         padding: 35px;
@@ -217,19 +225,20 @@ st.markdown("""
         height: 100%;
         margin-bottom: 20px;
     }
+    
     .card-heading {
         color: #0A2540;
         font-size: 20px;
         font-weight: 600;
         margin-bottom: 12px;
     }
+    
     .card-text {
         color: #637381;
         font-size: 14.5px;
         line-height: 1.65;
     }
 
-    /* Process Flow Timeline Numbers */
     .flow-step-num {
         font-size: 44px;
         font-weight: 700;
@@ -237,7 +246,7 @@ st.markdown("""
         margin-bottom: -10px;
     }
     
-    /* ── DEEP FOOTER MATRIX ── */
+    /* CORPORATE DEEP FOOTER */
     .enterprise-footer {
         background-color: #0A2540;
         color: #FFFFFF;
@@ -246,6 +255,7 @@ st.markdown("""
         margin-left: -200px;
         margin-right: -200px;
     }
+    
     .footer-content {
         max-width: 1200px;
         margin: 0 auto;
@@ -255,24 +265,29 @@ st.markdown("""
         border-bottom: 1px solid rgba(255,255,255,0.08);
         padding-bottom: 45px;
     }
+    
     .footer-brand-column {
         flex: 1.4;
         min-width: 260px;
     }
+    
     .footer-logo {
         font-size: 23px;
         font-weight: 700;
         margin-bottom: 12px;
     }
+    
     .footer-tagline {
         color: #93A0AD;
         font-size: 14px;
         max-width: 280px;
     }
+    
     .footer-links-column {
         flex: 1;
         min-width: 170px;
     }
+    
     .footer-header {
         color: #1F7A8C;
         font-size: 13px;
@@ -280,11 +295,13 @@ st.markdown("""
         text-transform: uppercase;
         margin-bottom: 18px;
     }
+    
     .footer-item {
         color: #93A0AD;
         font-size: 14px;
         margin-bottom: 12px;
     }
+    
     .footer-bottom {
         max-width: 1200px;
         margin: 0 auto;
@@ -331,13 +348,12 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-# Capture view router parameters safely
+# Capture view router parameters safely from active URL matrices
 current_view = st.query_params.get("view", "Home")
 
 # ── 3. DYNAMIC CONTENT RENDERING MODULES ─────────────────────────────────────
 
 if current_view == "Home":
-    # SECTION 1: Asymmetric Hero Canvas Block
     st.markdown("""
     <div class="hero-container">
         <div class="hero-left">
@@ -351,7 +367,6 @@ if current_view == "Home":
     </div>
     """, unsafe_allow_html=True)
     
-    # SECTION 2: Exprimunt Value Grid Panel
     st.markdown('<p class="section-title">Why Independent Groups Choose Master Health</p>', unsafe_allow_html=True)
     st.markdown('<p class="section-tagline">We combine airtight security standards with accelerated reimbursement lifecycles.</p>', unsafe_allow_html=True)
     
@@ -363,7 +378,7 @@ if current_view == "Home":
     with c3:
         st.markdown('<div class="corporate-card"><div class="card-heading">🎓 AAPC Certified Experts</div><div class="card-text">All charge routing and documentation checks are overlooked by specialists holding formal credentials (AAPC/AHIMA), ensuring accurate modifier tracking for multi-specialty practices.</div></div>', unsafe_allow_html=True)
 
-    # SECTION 3: Full Bleed Operational Process Step Loop
+    # Exprimunt Operational Process Loop Strip
     st.markdown("""
     <div class="section-block-grey">
         <div class="inner-content-wrapper">
@@ -375,19 +390,18 @@ if current_view == "Home":
     with p1:
         st.markdown('<div class="corporate-card"><div class="flow-step-num">01</div><div class="card-heading">Intake Audit</div><div class="card-text">Encounter checks and verification of insurance configurations to eliminate front-end clearinghouse rejections.</div></div>', unsafe_allow_html=True)
     with p2:
-        st.markdown('<div class="corporate-card"><div class="flow-step-num">02</div><div class="flow-step-num"></div><div class="card-heading">Scrub & Code</div><div class="card-text">Line-by-line validation of specialty coding and modifier rules before routing to clearinghouses.</div></div>', unsafe_allow_html=True)
+        st.markdown('<div class="corporate-card"><div class="flow-step-num">02</div><div class="card-heading">Scrub & Code</div><div class="card-text">Line-by-line validation of specialty coding and modifier rules before routing to clearinghouses.</div></div>', unsafe_allow_html=True)
     with p3:
         st.markdown('<div class="corporate-card"><div class="flow-step-num">03</div><div class="card-heading">Payment Post</div><div class="card-text">Line item allocation of incoming ERAs against localized payer fee directories to capture underpayments.</div></div>', unsafe_allow_html=True)
     with p4:
         st.markdown('<div class="corporate-card"><div class="flow-step-num">04</div><div class="card-heading">A/R Recovery</div><div class="card-text">Persistent, structured follow-up campaigns targeting outstanding balances past the 30 and 60-day thresholds.</div></div>', unsafe_allow_html=True)
         
-    st.markdown('</div></div>', unsafe_allow_html=True) # Close gray block container
+    st.markdown('</div></div>', unsafe_allow_html=True)
 
 elif current_view == "Overview":
     st.markdown('<p class="hero-title" style="margin-top:60px;">Corporate Overview</p>', unsafe_allow_html=True)
     st.markdown('<p class="hero-subtitle">Master Health delivers institutional-grade revenue operation infrastructures engineered specifically to shield modern medical groups from overhead bloat, structural coding errors, and clearinghouse audit friction.</p>', unsafe_allow_html=True)
 
-# SECTION 4: Reconfigured Leadership Viewport (Reduced to 1 Profile: Dr. Sashi)
 elif current_view == "Founder":
     st.markdown('<p class="hero-title" style="margin-top:60px;">Executive Leadership</p>', unsafe_allow_html=True)
     st.markdown('<p class="hero-subtitle">Driven by advanced clinical, technical, and compliance insights, our corporate structure isolates administrative overhead and establishes high-efficiency processing tunnels.</p>', unsafe_allow_html=True)
@@ -410,17 +424,30 @@ elif current_view == "Founder":
         """, unsafe_allow_html=True)
 
 else:
-    # Individual Specialty Views
+    # ── LEVERAGING TAILORED SPECIALTY PATHWAYS (ASSEMBLY HEALTH STYLE) ──
     clean_title = current_view.replace("_", " & ")
-    st.markdown(f'<p class="hero-title" style="margin-top:60px;">{clean_title} Revenue Management</p>', unsafe_allow_html=True)
-    st.markdown(f'<p class="hero-subtitle">Master Health provides tailored billing guidelines, claim scrubbing sub-routines, and optimization protocols built explicitly to support institutional practices specializing in {clean_title}.</p>', unsafe_allow_html=True)
+    st.markdown(f'<p class="hero-title" style="margin-top:60px;">{clean_title} Revenue Optimization</p>', unsafe_allow_html=True)
+    
+    # Map high-end technical criteria per specialty to reflect true domain expertise
+    specialty_copy_matrix = {
+        "Cardiology": "Mastery of documentation guidelines for complex cardiac procedures, including device checks, cardiac catheterizations, diagnostic imaging bundling, and specialized peripheral vascular modifier sets.",
+        "Ophthalmology": "Precision execution for global surgical windows, bilateral surgical modifiers, complex diagnostic injections, optometry testing cross-walks, and highly specific premium intraocular lens billing metrics.",
+        "GI": "Rigorous claim optimization metrics for screening vs. diagnostic endoscopy pathways, anesthesia bundling variations, multiple polyp extraction technique modifier protocols, and institutional compliance routing.",
+        "Oncology": "Expert compliance routing for high-complexity infusion coding, therapeutic hydration sequence tracking, toxic drug waste code calculation requirements, and concurrent chemotherapy management mapping.",
+        "Dermatology": "Advanced tracking workflows constructed around multi-lesion destruction algorithms, global surgical package intervals, complex wound closures, skin biopsy bundling, and cosmetic-medical care classification borders.",
+        "Orthopedic": "Flawless coding precision across major joint arthroplasties, spinal instrumentation sequences, multi-surgeon fracture repair modifier cross-walks, and comprehensive physical therapy tracking.",
+        "Mental_Behavioral": "Specialized rules frameworks customized for time-based psychotherapy tracking codes, diagnostic interview parameters, intensive outpatient programs (IOP) authorizations, and complex behavioral health network directories."
+    }
+    
+    active_copy = specialty_copy_matrix.get(current_view, "Dedicated revenue cycle management workflows configured specifically to handle provider schedules, modifier requirements, and specific payer rules directories.")
+    st.markdown(f'<p class="hero-subtitle">{active_copy}</p>', unsafe_allow_html=True)
     
     st.markdown(f"""
     <div class="corporate-card" style="border-top: 4px solid #1F7A8C;">
-        <div class="card-heading">{clean_title} Workflow Optimization Metrics</div>
+        <div class="card-heading">{clean_title} Tactical Priorities</div>
         <div class="card-text" style="line-height:2;">
             • Specialized ICD-10 crosswalk monitoring ensuring error-free documentation posting.<br>
-            • Proactive modifier verification (e.g., global procedural surgical timelines).<br>
+            • Proactive modifier verification matching localized commercial and public policy rules engines.<br>
             • Persistent aging follow-up loops targeted toward discipline-specific commercial insurance policies.
         </div>
     </div>
