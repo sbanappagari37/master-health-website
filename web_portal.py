@@ -8,6 +8,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+# Global CSS Master Layer for High-End Corporate Website Aesthetics
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -17,10 +18,11 @@ st.markdown("""
         background-color: #FFFFFF !important;
     }
     
+    /* Strict eradication of app infrastructure watermarks and sidebar padding */
     [data-testid="stSidebar"] { display: none !important; }
     [data-testid="stSidebarCollapsedControl"] { display: none !important; }
     header { visibility: hidden !important; height: 0px !important; }
-    footer { visibility: hidden !important; height: 0px !important; }
+    footer { visibility: hidden !important; }
     [data-testid="stHeader"] { display: none !important; }
     
     .block-container {
@@ -29,117 +31,149 @@ st.markdown("""
         max-width: 1200px !important;
     }
     
-    /* ── CUSTOM REPLICATED TOP NAVBAR ── */
-    .header-nav {
+    /* ── COMPLETE PURE-WEB HORIZONTAL NAVIGATION HEADER ── */
+    .premium-navbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 50px 0px 20px 0px; 
-        margin-bottom: 0px;
+        padding: 45px 0px 20px 0px; 
         border-bottom: 1px solid #F0F2F5;
+        background-color: #FFFFFF;
+        position: relative;
+        z-index: 999999 !important;
     }
-    .nav-brand {
+    
+    .nav-brand-wrapper {
+        display: flex;
+        align-items: baseline;
+    }
+    
+    .nav-brand-main {
         color: #0A2540;
         font-size: 26px;
         font-weight: 700;
         letter-spacing: -0.5px;
-    }
-    .nav-brand span {
-        color: #1F7A8C;
-        font-weight: 400;
-        font-size: 13px;
-        margin-left: 10px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-
-    /* Minimalist text button links override for Home */
-    div[data-testid="stButton"] button {
-        background-color: transparent !important;
-        color: #1A1A1A !important;
-        border: none !important;
-        padding: 8px 16px !important;
-        font-weight: 500 !important;
-        font-size: 15px !important;
-        transition: color 0.2s ease-in-out !important;
-        box-shadow: none !important;
-        margin-top: 24px;
-    }
-    div[data-testid="stButton"] button:hover {
-        color: #1F7A8C !important;
-        background-color: transparent !important;
-    }
-    div[data-testid="stButton"] button[kind="primary"] {
-        color: #1F7A8C !important;
-        font-weight: 700 !important;
-        border-bottom: 2px solid #1F7A8C !important;
-        border-radius: 0px !important;
-    }
-    
-    /* Clean corporate style for selectbox dropdown navigation headers */
-    div[data-testid="stSelectbox"] label {
-        display: none !important;
-    }
-    div[data-testid="stSelectbox"] div[data-baseweb="select"] {
-        border: none !important;
-        background-color: transparent !important;
-        font-weight: 500 !important;
-        font-size: 15px !important;
-        color: #1A1A1A !important;
-    }
-    
-    /* External clickable mailto links styling */
-    .nav-mail-link {
-        display: inline-block;
-        color: #1A1A1A !important;
         text-decoration: none !important;
-        font-weight: 500 !important;
-        font-size: 15px !important;
-        padding: 8px 16px !important;
-        margin-top: 28px;
-        transition: color 0.2s ease-in-out !important;
     }
-    .nav-mail-link:hover {
+    
+    .nav-brand-sub {
+        color: #1F7A8C;
+        font-weight: 500;
+        font-size: 13px;
+        margin-left: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.75px;
+    }
+    
+    .nav-menu-links {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    
+    /* Hover Dropdown Architecture */
+    .menu-dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .menu-tab-link {
+        color: #1A1A1A !important;
+        background: transparent;
+        border: none;
+        padding: 10px 18px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 15px;
+        text-decoration: none !important;
+        cursor: pointer;
+        transition: color 0.15s ease;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    
+    .menu-tab-link:hover {
         color: #1F7A8C !important;
     }
     
-    /* ── ASYMMETRIC ASSEMBLY-STYLE HERO GRID ── */
+    /* Popover Dropdown Styling Overlay */
+    .dropdown-overlay-box {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #FFFFFF;
+        min-width: 270px;
+        box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.06), 0px 4px 12px rgba(0, 0, 0, 0.03);
+        border: 1px solid #EFEFEF;
+        border-radius: 6px;
+        padding: 8px 0px;
+        z-index: 9999999 !important;
+        margin-top: 4px;
+    }
+    
+    .menu-dropdown:hover .dropdown-overlay-box {
+        display: block;
+    }
+    
+    .dropdown-overlay-box a {
+        display: block !important;
+        padding: 11px 20px !important;
+        color: #4A4A4A !important;
+        text-decoration: none !important;
+        font-size: 14.5px !important;
+        font-weight: 400 !important;
+        transition: background 0.15s ease, color 0.15s ease !important;
+    }
+    
+    .dropdown-overlay-box a:hover {
+        background-color: #F8F9FA !important;
+        color: #1F7A8C !important;
+    }
+    
+    /* ── PREMIUM CORPORATE HERO SPLIT (ASSEMBLY REPLICATION) ── */
     .hero-container {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 80px 0px;
+        padding: 90px 0px;
         background-color: #FFFFFF;
-        gap: 40px;
+        gap: 60px;
     }
+    
     .hero-left {
         flex: 1.1;
-        max-width: 550px;
+        max-width: 560px;
     }
+    
     .hero-right {
         flex: 0.9;
         display: flex;
         justify-content: flex-end;
     }
+    
     .assembly-title {
         color: #111111;
-        font-size: 56px;
+        font-size: 58px;
         font-weight: 700;
         line-height: 1.1;
-        letter-spacing: -1px;
-        margin-bottom: 24px;
+        letter-spacing: -1.5px;
+        margin-bottom: 22px;
     }
+    
     .assembly-subtitle {
-        color: #222222;
-        font-size: 18px;
+        color: #333333;
+        font-size: 19px;
         font-weight: 400;
-        line-height: 1.5;
+        line-height: 1.55;
         margin-bottom: 35px;
     }
+    
     .hero-img-frame {
         width: 100%;
-        max-width: 500px;
-        border-radius: 4px;
+        max-width: 520px;
+        border-radius: 6px;
     }
     
     .action-btn-link {
@@ -148,157 +182,164 @@ st.markdown("""
         color: #FFFFFF !important;
         font-weight: 600 !important;
         font-size: 15px !important;
-        padding: 14px 28px !important;
+        padding: 15px 32px !important;
         border-radius: 6px !important;
         text-decoration: none !important;
+        box-shadow: 0px 4px 10px rgba(45, 156, 219, 0.2);
     }
     
+    /* Premium Grid Cards Content */
     .section-title {
         color: #0A2540;
         font-size: 28px;
         font-weight: 700;
-        margin-top: 60px;
+        margin-top: 40px;
         margin-bottom: 25px;
         letter-spacing: -0.5px;
     }
     
     .corporate-card {
         background-color: #FFFFFF;
-        padding: 32px;
+        padding: 35px;
         border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.02);
         border: 1px solid #EFEFEF;
         height: 100%;
         margin-bottom: 20px;
     }
+    
     .card-heading {
         color: #0A2540;
         font-size: 19px;
         font-weight: 600;
         margin-bottom: 12px;
     }
+    
     .card-text {
         color: #637381;
         font-size: 14.5px;
-        line-height: 1.6;
+        line-height: 1.65;
     }
     
+    /* ── DEEP FOOTER MATRIX ── */
     .enterprise-footer {
         background-color: #0A2540;
         color: #FFFFFF;
-        padding: 60px 40px 30px 40px;
-        margin-top: 80px;
+        padding: 70px 40px 35px 40px;
+        margin-top: 90px;
         margin-left: -200px;
         margin-right: -200px;
     }
+    
     .footer-content {
         max-width: 1200px;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-        padding-bottom: 40px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        padding-bottom: 45px;
     }
+    
     .footer-brand-column {
-        flex: 1.5;
-        min-width: 250px;
+        flex: 1.4;
+        min-width: 260px;
     }
+    
     .footer-logo {
-        font-size: 22px;
+        font-size: 23px;
         font-weight: 700;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
     }
+    
     .footer-tagline {
         color: #93A0AD;
         font-size: 14px;
-        max-width: 300px;
+        max-width: 280px;
     }
+    
     .footer-links-column {
         flex: 1;
-        min-width: 180px;
+        min-width: 170px;
     }
+    
     .footer-header {
         color: #1F7A8C;
         font-size: 13px;
         font-weight: 700;
         text-transform: uppercase;
-        margin-bottom: 15px;
+        margin-bottom: 18px;
     }
+    
     .footer-item {
         color: #93A0AD;
         font-size: 14px;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
     }
+    
     .footer-bottom {
         max-width: 1200px;
         margin: 0 auto;
-        padding-top: 25px;
+        padding-top: 30px;
         display: flex;
         justify-content: space-between;
         color: #637381;
-        font-size: 12px;
+        font-size: 12.5px;
     }
     </style>
     """, unsafe_allow_html=True)
 
-# Header Brand Top Bar Layout
-st.markdown("""
-<div class="header-nav">
-    <div class="nav-brand">Master Health<span>Enterprise Revenue Operations</span></div>
+# ── 2. ISOLATED NAVBAR RENDERING DATA BLOCK ──────────────────────────────────
+navbar_html_content = """
+<div class="premium-navbar">
+    <div class="nav-brand-wrapper">
+        <a href="?view=Home" class="nav-brand-main" target="_self">Master Health</a>
+        <div class="nav-brand-sub">Enterprise Revenue Operations</div>
+    </div>
+    <div class="nav-menu-links">
+        <a href="?view=Home" class="menu-tab-link" target="_self">Home</a>
+        
+        <div class="menu-dropdown">
+            <button class="menu-tab-link">About Us ▾</button>
+            <div class="dropdown-overlay-box">
+                <a href="?view=Overview" target="_self">Overview</a>
+                <a href="?view=Founder" target="_self">Founder</a>
+            </div>
+        </div>
+        
+        <div class="menu-dropdown">
+            <button class="menu-tab-link">Services ▾</button>
+            <div class="dropdown-overlay-box">
+                <a href="?view=Cardiology" target="_self">Cardiology</a>
+                <a href="?view=Ophthalmology" target="_self">Ophthalmology</a>
+                <a href="?view=GI" target="_self">GI</a>
+                <a href="?view=Oncology" target="_self">Oncology</a>
+                <a href="?view=Dermatology" target="_self">Dermatology</a>
+                <a href="?view=Orthopedic" target="_self">Orthopedic</a>
+                <a href="?view=Mental_Behavioral" target="_self">Mental & Behavioral Health</a>
+            </div>
+        </div>
+        
+        <a class="menu-tab-link" href="mailto:operations@masterhealth.us?subject=Free Consultation Request">Free Consultation</a>
+        <a class="menu-tab-link" href="mailto:info@masterhealth.us?subject=Corporate Inquiry">Contact</a>
+    </div>
 </div>
-""", unsafe_allow_html=True)
+"""
 
-# Navigation Row Layout
-nav_col1, nav_col2, nav_col3, nav_col4, nav_col5 = st.columns([1.2, 2.0, 3.2, 2.2, 1.2])
+# Send clean variable to Streamlit parser safely
+st.markdown(navbar_html_content, unsafe_allow_html=True)
 
-with nav_col1:
-    go_home = st.button("Home", key="btn_home_nav", use_container_width=True)
+# Detect state parameters
+current_view = st.query_params.get("view", "Home")
 
-with nav_col2:
-    about_selection = st.selectbox(
-        "About Us Dropdown",
-        options=["About Us", "Overview", "Founder"],
-        key="drop_about"
-    )
+# ── 3. DYNAMIC CONTENT VIEWS ─────────────────────────────────────────────────
 
-with nav_col3:
-    services_selection = st.selectbox(
-        "Services Dropdown",
-        options=[
-            "Services Offered", "Cardiology", "Ophthalmology", "GI", 
-            "Oncology", "Dermatology", "Orthopedic", "Mental & Behavioral Health"
-        ],
-        key="drop_services"
-    )
-
-with nav_col4:
-    st.markdown('<a class="nav-mail-link" href="mailto:operations@masterhealth.us?subject=Free Consultation Request">Free Consultation</a>', unsafe_allow_html=True)
-
-with nav_col5:
-    st.markdown('<a class="nav-mail-link" href="mailto:info@masterhealth.us?subject=Corporate Inquiry">Contact</a>', unsafe_allow_html=True)
-
-st.markdown("<br><hr style='border:0; border-top:1px solid #F0F2F5; margin-top:-20px;'><br>", unsafe_allow_html=True)
-
-# ── 3. DYNAMIC RENDERING MATRIX ───────────────────────────────────────────────
-
-if go_home:
-    st.session_state.current_view = "Home"
-elif about_selection in ["Overview", "Founder"]:
-    st.session_state.current_view = about_selection
-elif services_selection != "Services Offered":
-    st.session_state.current_view = services_selection
-
-if "current_view" not in st.session_state:
-    st.session_state.current_view = "Home"
-
-if st.session_state.current_view == "Home":
+if current_view == "Home":
     st.markdown("""
     <div class="hero-container">
         <div class="hero-left">
             <h1 class="assembly-title">Your Trusted RCM Partner</h1>
             <p class="assembly-subtitle">Getting paid for the care you deliver shouldn’t be this hard.</p>
-            <br>
             <a href="mailto:operations@masterhealth.us?subject=Free Consultation Request" class="action-btn-link">Speak to an Expert</a>
         </div>
         <div class="hero-right">
@@ -316,19 +357,32 @@ if st.session_state.current_view == "Home":
     with c3:
         st.markdown('<div class="corporate-card"><div class="card-heading">🎓 Certified Professional Coders</div><div class="card-text">All charge routing and documentation checks are overlooked by specialists holding formal credentials (AAPC/AHIMA), ensuring accurate modifier tracking for multi-specialty practices.</div></div>', unsafe_allow_html=True)
 
-elif st.session_state.current_view == "Overview":
-    st.markdown('<p class="hero-title">Corporate Overview</p>', unsafe_allow_html=True)
+elif current_view == "Overview":
+    st.markdown('<p class="hero-title" style="margin-top:60px;">Corporate Overview</p>', unsafe_allow_html=True)
     st.markdown('<p class="hero-subtitle">Master Health delivers institutional-grade revenue operation infrastructures engineered specifically to shield modern medical groups from overhead bloat, structural coding errors, and clearinghouse audit friction.</p>', unsafe_allow_html=True)
 
-elif st.session_state.current_view == "Founder":
-    st.markdown('<p class="hero-title">Executive Leadership</p>', unsafe_allow_html=True)
+elif current_view == "Founder":
+    st.markdown('<p class="hero-title" style="margin-top:60px;">Executive Leadership</p>', unsafe_allow_html=True)
     st.markdown('<p class="hero-subtitle">Driven by advanced clinical, technical, and compliance insights, our executive framework bridges the gap between domestic clinical operations and secure high-efficiency processing systems.</p>', unsafe_allow_html=True)
 
 else:
-    st.markdown(f'<p class="hero-title">{st.session_state.current_view} RCM Solutions</p>', unsafe_allow_html=True)
-    st.markdown(f'<p class="hero-subtitle">Dedicated revenue cycle management workflows configured specifically to handle the structural modifiers, provider schedules, and payer rules engines unique to {st.session_state.current_view} medical practices.</p>', unsafe_allow_html=True)
+    # Handle Medical Specialties Views cleanly
+    clean_title = current_view.replace("_", " & ")
+    st.markdown(f'<p class="hero-title" style="margin-top:60px;">{clean_title} Revenue Management</p>', unsafe_allow_html=True)
+    st.markdown(f'<p class="hero-subtitle">Master Health provides tailored billing guidelines, claim scrubbing sub-routines, and optimization protocols built explicitly to support institutional practices specializing in {clean_title}.</p>', unsafe_allow_html=True)
+    
+    st.markdown(f"""
+    <div class="corporate-card" style="border-top: 4px solid #1F7A8C;">
+        <div class="card-heading">{clean_title} Workflow Optimization Metrics</div>
+        <div class="card-text" style="line-height:2;">
+            • Specialized ICD-10 crosswalk monitoring ensuring error-free documentation posting.<br>
+            • Proactive modifier verification (e.g., global procedural surgical timelines).<br>
+            • Persistent aging follow-up loops targeted toward discipline-specific commercial insurance policies.
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
-# ── 4. ENTERPRISE FOOTER STRUCTURE WITH UPDATED SPECIALTIES ─────────────────
+# ── 4. ENTERPRISE FOOTER MATRIX ────────────────────────────────────────────────
 st.markdown("""
 <div class="enterprise-footer">
     <div class="footer-content">
@@ -340,6 +394,7 @@ st.markdown("""
             <div class="footer-header">Solutions</div>
             <div class="footer-item">End-to-End Billing</div>
             <div class="footer-item">Denial Optimization</div>
+            <div class="footer-item">Payer Fee Auditing</div>
         </div>
         <div class="footer-links-column">
             <div class="footer-header">Expertise</div>
@@ -355,6 +410,7 @@ st.markdown("""
             <div class="footer-header">Contact & Info</div>
             <div class="footer-item">info@masterhealth.us</div>
             <div class="footer-item">San Ramon, California</div>
+            <div class="footer-item" style="color: #00D4B2; font-size:12px; margin-top:10px;">🔒 HIPAA Compliant Network</div>
         </div>
     </div>
     <div class="footer-bottom">
