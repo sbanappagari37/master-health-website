@@ -1,6 +1,6 @@
 import streamlit as st
 
-# ── 1. GLOBAL INITIALIZATION & REGULATORY DESIGN TOKENS ─────────────────────
+# ── 1. GLOBAL INITIALIZATION & DESIGN OVERRIDES ──────────────────────────────────
 st.set_page_config(
     page_title="Master Health | Enterprise Revenue Cycle Management", 
     page_icon="🏦", 
@@ -8,7 +8,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Global CSS Master Layer for High-End Pure-Web Aesthetics
+# Global CSS Overrides Block
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -18,11 +18,11 @@ st.markdown("""
         background-color: #FFFFFF !important;
     }
     
-    /* Strict eradication of app infrastructure watermarks and padding rails */
+    /* Strip native dashboard properties */
     [data-testid="stSidebar"] { display: none !important; }
     [data-testid="stSidebarCollapsedControl"] { display: none !important; }
     header { visibility: hidden !important; height: 0px !important; }
-    footer { visibility: hidden !important; height: 0px !important; }
+    footer { visibility: hidden !important; }
     [data-testid="stHeader"] { display: none !important; }
     
     .block-container {
@@ -97,7 +97,7 @@ st.markdown("""
         color: #1F7A8C !important;
     }
     
-    /* Popover Dropdown Styling */
+    /* Popover Dropdown Boxes */
     .dropdown-overlay-box {
         display: none;
         position: absolute;
@@ -132,7 +132,7 @@ st.markdown("""
         color: #1F7A8C !important;
     }
     
-    /* ── PREMIUM CORPORATE HERO SPLIT (ASSEMBLY REPLICATION) ── */
+    /* ── PREMIUM CORPORATE HERO SPLIT ── */
     .hero-container {
         display: flex;
         justify-content: space-between;
@@ -185,10 +185,8 @@ st.markdown("""
         padding: 15px 32px !important;
         border-radius: 6px !important;
         text-decoration: none !important;
-        box-shadow: 0px 4px 10px rgba(45, 156, 219, 0.2);
     }
     
-    /* Content Components */
     .section-title {
         color: #0A2540;
         font-size: 28px;
@@ -254,55 +252,4 @@ st.markdown("""
     
     .footer-tagline {
         color: #93A0AD;
-        font-size: 14px;
-        max-width: 280px;
-    }
-    
-    .footer-links-column {
-        flex: 1;
-        min-width: 170px;
-    }
-    
-    .footer-header {
-        color: #1F7A8C;
-        font-size: 13px;
-        font-weight: 700;
-        text-transform: uppercase;
-        margin-bottom: 18px;
-    }
-    
-    .footer-item {
-        color: #93A0AD;
-        font-size: 14px;
-        margin-bottom: 12px;
-    }
-    
-    .footer-bottom {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding-top: 30px;
-        display: flex;
-        justify-content: space-between;
-        color: #637381;
-        font-size: 12.5px;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-# ── 2. RENDER PURE-HTML NAVIGATION ROW ───────────────────────────────────────
-st.markdown("""
-<div class="premium-navbar">
-    <div class="nav-brand-wrapper">
-        <a href="?view=Home" class="nav-brand-main" target="_self">Master Health</a>
-        <div class="nav-brand-sub">Enterprise Revenue Operations</div>
-    </div>
-    <div class="nav-menu-links">
-        <a href="?view=Home" class="menu-tab-link" target="_self">Home</a>
-        
-        <div class="menu-dropdown">
-            <button class="menu-tab-link">About Us ▾</button>
-            <div class="dropdown-overlay-box">
-                <a href="?view=Overview" target="_self">Overview</a>
-                <a href="?view=Founder" target="_self">Founder</a>
-            </div>
-        </div>
+        font-size
