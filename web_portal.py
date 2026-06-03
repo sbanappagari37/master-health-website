@@ -1,6 +1,6 @@
 import streamlit as st
 
-# ── 1. GLOBAL INITIALIZATION & DESIGN OVERRIDES ──────────────────────────────────
+# ── 1. GLOBAL INITIALIZATION & REPLICATED DESIGN TOKENS ─────────────────────
 st.set_page_config(
     page_title="Master Health | Enterprise Revenue Cycle Management", 
     page_icon="🏦", 
@@ -8,8 +8,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# ── 2. UNIFIED STYLING & HORIZONTAL NAVBAR LAYER ────────────────────
-# Combining the CSS and HTML structures guarantees simultaneous browser rendering
+# Global CSS Master Layer for Exprimunt-Style Web Canvas Flow
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -19,7 +18,7 @@ st.markdown("""
         background-color: #FFFFFF !important;
     }
     
-    /* Eradicate native Streamlit headers, footers, and sidebars */
+    /* Strict eradication of app infrastructure sidebars and padding rails */
     [data-testid="stSidebar"] { display: none !important; }
     [data-testid="stSidebarCollapsedControl"] { display: none !important; }
     header { visibility: hidden !important; height: 0px !important; }
@@ -32,7 +31,7 @@ st.markdown("""
         max-width: 1200px !important;
     }
     
-    /* HORIZONTAL NAVIGATION BAR HEADER */
+    /* ── COMPLETE PURE-WEB HORIZONTAL NAVIGATION HEADER ── */
     .premium-navbar {
         display: flex;
         justify-content: space-between;
@@ -72,7 +71,7 @@ st.markdown("""
         gap: 4px;
     }
     
-    /* Custom Dropdown Triggers */
+    /* Dropdown Architecture */
     .menu-dropdown {
         position: relative;
         display: inline-block;
@@ -133,7 +132,7 @@ st.markdown("""
         color: #1F7A8C !important;
     }
     
-    /* CORPORATE HERO GRIDS */
+    /* ── CORPORATE SECTION STRIPS (EXPRIMUNT RENDERING) ── */
     .hero-container {
         display: flex;
         justify-content: space-between;
@@ -142,18 +141,15 @@ st.markdown("""
         background-color: #FFFFFF;
         gap: 60px;
     }
-    
     .hero-left {
         flex: 1.1;
         max-width: 560px;
     }
-    
     .hero-right {
         flex: 0.9;
         display: flex;
         justify-content: flex-end;
     }
-    
     .assembly-title {
         color: #111111;
         font-size: 58px;
@@ -162,7 +158,6 @@ st.markdown("""
         letter-spacing: -1.5px;
         margin-bottom: 22px;
     }
-    
     .assembly-subtitle {
         color: #333333;
         font-size: 19px;
@@ -170,13 +165,11 @@ st.markdown("""
         line-height: 1.55;
         margin-bottom: 35px;
     }
-    
     .hero-img-frame {
         width: 100%;
         max-width: 520px;
         border-radius: 6px;
     }
-    
     .action-btn-link {
         display: inline-block;
         background-color: #2D9CDB !important;
@@ -187,14 +180,32 @@ st.markdown("""
         border-radius: 6px !important;
         text-decoration: none !important;
     }
+
+    /* Full bleed banner panels */
+    .section-block-grey {
+        background-color: #F8F9FA;
+        padding: 80px 40px;
+        margin-left: -200px;
+        margin-right: -200px;
+        border-top: 1px solid #EAEAEA;
+        border-bottom: 1px solid #EAEAEA;
+    }
+    .inner-content-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
     
     .section-title {
         color: #0A2540;
-        font-size: 28px;
+        font-size: 32px;
         font-weight: 700;
-        margin-top: 40px;
-        margin-bottom: 25px;
+        margin-bottom: 15px;
         letter-spacing: -0.5px;
+    }
+    .section-tagline {
+        color: #637381;
+        font-size: 16px;
+        margin-bottom: 40px;
     }
     
     .corporate-card {
@@ -206,21 +217,27 @@ st.markdown("""
         height: 100%;
         margin-bottom: 20px;
     }
-    
     .card-heading {
         color: #0A2540;
-        font-size: 19px;
+        font-size: 20px;
         font-weight: 600;
         margin-bottom: 12px;
     }
-    
     .card-text {
         color: #637381;
         font-size: 14.5px;
         line-height: 1.65;
     }
+
+    /* Process Flow Timeline Numbers */
+    .flow-step-num {
+        font-size: 44px;
+        font-weight: 700;
+        color: rgba(31, 122, 140, 0.15);
+        margin-bottom: -10px;
+    }
     
-    /* CORPORATE DEEP FOOTER */
+    /* ── DEEP FOOTER MATRIX ── */
     .enterprise-footer {
         background-color: #0A2540;
         color: #FFFFFF;
@@ -229,7 +246,6 @@ st.markdown("""
         margin-left: -200px;
         margin-right: -200px;
     }
-    
     .footer-content {
         max-width: 1200px;
         margin: 0 auto;
@@ -239,29 +255,24 @@ st.markdown("""
         border-bottom: 1px solid rgba(255,255,255,0.08);
         padding-bottom: 45px;
     }
-    
     .footer-brand-column {
         flex: 1.4;
         min-width: 260px;
     }
-    
     .footer-logo {
         font-size: 23px;
         font-weight: 700;
         margin-bottom: 12px;
     }
-    
     .footer-tagline {
         color: #93A0AD;
         font-size: 14px;
         max-width: 280px;
     }
-    
     .footer-links-column {
         flex: 1;
         min-width: 170px;
     }
-    
     .footer-header {
         color: #1F7A8C;
         font-size: 13px;
@@ -269,13 +280,11 @@ st.markdown("""
         text-transform: uppercase;
         margin-bottom: 18px;
     }
-    
     .footer-item {
         color: #93A0AD;
         font-size: 14px;
         margin-bottom: 12px;
     }
-    
     .footer-bottom {
         max-width: 1200px;
         margin: 0 auto;
@@ -322,12 +331,13 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-# Track active view variables directly through query tokens
+# Capture view router parameters safely
 current_view = st.query_params.get("view", "Home")
 
 # ── 3. DYNAMIC CONTENT RENDERING MODULES ─────────────────────────────────────
 
 if current_view == "Home":
+    # SECTION 1: Asymmetric Hero Canvas Block
     st.markdown("""
     <div class="hero-container">
         <div class="hero-left">
@@ -341,25 +351,66 @@ if current_view == "Home":
     </div>
     """, unsafe_allow_html=True)
     
-    st.markdown('<p class="section-title">Institutional Protections & System Adaptability</p>', unsafe_allow_html=True)
+    # SECTION 2: Exprimunt Value Grid Panel
+    st.markdown('<p class="section-title">Why Independent Groups Choose Master Health</p>', unsafe_allow_html=True)
+    st.markdown('<p class="section-tagline">We combine airtight security standards with accelerated reimbursement lifecycles.</p>', unsafe_allow_html=True)
+    
     c1, c2, c3 = st.columns(3)
     with c1:
-        st.markdown('<div class="corporate-card"><div class="card-heading">🔒 Airtight OIG & HIPAA Compliance</div><div class="card-text">Our workflows strictly follow Office of Inspector General (OIG) guidelines. We deploy ongoing chart reviews to catch structural coding errors before they flag clearinghouse audits.</div></div>', unsafe_allow_html=True)
+        st.markdown('<div class="corporate-card"><div class="card-heading">🔒 Airtight HIPAA Vaults</div><div class="card-text">Our workflows strictly follow Office of Inspector General (OIG) guidelines. We deploy ongoing chart reviews to catch structural coding errors before they flag clearinghouse audits.</div></div>', unsafe_allow_html=True)
     with c2:
-        st.markdown('<div class="corporate-card"><div class="card-heading">💻 Technology-Agnostic Framework</div><div class="card-text">We work directly inside your existing PM or EHR system. Whether your group utilizes Athenahealth, eClinicalWorks, AdvancedMD, or Epic, our teams log in via secure, encrypted pathways.</div></div>', unsafe_allow_html=True)
+        st.markdown('<div class="corporate-card"><div class="card-heading">💻 Technology-Agnostic</div><div class="card-text">We work directly inside your existing PM or EHR system. Whether your group utilizes Athenahealth, eClinicalWorks, AdvancedMD, or Epic, our teams log in via secure, encrypted pathways.</div></div>', unsafe_allow_html=True)
     with c3:
-        st.markdown('<div class="corporate-card"><div class="card-heading">🎓 Certified Professional Coders</div><div class="card-text">All charge routing and documentation checks are overlooked by specialists holding formal credentials (AAPC/AHIMA), ensuring accurate modifier tracking for multi-specialty practices.</div></div>', unsafe_allow_html=True)
+        st.markdown('<div class="corporate-card"><div class="card-heading">🎓 AAPC Certified Experts</div><div class="card-text">All charge routing and documentation checks are overlooked by specialists holding formal credentials (AAPC/AHIMA), ensuring accurate modifier tracking for multi-specialty practices.</div></div>', unsafe_allow_html=True)
+
+    # SECTION 3: Full Bleed Operational Process Step Loop
+    st.markdown("""
+    <div class="section-block-grey">
+        <div class="inner-content-wrapper">
+            <p class="section-title" style="text-align:center;">Our 4-Stage Revenue Optimization Framework</p>
+            <p class="section-tagline" style="text-align:center; margin-bottom:50px;">A relentless workflow cycle built to identify documentation leakage points and accelerate processing speed.</p>
+    """, unsafe_allow_html=True)
+    
+    p1, p2, p3, p4 = st.columns(4)
+    with p1:
+        st.markdown('<div class="corporate-card"><div class="flow-step-num">01</div><div class="card-heading">Intake Audit</div><div class="card-text">Encounter checks and verification of insurance configurations to eliminate front-end clearinghouse rejections.</div></div>', unsafe_allow_html=True)
+    with p2:
+        st.markdown('<div class="corporate-card"><div class="flow-step-num">02</div><div class="flow-step-num"></div><div class="card-heading">Scrub & Code</div><div class="card-text">Line-by-line validation of specialty coding and modifier rules before routing to clearinghouses.</div></div>', unsafe_allow_html=True)
+    with p3:
+        st.markdown('<div class="corporate-card"><div class="flow-step-num">03</div><div class="card-heading">Payment Post</div><div class="card-text">Line item allocation of incoming ERAs against localized payer fee directories to capture underpayments.</div></div>', unsafe_allow_html=True)
+    with p4:
+        st.markdown('<div class="corporate-card"><div class="flow-step-num">04</div><div class="card-heading">A/R Recovery</div><div class="card-text">Persistent, structured follow-up campaigns targeting outstanding balances past the 30 and 60-day thresholds.</div></div>', unsafe_allow_html=True)
+        
+    st.markdown('</div></div>', unsafe_allow_html=True) # Close gray block container
 
 elif current_view == "Overview":
     st.markdown('<p class="hero-title" style="margin-top:60px;">Corporate Overview</p>', unsafe_allow_html=True)
     st.markdown('<p class="hero-subtitle">Master Health delivers institutional-grade revenue operation infrastructures engineered specifically to shield modern medical groups from overhead bloat, structural coding errors, and clearinghouse audit friction.</p>', unsafe_allow_html=True)
 
+# SECTION 4: Reconfigured Leadership Viewport (Reduced to 1 Profile: Dr. Sashi)
 elif current_view == "Founder":
     st.markdown('<p class="hero-title" style="margin-top:60px;">Executive Leadership</p>', unsafe_allow_html=True)
-    st.markdown('<p class="hero-subtitle">Driven by advanced clinical, technical, and compliance insights, our executive framework bridges the gap between domestic clinical operations and secure high-efficiency processing systems.</p>', unsafe_allow_html=True)
+    st.markdown('<p class="hero-subtitle">Driven by advanced clinical, technical, and compliance insights, our corporate structure isolates administrative overhead and establishes high-efficiency processing tunnels.</p>', unsafe_allow_html=True)
+    
+    lead_col1, lead_col2 = st.columns([1, 2])
+    with lead_col1:
+        st.markdown('<img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=400&q=80" style="width:100%; border-radius:8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">', unsafe_allow_html=True)
+    with lead_col2:
+        st.markdown("""
+        <div class="corporate-card" style="height:100%;">
+            <div class="card-heading" style="font-size:24px; color:#0A2540; margin-bottom:4px;">Dr. Sashi</div>
+            <div class="card-text" style="color:#1F7A8C; font-weight:600; font-size:15px; margin-bottom:20px; text-transform:uppercase;">Founder & Chief Executive</div>
+            <div class="card-text" style="font-size:15.5px; line-height:1.8; color:#333333;">
+                Dr. Sashi establishes the overarching vision, corporate strategy, and compliance frameworks for Master Health. 
+                With a career built on specialized scientific pathways, operational scaling models, and institutional data governance, 
+                Dr. Sashi designs data infrastructures to handle high-volume billing operations while keeping data pipelines perfectly 
+                isolated under strict HIPAA and OIG parameters.
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
 
 else:
-    # Individual Specialty Page Viewport Fallbacks
+    # Individual Specialty Views
     clean_title = current_view.replace("_", " & ")
     st.markdown(f'<p class="hero-title" style="margin-top:60px;">{clean_title} Revenue Management</p>', unsafe_allow_html=True)
     st.markdown(f'<p class="hero-subtitle">Master Health provides tailored billing guidelines, claim scrubbing sub-routines, and optimization protocols built explicitly to support institutional practices specializing in {clean_title}.</p>', unsafe_allow_html=True)
