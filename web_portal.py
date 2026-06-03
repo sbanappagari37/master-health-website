@@ -1,6 +1,6 @@
 import streamlit as st
 
-# ── 1. PAGE SETUP & STRUCTURAL CANCEL FLAGS ──────────────────────────────────
+# ── 1. GLOBAL INITIALIZATION & DESIGN OVERRIDES ──────────────────────────────────
 st.set_page_config(
     page_title="Master Health | Enterprise Revenue Cycle Management", 
     page_icon="🏦", 
@@ -8,7 +8,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Global CSS Overrides to build hover dropdown mechanics and eliminate dashboard visuals
+# Global CSS Overrides to build a flawless horizontal web header
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -18,7 +18,7 @@ st.markdown("""
         background-color: #FFFFFF !important;
     }
     
-    /* Eliminate structural development borders and native headers */
+    /* Strip native dashboard properties */
     [data-testid="stSidebar"] { display: none !important; }
     [data-testid="stSidebarCollapsedControl"] { display: none !important; }
     header { visibility: hidden !important; height: 0px !important; }
@@ -31,15 +31,15 @@ st.markdown("""
         max-width: 1200px !important;
     }
     
-    /* ── CUSTOM PURE-WEB CORPORATE TOP NAVBAR ── */
-    .header-nav {
+    /* ── COMPLETE PURE-WEB HORIZONTAL NAVIGATION HEADER ── */
+    .premium-navbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 50px 0px 20px 0px; 
         border-bottom: 1px solid #F0F2F5;
         position: relative;
-        z-index: 9999;
+        z-index: 99999 !important;
     }
     .nav-brand {
         color: #0A2540;
@@ -56,97 +56,72 @@ st.markdown("""
         letter-spacing: 0.5px;
     }
     
-    /* Inline Nav Wrapper links list block rules */
-    .nav-links-wrapper {
+    .nav-menu-links {
         display: flex;
         align-items: center;
-        gap: 15px;
+        gap: 8px; /* Strict horizontal row alignment */
     }
     
-    /* ── GENUINE HOVER DROPDOWN INTERACTION CSS ── */
-    .dropdown-container {
+    /* Navigation Items & Dropdown Elements */
+    .menu-dropdown {
         position: relative;
         display: inline-block;
     }
     
-    .nav-item-trigger {
+    .menu-tab-link {
         color: #1A1A1A !important;
         background: transparent;
         border: none;
         padding: 8px 16px;
+        font-family: 'Inter', sans-serif;
         font-weight: 500;
         font-size: 15px;
+        text-decoration: none !important;
         cursor: pointer;
         transition: color 0.2s ease;
         display: flex;
         align-items: center;
         gap: 4px;
     }
-    .nav-item-trigger:hover {
+    .menu-tab-link:hover {
         color: #1F7A8C !important;
     }
     
-    /* The hidden absolute container menu block overlay properties */
-    .dropdown-menu-content {
+    /* Dropdown item overlays overlaying standard layouts layout */
+    .dropdown-overlay-box {
         display: none;
         position: absolute;
         top: 100%;
         left: 0;
         background-color: #FFFFFF;
-        min-width: 240px;
+        min-width: 250px;
         box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
         border: 1px solid #EFEFEF;
         border-radius: 6px;
-        padding: 12px 0px;
-        z-index: 10000;
+        padding: 8px 0px;
+        z-index: 100000 !important;
         margin-top: 5px;
     }
     
-    /* Display dropdown cleanly when user hovers */
-    .dropdown-container:hover .dropdown-menu-content {
+    .menu-dropdown:hover .dropdown-overlay-box {
         display: block;
     }
     
-    /* Individual option item text entries inside the custom layout overlays */
-    .dropdown-menu-content button {
+    .dropdown-overlay-box a {
         display: block !important;
-        width: 100% !important;
-        text-align: left !important;
         padding: 10px 20px !important;
         color: #4A4A4A !important;
-        background: transparent !important;
-        border: none !important;
-        font-size: 14px !important;
+        text-decoration: none !important;
+        font-size: 14.5px !important;
         font-weight: 400 !important;
-        cursor: pointer !important;
         transition: background 0.15s ease, color 0.15s ease !important;
     }
-    .dropdown-menu-content button:hover {
+    .dropdown-overlay-box a:hover {
         background-color: #F8F9FA !important;
         color: #1F7A8C !important;
     }
     
-    /* Active Link Accent Underline Rules */
-    .active-nav-tab {
-        border-bottom: 2px solid #1F7A8C !important;
-        color: #1F7A8C !important;
-        font-weight: 700 !important;
-    }
-    
-    /* External Direct Mail Actions text link rendering formatting setup formulas */
-    .nav-mail-link {
-        color: #1A1A1A !important;
-        text-decoration: none !important;
-        font-weight: 500 !important;
-        font-size: 15px !important;
-        padding: 8px 16px !important;
-        transition: color 0.2s ease !important;
-    }
-    .nav-mail-link:hover {
-        color: #1F7A8C !important;
-    }
-    
-    /* ── REPLICATED HERO SECTION STYLES ── */
+    /* ── CORE COMPONENT CANVAS CARDS ── */
     .hero-container {
         display: flex;
         justify-content: space-between;
@@ -285,68 +260,49 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# Initialize global state variables cleanly
-if "current_view" not in st.session_state:
-    st.session_state.current_view = "Home"
+# ── 2. RENDER STABLE PURE-HTML NAVIGATION ROW ──────────────────────────────────
 
-# ── 2. STATE-PROOF SELECTION CALLBACK INTERCEPTORS ─────────────────────────
-def update_view(target_view):
-    st.session_state.current_view = target_view
-
-# Render Fixed Branding Header Structure
-st.write(f'<div class="header-nav"><div class="nav-brand">Master Health<span>Enterprise Revenue Operations</span></div>', unsafe_allow_html=True)
-
-# Build HTML Multi-Element Navigation Components right across standard columns
-col_blank, col_nav = st.columns([0.4, 0.6])
-
-with col_nav:
-    # Open continuous flex block containing your interactive links
-    st.write('<div class="nav-links-wrapper">', unsafe_allow_html=True)
-    
-    # link 1: Home Button (Native text link mapping)
-    is_home_active = ' active-nav-tab' if st.session_state.current_view == "Home" else ''
-    if st.button("Home", key="nav_home_trigger", help="Go to Homepage"):
-        update_view("Home")
-        st.rerun()
+# Build a unified HTML header code layout where elements are physically locked side-by-side
+st.markdown("""
+<div class="premium-navbar">
+    <div class="nav-brand">Master Health<span>Enterprise Revenue Operations</span></div>
+    <div class="nav-menu-links">
+        <a href="?view=Home" class="menu-tab-link" target="_self">Home</a>
         
-    # Element 2: About Us pure-CSS Hover Container Block
-    st.write("""
-    <div class="dropdown-container">
-        <button class="nav-item-trigger">About Us ▾</button>
-        <div class="dropdown-menu-content">
-    """, unsafe_allow_html=True)
-    if st.button("Overview", key="drop_overview_action"):
-        update_view("Overview")
-        st.rerun()
-    if st.button("Founder", key="drop_founder_action"):
-        update_view("Founder")
-        st.rerun()
-    st.write('</div></div>', unsafe_allow_html=True)
-    
-    # Element 3: Services Offered pure-CSS Hover Container Block
-    st.write("""
-    <div class="dropdown-container">
-        <button class="nav-item-trigger">Services ▾</button>
-        <div class="dropdown-menu-content">
-    """, unsafe_allow_html=True)
-    for specialty in ["Cardiology", "Ophthalmology", "GI", "Oncology", "Dermatology", "Orthopedic", "Mental & Behavioral Health"]:
-        if st.button(specialty, key=f"drop_spec_{specialty}"):
-            update_view(specialty)
-            st.rerun()
-    st.write('</div></div>', unsafe_allow_html=True)
-    
-    # Link 4 & 5: Clickable direct transactional mail actions
-    st.markdown('<a class="nav-mail-link" href="mailto:operations@masterhealth.us?subject=Free Consultation Request">Free Consultation</a>', unsafe_allow_html=True)
-    st.markdown('<a class="nav-mail-link" href="mailto:info@masterhealth.us?subject=Corporate Inquiry">Contact</a>', unsafe_allow_html=True)
-    
-    st.write('</div>', unsafe_allow_html=True) # Close Wrapper Block Container
+        <div class="menu-dropdown">
+            <button class="menu-tab-link">About Us ▾</button>
+            <div class="dropdown-overlay-box">
+                <a href="?view=Overview" target="_self">Overview</a>
+                <a href="?view=Founder" target="_self">Founder</a>
+            </div>
+        </div>
+        
+        <div class="menu-dropdown">
+            <button class="menu-tab-link">Services ▾</button>
+            <div class="dropdown-overlay-box">
+                <a href="?view=Cardiology" target="_self">Cardiology</a>
+                <a href="?view=Ophthalmology" target="_self">Ophthalmology</a>
+                <a href="?view=GI" target="_self">GI</a>
+                <a href="?view=Oncology" target="_self">Oncology</a>
+                <a href="?view=Dermatology" target="_self">Dermatology</a>
+                <a href="?view=Orthopedic" target="_self">Orthopedic</a>
+                <a href="?view=Mental_Behavioral" target="_self">Mental & Behavioral Health</a>
+            </div>
+        </div>
+        
+        <a class="menu-tab-link" href="mailto:operations@masterhealth.us?subject=Free Consultation Request">Free Consultation</a>
+        <a class="menu-tab-link" href="mailto:info@masterhealth.us?subject=Corporate Inquiry">Contact</a>
+    </div>
+</div>
+<br>
+""", unsafe_allow_html=True)
 
-st.write('</div>', unsafe_allow_html=True) # Close Nav Layout Container
-st.markdown("<br>", unsafe_allow_html=True)
+# Read active URL parameter tracking to change screen outputs safely
+current_view = st.query_params.get("view", "Home")
 
-# ── 3. DYNAMIC RENDERING INTERACTIVE VIEWPORTS ───────────────────────────────
+# ── 3. DYNAMIC VIEWPORT GENERATOR ──────────────────────────────────────────────
 
-if st.session_state.current_view == "Home":
+if current_view == "Home":
     st.markdown("""
     <div class="hero-container">
         <div class="hero-left">
@@ -370,20 +326,21 @@ if st.session_state.current_view == "Home":
     with c3:
         st.markdown('<div class="corporate-card"><div class="card-heading">🎓 Certified Professional Coders</div><div class="card-text">All charge routing and documentation checks are overlooked by specialists holding formal credentials (AAPC/AHIMA), ensuring accurate modifier tracking for multi-specialty practices.</div></div>', unsafe_allow_html=True)
 
-elif st.session_state.current_view == "Overview":
+elif current_view == "Overview":
     st.markdown('<p class="hero-title">Corporate Overview</p>', unsafe_allow_html=True)
     st.markdown('<p class="hero-subtitle">Master Health delivers institutional-grade revenue operation infrastructures engineered specifically to shield modern medical groups from overhead bloat, structural coding errors, and clearinghouse audit friction.</p>', unsafe_allow_html=True)
 
-elif st.session_state.current_view == "Founder":
+elif current_view == "Founder":
     st.markdown('<p class="hero-title">Executive Leadership</p>', unsafe_allow_html=True)
     st.markdown('<p class="hero-subtitle">Driven by advanced clinical, technical, and compliance insights, our executive framework bridges the gap between domestic clinical operations and secure high-efficiency processing systems.</p>', unsafe_allow_html=True)
 
 else:
-    # Specialty fallback engine
-    st.markdown(f'<p class="hero-title">{st.session_state.current_view} RCM Solutions</p>', unsafe_allow_html=True)
-    st.markdown(f'<p class="hero-subtitle">Dedicated revenue cycle management workflows configured specifically to handle the structural modifiers, provider schedules, and payer rules engines unique to {st.session_state.current_view} medical practices.</p>', unsafe_allow_html=True)
+    # Specialty text routing filter overrides
+    clean_title = current_view.replace("_", " & ")
+    st.markdown(f'<p class="hero-title">{clean_title} RCM Solutions</p>', unsafe_allow_html=True)
+    st.markdown(f'<p class="hero-subtitle">Dedicated revenue cycle management workflows configured specifically to handle the structural modifiers, provider schedules, and payer rules engines unique to {clean_title} medical practices.</p>', unsafe_allow_html=True)
 
-# ── 4. ENTERPRISE FOOTER STRUCTURE WITH UPDATED SPECIALTIES ─────────────────
+# ── 4. ENTERPRISE FOOTER MATRIX ────────────────────────────────────────────────
 st.markdown("""
 <div class="enterprise-footer">
     <div class="footer-content">
