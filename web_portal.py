@@ -14,7 +14,7 @@ st.markdown("""
     
     html, body, [data-testid="stAppViewContainer"] {
         font-family: 'Inter', sans-serif;
-        background-color: #FAFAFA !important;
+        background-color: #FFFFFF !important;
     }
     
     [data-testid="stSidebar"] { display: none !important; }
@@ -29,13 +29,14 @@ st.markdown("""
         max-width: 1200px !important;
     }
     
+    /* ── CUSTOM REPLICATED TOP NAVBAR ── */
     .header-nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 65px 0px 20px 0px; 
-        margin-bottom: 20px;
-        border-bottom: 1px solid #EAEAEA;
+        padding: 50px 0px 20px 0px; 
+        margin-bottom: 0px;
+        border-bottom: 1px solid #F0F2F5;
     }
     .nav-brand {
         color: #0A2540;
@@ -52,9 +53,10 @@ st.markdown("""
         letter-spacing: 0.5px;
     }
 
+    /* Minimalist text button links override */
     div[data-testid="stButton"] button {
         background-color: transparent !important;
-        color: #637381 !important;
+        color: #1A1A1A !important;
         border: none !important;
         padding: 8px 16px !important;
         font-weight: 500 !important;
@@ -67,33 +69,73 @@ st.markdown("""
         background-color: transparent !important;
     }
     div[data-testid="stButton"] button[kind="primary"] {
-        color: #0A2540 !important;
+        color: #1F7A8C !important;
         font-weight: 700 !important;
         border-bottom: 2px solid #1F7A8C !important;
         border-radius: 0px !important;
     }
     
-    .hero-title {
-        color: #0A2540;
-        font-size: 46px;
-        font-weight: 700;
-        line-height: 1.15;
-        letter-spacing: -1px;
-        margin-bottom: 18px;
+    /* ── ASYMMETRIC ASSEMBLY-STYLE HERO GRID ── */
+    .hero-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 80px 0px;
+        background-color: #FFFFFF;
+        gap: 40px;
     }
-    .hero-subtitle {
-        color: #637381;
-        font-size: 19px;
+    .hero-left {
+        flex: 1.1;
+        max-width: 550px;
+    }
+    .hero-right {
+        flex: 0.9;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .assembly-title {
+        color: #111111;
+        font-size: 56px;
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -1.5px;
+        margin-bottom: 24px;
+    }
+    .assembly-subtitle {
+        color: #222222;
+        font-size: 18px;
         font-weight: 400;
         line-height: 1.5;
-        max-width: 900px;
-        margin-bottom: 40px;
+        margin-bottom: 35px;
     }
+    .hero-img-frame {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 4px;
+    }
+    
+    /* Premium Action Button Custom CSS */
+    .action-btn-link {
+        display: inline-block;
+        background-color: #2D9CDB !important;
+        color: #FFFFFF !important;
+        font-weight: 600 !important;
+        font-size: 15px !important;
+        padding: 14px 28px !important;
+        border-radius: 6px !important;
+        text-decoration: none !important;
+        transition: background-color 0.2s ease !important;
+    }
+    .action-btn-link:hover {
+        background-color: #1F7A8C !important;
+    }
+    
+    /* Sub-section details */
     .section-title {
         color: #0A2540;
         font-size: 28px;
         font-weight: 700;
-        margin-top: 50px;
+        margin-top: 60px;
         margin-bottom: 25px;
         letter-spacing: -0.5px;
     }
@@ -217,20 +259,22 @@ st.markdown("""
 # ── 2. INDEPENDENT MODULAR CONTENT PAGES ──────────────────────────────────────────
 
 def render_home():
-    st.markdown('<p class="hero-title">Airtight Compliance & Optimized Cash Flow For Independent Practices</p>', unsafe_allow_html=True)
-    st.markdown('<p class="hero-subtitle">Master Health delivers institutional-grade medical billing solutions. By combining rigorous compliance metrics with a specialized 24/7 delivery force, we shield your practice from revenue leakage and audit vulnerabilities.</p>', unsafe_allow_html=True)
-    st.markdown('<img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80" style="width:100%; border-radius:8px; margin-bottom:40px;">', unsafe_allow_html=True)
+    # Asymmetric HTML grid replication layout matching image_0420de.jpg exactly
+    st.markdown("""
+    <div class="hero-container">
+        <div class="hero-left">
+            <h1 class="assembly-title">Your Trusted RCM Partner</h1>
+            <p class="assembly-subtitle">Getting paid for the care you deliver shouldn’t be this hard.</p>
+            <br>
+            <a href="#" class="action-btn-link" onclick="document.getElementById('nav_c').click();">Speak to an Expert</a>
+        </div>
+        <div class="hero-right">
+            <img class="hero-img-frame" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80">
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
-    m1, m2, m3, m4 = st.columns(4)
-    with m1:
-        st.markdown('<div class="metric-wrapper"><p class="metric-num">$5M+</p><p class="metric-lbl">Claims Managed</p></div>', unsafe_allow_html=True)
-    with m2:
-        st.markdown('<div class="metric-wrapper"><p class="metric-num">98.2%</p><p class="metric-lbl">Target Clean Claim Rate</p></div>', unsafe_allow_html=True)
-    with m3:
-        st.markdown('<div class="metric-wrapper"><p class="metric-num">&lt; 30</p><p class="metric-lbl">Avg Days in A/R Goal</p></div>', unsafe_allow_html=True)
-    with m4:
-        st.markdown('<div class="metric-wrapper"><p class="metric-num">HIPAA</p><p class="metric-lbl">Compliant Data Tunnels</p></div>', unsafe_allow_html=True)
-        
+    # Core Institutional Details Section Below Hero Canvas
     st.markdown('<p class="section-title">Institutional Protections & System Adaptability</p>', unsafe_allow_html=True)
     c1, c2, c3 = st.columns(3)
     with c1:
@@ -317,14 +361,14 @@ routing_matrix = {
 if "active_view" not in st.session_state:
     st.session_state.active_view = "Home & Compliance"
 
-# Header Title Layout
+# Header Brand Top Bar Layout
 st.markdown("""
 <div class="header-nav">
     <div class="nav-brand">Master Health<span>Enterprise Revenue Operations</span></div>
 </div>
 """, unsafe_allow_html=True)
 
-# Fixed Column Proportions with perfectly balanced layout properties
+# Generate header navigation buttons rows with precise column allocations
 nav1, nav2, nav3, nav4, nav5 = st.columns([2.0, 2.3, 2.3, 2.8, 1.6])
 with nav1:
     if st.button("Home & Compliance", key="nav_h", use_container_width=True, type="primary" if st.session_state.active_view == "Home & Compliance" else "secondary"):
