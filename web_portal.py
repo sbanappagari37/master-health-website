@@ -238,7 +238,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Fixed Column Proportions to ensure full clickability on all nav options
+# Navigation Row Columns
 nav1, nav2, nav3, nav4, nav5 = st.columns([2.0, 2.3, 2.3, 2.8, 1.6])
 with nav1:
     if st.button("Home & Compliance", key="btn_home", use_container_width=True, type="primary" if st.session_state.current_page == "Home & Compliance" else "secondary"):
@@ -264,7 +264,6 @@ if st.session_state.current_page == "Home & Compliance":
     st.markdown('<p class="hero-title">Airtight Compliance & Optimized Cash Flow For Independent Practices</p>', unsafe_allow_html=True)
     st.markdown('<p class="hero-subtitle">Master Health delivers institutional-grade medical billing solutions. By combining rigorous compliance metrics with a specialized 24/7 delivery force, we shield your practice from revenue leakage and audit vulnerabilities.</p>', unsafe_allow_html=True)
     
-    # Secure, stable fallback-safe image rendering
     st.markdown('<img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80" style="width:100%; border-radius:8px; margin-bottom:40px;">', unsafe_allow_html=True)
 
     # Premium Metrics Row
