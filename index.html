@@ -190,6 +190,13 @@
       transition: background .12s, color .12s;
     }
     .dropdown a:hover { background: var(--accent); color: var(--teal); }
+    .dropdown a:hover span { color: var(--teal); }
+    /* Tall dropdown scroll */
+    .nav-item .dropdown {
+      max-height: 85vh;
+      overflow-y: auto;
+      scrollbar-width: thin;
+    }
 
     /* nav CTA */
     .nav-cta { display: flex; align-items: center; gap: 10px; }
@@ -839,16 +846,43 @@
       </li>
       <li class="nav-item">
         <button id="nav-services">Services <span class="chevron"></span></button>
-        <div class="dropdown" style="min-width:260px;">
-          <a onclick="showPage('rcm')">Revenue Cycle Management (RCM)</a>
-          <a onclick="showPage('svc-medical-billing')">Medical Billing</a>
-          <a onclick="showPage('svc-physician-billing')">Physician Billing</a>
-          <a onclick="showPage('svc-medical-coding')">Medical Coding</a>
-          <a onclick="showPage('svc-charge-posting')">Charge Posting</a>
-          <a onclick="showPage('svc-payment-posting')">Payment Posting</a>
-          <a onclick="showPage('svc-denial-management')">Denial Management</a>
-          <a onclick="showPage('svc-accounts-receivable')">Accounts Receivable</a>
-          <a onclick="showPage('svc-lab-billing')">Laboratory Billing</a>
+        <div class="dropdown" style="min-width:440px;padding:12px 0;">
+          <a onclick="showPage('rcm')" style="padding:12px 20px;display:block;">
+            <span style="font-weight:700;color:var(--navy);font-size:.92rem;display:block;margin-bottom:3px;">Revenue Cycle Management (RCM)</span>
+            <span style="font-size:.8rem;color:var(--mid);font-weight:400;line-height:1.5;display:block;">End-to-end management of your entire revenue cycle from charge capture to final payment. We streamline every step to reduce denials, accelerate cash flow, and maximize collections.</span>
+          </a>
+          <a onclick="showPage('svc-medical-billing')" style="padding:12px 20px;display:block;">
+            <span style="font-weight:700;color:var(--navy);font-size:.92rem;display:block;margin-bottom:3px;">Medical Billing</span>
+            <span style="font-size:.8rem;color:var(--mid);font-weight:400;line-height:1.5;display:block;">Accurate, compliant claim submission across all payer types and specialties. Our 95%+ clean claim rate means faster payments and fewer denials for your practice.</span>
+          </a>
+          <a onclick="showPage('svc-physician-billing')" style="padding:12px 20px;display:block;">
+            <span style="font-weight:700;color:var(--navy);font-size:.92rem;display:block;margin-bottom:3px;">Physician Billing</span>
+            <span style="font-size:.8rem;color:var(--mid);font-weight:400;line-height:1.5;display:block;">Specialized billing tailored to physician practices with payer-specific rules, E/M guidelines, and modifier logic applied to every claim. We scale to fit solo or multi-physician groups.</span>
+          </a>
+          <a onclick="showPage('svc-medical-coding')" style="padding:12px 20px;display:block;">
+            <span style="font-weight:700;color:var(--navy);font-size:.92rem;display:block;margin-bottom:3px;">Medical Coding</span>
+            <span style="font-size:.8rem;color:var(--mid);font-weight:400;line-height:1.5;display:block;">Certified ICD-10, CPT, and HCPCS coding across all major specialties. Our credentialed coders ensure every service is captured accurately and every claim is audit-ready.</span>
+          </a>
+          <a onclick="showPage('svc-charge-posting')" style="padding:12px 20px;display:block;">
+            <span style="font-weight:700;color:var(--navy);font-size:.92rem;display:block;margin-bottom:3px;">Charge Posting</span>
+            <span style="font-size:.8rem;color:var(--mid);font-weight:400;line-height:1.5;display:block;">Timely capture of all billable services from encounter documentation, preventing revenue leakage at the source. Our workflows integrate with your EHR for same-day turnaround.</span>
+          </a>
+          <a onclick="showPage('svc-payment-posting')" style="padding:12px 20px;display:block;">
+            <span style="font-weight:700;color:var(--navy);font-size:.92rem;display:block;margin-bottom:3px;">Payment Posting</span>
+            <span style="font-size:.8rem;color:var(--mid);font-weight:400;line-height:1.5;display:block;">Rapid, accurate posting of all insurance and patient payments with full reconciliation. We flag underpayments immediately and maintain a clean audit trail with daily posting cycles.</span>
+          </a>
+          <a onclick="showPage('svc-denial-management')" style="padding:12px 20px;display:block;">
+            <span style="font-weight:700;color:var(--navy);font-size:.92rem;display:block;margin-bottom:3px;">Denial Management</span>
+            <span style="font-size:.8rem;color:var(--mid);font-weight:400;line-height:1.5;display:block;">Systematic identification, appeal, and resolution of denied claims to recover lost revenue. We fix root causes — not just individual claims — reducing your denial rate over time.</span>
+          </a>
+          <a onclick="showPage('svc-accounts-receivable')" style="padding:12px 20px;display:block;">
+            <span style="font-weight:700;color:var(--navy);font-size:.92rem;display:block;margin-bottom:3px;">Accounts Receivable</span>
+            <span style="font-size:.8rem;color:var(--mid);font-weight:400;line-height:1.5;display:block;">Proactive follow-up on every open balance to keep your days in AR below 40. We pursue even the most difficult aged claims with real-time analytics giving you full visibility.</span>
+          </a>
+          <a onclick="showPage('svc-lab-billing')" style="padding:12px 20px;display:block;">
+            <span style="font-weight:700;color:var(--navy);font-size:.92rem;display:block;margin-bottom:3px;">Laboratory Billing</span>
+            <span style="font-size:.8rem;color:var(--mid);font-weight:400;line-height:1.5;display:block;">High-volume, compliant billing for clinical and reference labs with strict medical necessity validation. We manage code assignment, payer routing, and ABN documentation for every test.</span>
+          </a>
         </div>
       </li>
       <li class="nav-item">
