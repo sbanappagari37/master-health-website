@@ -38,8 +38,8 @@ st.markdown("""
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 45px 0px 20px 0px; /* Increased top padding to clear the floating tag */
-        margin-bottom: 40px;
+        padding: 65px 0px 20px 0px; /* Increased to 65px to safely clear the floating badge */
+        margin-bottom: 30px;
         border-bottom: 1px solid #EAEAEA;
     }
     .nav-brand {
