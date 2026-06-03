@@ -244,8 +244,8 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Navigation Grid
-nav1, nav2, nav3, nav4, nav5 = st.columns([1.5, 1.8, 1.8, 2.2, 3])
+# Navigation Grid with Contact Tab Added
+nav1, nav2, nav3, nav4, nav5 = st.columns([1.5, 1.8, 1.8, 2.2, 1.5])
 with nav1:
     if st.button("Home & Compliance", key="btn_home", use_container_width=True, type="secondary" if st.session_state.current_page != "Home & Compliance" else "primary"):
         set_page("Home & Compliance")
@@ -258,6 +258,9 @@ with nav3:
 with nav4:
     if st.button("ROI & Free Billing Assessment", key="btn_roi", use_container_width=True, type="secondary" if st.session_state.current_page != "ROI & Free Billing Assessment" else "primary"):
         set_page("ROI & Free Billing Assessment")
+with nav5:
+    if st.button("Contact Us", key="btn_contact", use_container_width=True, type="secondary" if st.session_state.current_page != "Contact Us" else "primary"):
+        set_page("Contact Us")
 
 st.markdown("<br>", unsafe_allow_html=True)
 
@@ -267,6 +270,10 @@ if st.session_state.current_page == "Home & Compliance":
     st.markdown('<p class="hero-title">Airtight Compliance & Optimized Cash Flow For Independent Practices</p>', unsafe_allow_html=True)
     st.markdown('<p class="hero-subtitle">Master Health delivers institutional-grade medical billing solutions. By combining rigorous compliance metrics with a specialized 24/7 delivery force, we shield your practice from revenue leakage and audit vulnerabilities.</p>', unsafe_allow_html=True)
     
+    # Hero Image for Home Tab
+    st.image("https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80", use_container_width=True)
+    st.markdown("<br>", unsafe_allow_html=True)
+
     # Premium Metrics Row
     m1, m2, m3, m4 = st.columns(4)
     with m1:
@@ -306,7 +313,6 @@ if st.session_state.current_page == "Home & Compliance":
         </div>
         """, unsafe_allow_html=True)
 
-    # NEW SECTION: SPECIALTY INTEGRATION MATRIX (Like Assembly.health)
     st.markdown('<p class="section-title">Specialty-Specific Revenue Expertise</p>', unsafe_allow_html=True)
     st.markdown('<p class="section-subtitle">We deploy custom rules engines mapped directly to the billing nuances of individual medical specialties.</p>', unsafe_allow_html=True)
     
@@ -337,6 +343,10 @@ elif st.session_state.current_page == "End-to-End RCM Pillars":
     st.markdown('<p class="hero-title">Our Integrated Revenue Operations Ecosystem</p>', unsafe_allow_html=True)
     st.markdown('<p class="hero-subtitle">We manage your administrative footprint across every functional vector of the revenue cycle, minimizing overhead and accelerating collections.</p>', unsafe_allow_html=True)
     
+    # Hero Image for Pillars Tab
+    st.image("https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80", use_container_width=True)
+    st.markdown("<br>", unsafe_allow_html=True)
+
     col1, col2 = st.columns(2)
     with col1:
         st.markdown("""
@@ -373,6 +383,10 @@ elif st.session_state.current_page == "The Onshore Advantage":
     st.markdown('<p class="hero-title">The Onshore Accountability Advantage</p>', unsafe_allow_html=True)
     st.markdown('<p class="hero-subtitle">Many providers struggle when outsourcing due to a breakdown in communication. Master Health bridges this gap completely by wrapping an elite overnight execution engine inside a domestic executive management framework.</p>', unsafe_allow_html=True)
     
+    # Hero Image for Advantage Tab
+    st.image("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80", use_container_width=True)
+    st.markdown("<br>", unsafe_allow_html=True)
+
     col1, col2 = st.columns(2)
     with col1:
         st.markdown("""
@@ -401,6 +415,10 @@ elif st.session_state.current_page == "ROI & Free Billing Assessment":
     st.markdown('<p class="hero-title">Interactive Operational Financial Estimator</p>', unsafe_allow_html=True)
     st.markdown('<p class="hero-subtitle">Review the real economic impact of leakage stabilization based on your standard monthly volumes.</p>', unsafe_allow_html=True)
     
+    # Hero Image for Calculator Tab
+    st.image("https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80", use_container_width=True)
+    st.markdown("<br>", unsafe_allow_html=True)
+
     # Calculator Segment in clean Card Wrapper
     st.markdown('<div class="corporate-card">', unsafe_allow_html=True)
     c1, c2 = st.columns(2)
@@ -413,6 +431,42 @@ elif st.session_state.current_page == "ROI & Free Billing Assessment":
         st.metric(label="Estimated Monthly Revenue Recovery Potential", value=f"${recovered:,.2f}")
         st.metric(label="Projected Annualized Profit Retention Optimization", value=f"${annualized:,.2f}")
     st.markdown('</div>', unsafe_allow_html=True)
+
+elif st.session_state.current_page == "Contact Us":
+    st.markdown('<p class="hero-title">Connect with Our Corporate Team</p>', unsafe_allow_html=True)
+    st.markdown('<p class="hero-subtitle">Speak directly with an expert to review your practice footprint, EHR integration logistics, or compliance guidelines.</p>', unsafe_allow_html=True)
+    
+    # Hero Image for Contact Tab
+    st.image("https://images.unsplash.com/photo-1423662055902-359430b051b7?auto=format&fit=crop&w=1200&q=80", use_container_width=True)
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    con_col1, con_col2 = st.columns(2)
+    with con_col1:
+        st.markdown("""
+        <div class="corporate-card" style="height: 100%;">
+            <div class="card-heading" style="font-size: 22px; color: #0A2540;">Corporate Communication Desk</div><br>
+            <p class="card-text" style="font-size: 16px;">
+                For general corporate inquiries, scheduling onboarding meetings, or executing vendor agreements, reach our operations channel directly at:
+            </p>
+            <h3 style="color: #1F7A8C; font-size: 24px; margin-top: 20px;">✉️ info@masterhealth.us</h3>
+            <br>
+            <p class="card-text" style="color: #637381; font-size: 14px;">
+                📍 <b>Headquarters:</b> San Ramon, California, United States
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with con_col2:
+        st.markdown("""
+        <div class="corporate-card" style="height: 100%;">
+            <div class="card-heading" style="font-size: 22px; color: #0A2540;">Security & Encrypted Intake</div><br>
+            <p class="card-text" style="font-size: 15px; line-height: 1.8;">
+                • <b>Data Tunnels:</b> All communications passing through our infrastructure utilize full TLS encryption protocols.<br>
+                • <b>HIPAA Alignment:</b> Operational execution environments are strictly audited for data isolation rules.<br>
+                • <b>AAPC Rules:</b> Internal data governance oversight complies fully with domestic healthcare security structures.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
 
 # ── 4. BRAND NEW ENTERPRISE FOOTER STRUCTURE ────────────────────────────────
 st.markdown("""
@@ -436,7 +490,7 @@ st.markdown("""
         </div>
         <div class="footer-links-column">
             <div class="footer-header">Contact & Info</div>
-            <div class="footer-item">sashi@masterhealth.us</div>
+            <div class="footer-item">info@masterhealth.us</div>
             <div class="footer-item">San Ramon, California</div>
             <div class="footer-item" style="color: #00D4B2;">🔒 HIPAA Secure Endpoints</div>
         </div>
