@@ -221,12 +221,6 @@ st.markdown("""
         color: #637381;
         font-size: 12px;
     }
-    
-    div[data-testid="stForm"] {
-        border: none !important;
-        background-color: #FFFFFF !important;
-        padding: 0px !important;
-    }
     </style>
     """, unsafe_allow_html=True)
 
@@ -244,22 +238,22 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Navigation Grid with Contact Tab Added
-nav1, nav2, nav3, nav4, nav5 = st.columns([1.5, 1.8, 1.8, 2.2, 1.5])
+# Fixed Column Proportions to ensure full clickability on all nav options
+nav1, nav2, nav3, nav4, nav5 = st.columns([2.0, 2.3, 2.3, 2.8, 1.6])
 with nav1:
-    if st.button("Home & Compliance", key="btn_home", use_container_width=True, type="secondary" if st.session_state.current_page != "Home & Compliance" else "primary"):
+    if st.button("Home & Compliance", key="btn_home", use_container_width=True, type="primary" if st.session_state.current_page == "Home & Compliance" else "secondary"):
         set_page("Home & Compliance")
 with nav2:
-    if st.button("End-to-End RCM Pillars", key="btn_pillars", use_container_width=True, type="secondary" if st.session_state.current_page != "End-to-End RCM Pillars" else "primary"):
+    if st.button("End-to-End RCM Pillars", key="btn_pillars", use_container_width=True, type="primary" if st.session_state.current_page == "End-to-End RCM Pillars" else "secondary"):
         set_page("End-to-End RCM Pillars")
 with nav3:
-    if st.button("The Onshore Advantage", key="btn_model", use_container_width=True, type="secondary" if st.session_state.current_page != "The Onshore Advantage" else "primary"):
+    if st.button("The Onshore Advantage", key="btn_model", use_container_width=True, type="primary" if st.session_state.current_page == "The Onshore Advantage" else "secondary"):
         set_page("The Onshore Advantage")
 with nav4:
-    if st.button("ROI & Free Billing Assessment", key="btn_roi", use_container_width=True, type="secondary" if st.session_state.current_page != "ROI & Free Billing Assessment" else "primary"):
+    if st.button("ROI & Free Billing Assessment", key="btn_roi", use_container_width=True, type="primary" if st.session_state.current_page == "ROI & Free Billing Assessment" else "secondary"):
         set_page("ROI & Free Billing Assessment")
 with nav5:
-    if st.button("Contact Us", key="btn_contact", use_container_width=True, type="secondary" if st.session_state.current_page != "Contact Us" else "primary"):
+    if st.button("Contact Us", key="btn_contact", use_container_width=True, type="primary" if st.session_state.current_page == "Contact Us" else "secondary"):
         set_page("Contact Us")
 
 st.markdown("<br>", unsafe_allow_html=True)
@@ -270,9 +264,8 @@ if st.session_state.current_page == "Home & Compliance":
     st.markdown('<p class="hero-title">Airtight Compliance & Optimized Cash Flow For Independent Practices</p>', unsafe_allow_html=True)
     st.markdown('<p class="hero-subtitle">Master Health delivers institutional-grade medical billing solutions. By combining rigorous compliance metrics with a specialized 24/7 delivery force, we shield your practice from revenue leakage and audit vulnerabilities.</p>', unsafe_allow_html=True)
     
-    # Hero Image for Home Tab
-    st.image("https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80", use_container_width=True)
-    st.markdown("<br>", unsafe_allow_html=True)
+    # Secure, stable fallback-safe image rendering
+    st.markdown('<img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80" style="width:100%; border-radius:8px; margin-bottom:40px;">', unsafe_allow_html=True)
 
     # Premium Metrics Row
     m1, m2, m3, m4 = st.columns(4)
@@ -343,9 +336,7 @@ elif st.session_state.current_page == "End-to-End RCM Pillars":
     st.markdown('<p class="hero-title">Our Integrated Revenue Operations Ecosystem</p>', unsafe_allow_html=True)
     st.markdown('<p class="hero-subtitle">We manage your administrative footprint across every functional vector of the revenue cycle, minimizing overhead and accelerating collections.</p>', unsafe_allow_html=True)
     
-    # Hero Image for Pillars Tab
-    st.image("https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80", use_container_width=True)
-    st.markdown("<br>", unsafe_allow_html=True)
+    st.markdown('<img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80" style="width:100%; border-radius:8px; margin-bottom:40px;">', unsafe_allow_html=True)
 
     col1, col2 = st.columns(2)
     with col1:
@@ -383,9 +374,7 @@ elif st.session_state.current_page == "The Onshore Advantage":
     st.markdown('<p class="hero-title">The Onshore Accountability Advantage</p>', unsafe_allow_html=True)
     st.markdown('<p class="hero-subtitle">Many providers struggle when outsourcing due to a breakdown in communication. Master Health bridges this gap completely by wrapping an elite overnight execution engine inside a domestic executive management framework.</p>', unsafe_allow_html=True)
     
-    # Hero Image for Advantage Tab
-    st.image("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80", use_container_width=True)
-    st.markdown("<br>", unsafe_allow_html=True)
+    st.markdown('<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" style="width:100%; border-radius:8px; margin-bottom:40px;">', unsafe_allow_html=True)
 
     col1, col2 = st.columns(2)
     with col1:
@@ -415,9 +404,7 @@ elif st.session_state.current_page == "ROI & Free Billing Assessment":
     st.markdown('<p class="hero-title">Interactive Operational Financial Estimator</p>', unsafe_allow_html=True)
     st.markdown('<p class="hero-subtitle">Review the real economic impact of leakage stabilization based on your standard monthly volumes.</p>', unsafe_allow_html=True)
     
-    # Hero Image for Calculator Tab
-    st.image("https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80", use_container_width=True)
-    st.markdown("<br>", unsafe_allow_html=True)
+    st.markdown('<img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80" style="width:100%; border-radius:8px; margin-bottom:40px;">', unsafe_allow_html=True)
 
     # Calculator Segment in clean Card Wrapper
     st.markdown('<div class="corporate-card">', unsafe_allow_html=True)
@@ -436,9 +423,7 @@ elif st.session_state.current_page == "Contact Us":
     st.markdown('<p class="hero-title">Connect with Our Corporate Team</p>', unsafe_allow_html=True)
     st.markdown('<p class="hero-subtitle">Speak directly with an expert to review your practice footprint, EHR integration logistics, or compliance guidelines.</p>', unsafe_allow_html=True)
     
-    # Hero Image for Contact Tab
-    st.image("https://images.unsplash.com/photo-1423662055902-359430b051b7?auto=format&fit=crop&w=1200&q=80", use_container_width=True)
-    st.markdown("<br>", unsafe_allow_html=True)
+    st.markdown('<img src="https://images.unsplash.com/photo-1423662055902-359430b051b7?auto=format&fit=crop&w=1200&q=80" style="width:100%; border-radius:8px; margin-bottom:40px;">', unsafe_allow_html=True)
 
     con_col1, con_col2 = st.columns(2)
     with con_col1:
