@@ -146,6 +146,15 @@
     .nav-item > a:hover, .nav-item > button:hover { background: var(--accent); color: var(--teal); }
     .nav-item > a.active-link, .nav-item > button.active-link { color: var(--teal); font-weight: 600; }
 
+    /* Green button-style nav tab */
+    .nav-item > a.nav-btn {
+      background: var(--teal);
+      color: var(--white);
+      font-weight: 600;
+      padding: 9px 18px;
+    }
+    .nav-item > a.nav-btn:hover { background: var(--teal-lt); color: var(--white); }
+
     /* chevron */
     .chevron {
       width: 14px; height: 14px;
@@ -898,15 +907,16 @@
         </div>
       </li>
       <li class="nav-item">
-        <a onclick="showPage('consult')" id="nav-consult" style="cursor:pointer;">Free Consultation</a>
+        <a onclick="showPage('consult')" id="nav-consult" class="nav-btn" style="cursor:pointer;">Free Consultation</a>
       </li>
       <li class="nav-item">
-        <a onclick="showPage('contact')" id="nav-contact" style="cursor:pointer;">Contact</a>
+        <a onclick="showPage('contact')" id="nav-contact" class="nav-btn" style="cursor:pointer;">Contact</a>
       </li>
     </ul>
 
     <div class="nav-cta">
       <a class="btn-primary" onclick="showPage('consult')" style="cursor:pointer;">Free Consultation</a>
+      <a class="btn-primary" onclick="showPage('contact')" style="cursor:pointer;">Contact</a>
     </div>
 
     <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
@@ -1673,7 +1683,7 @@
         <p class="section-body">Incorrect coding is one of the leading causes of claim denials and compliance risk. Master Health's certified coders apply accurate ICD-10, CPT, and HCPCS codes across all specialties, ensuring every service is captured correctly, every modifier is applied appropriately, and every claim is audit-ready.</p>
         <p class="section-body" style="margin-top:16px;">Our coders stay continuously updated on annual code changes, payer bulletins, and specialty-specific guidelines — so your practice always reflects current coding standards without burdening your clinical staff.</p>
         <div class="about-values" style="margin-top:32px;">
-          <div class="value-item"><div class="value-dot"></div><div><h4>ICD-10, CPT & HCPCS</h4><p>Full code set coverage across all major coding systems and payer types.</p></div></div>
+          <div class="value-item"><div class="value-dot"></div><div><h4>ICD-10, CPT &amp; HCPCS</h4><p>Full code set coverage across all major coding systems and payer types.</p></div></div>
           <div class="value-item"><div class="value-dot"></div><div><h4>Certified Coders</h4><p>CPC and CCS-credentialed coders with specialty-specific expertise.</p></div></div>
           <div class="value-item"><div class="value-dot"></div><div><h4>Compliance Assurance</h4><p>Regular internal audits to identify and correct coding gaps before payers do.</p></div></div>
         </div>
@@ -1731,7 +1741,7 @@
         <p class="section-body">Accurate payment posting is the foundation of a healthy revenue cycle. Master Health posts all insurance payments, patient payments, EOBs, and electronic remittances quickly and correctly — reconciling every payment to the original claim, flagging underpayments, and maintaining a clean, auditable financial record for your practice.</p>
         <p class="section-body" style="margin-top:16px;">When payers underpay, we identify and flag the discrepancy immediately so your AR team can pursue the balance. Nothing gets posted and forgotten.</p>
         <div class="about-values" style="margin-top:32px;">
-          <div class="value-item"><div class="value-dot"></div><div><h4>ERA & Manual EOB Processing</h4><p>We handle both electronic and paper remittances with equal accuracy.</p></div></div>
+          <div class="value-item"><div class="value-dot"></div><div><h4>ERA &amp; Manual EOB Processing</h4><p>We handle both electronic and paper remittances with equal accuracy.</p></div></div>
           <div class="value-item"><div class="value-dot"></div><div><h4>Underpayment Detection</h4><p>Every payment is compared to contracted rates — discrepancies are flagged immediately.</p></div></div>
           <div class="value-item"><div class="value-dot"></div><div><h4>Clean Audit Trail</h4><p>Full reconciliation records maintained for compliance and reporting purposes.</p></div></div>
         </div>
@@ -1760,7 +1770,7 @@
         <p class="section-body">Claim denials cost the average practice thousands of dollars in lost and delayed revenue every month. Master Health's denial management team systematically identifies, works, and resolves denied claims — pursuing appeals, correcting coding errors, and resubmitting claims with the documentation needed to get paid.</p>
         <p class="section-body" style="margin-top:16px;">More importantly, we analyze denial patterns to find root causes and fix upstream billing and coding issues — so the same denials stop happening. Our goal is not just recovery, it's prevention.</p>
         <div class="about-values" style="margin-top:32px;">
-          <div class="value-item"><div class="value-dot"></div><div><h4>Denial Tracking & Reporting</h4><p>Every denial is logged, categorized, and tracked to resolution.</p></div></div>
+          <div class="value-item"><div class="value-dot"></div><div><h4>Denial Tracking &amp; Reporting</h4><p>Every denial is logged, categorized, and tracked to resolution.</p></div></div>
           <div class="value-item"><div class="value-dot"></div><div><h4>Appeals Management</h4><p>We write and submit payer appeals with supporting clinical documentation.</p></div></div>
           <div class="value-item"><div class="value-dot"></div><div><h4>Root Cause Analysis</h4><p>We identify patterns and fix the source — not just the symptoms.</p></div></div>
         </div>
