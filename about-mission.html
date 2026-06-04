@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Mission | Master Health</title>
+  <meta name="description" content="Our mission: precision-driven revenue cycle management that maximizes reimbursements and ensures compliance." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1a1a2e;
+      background: #fff;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+
+    /* ===== COLOR TOKENS ===== */
+    :root {
+      --navy:    #0d1b3e;
+      --teal:    #0a7e6e;
+      --teal-lt: #0d9e8a;
+      --accent:  #e8f5f2;
+      --mid:     #4a5568;
+      --light:   #f7fafc;
+      --white:   #ffffff;
+      --border:  #e2e8f0;
+    }
+
+    /* ===== UTILITY ===== */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--teal);
+      color: var(--white);
+      padding: 13px 30px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: .95rem;
+      transition: background .2s, transform .15s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary:hover { background: var(--teal-lt); transform: translateY(-1px); }
+    .btn-outline {
+      display: inline-block;
+      border: 2px solid var(--white);
+      color: var(--white);
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: .95rem;
+      transition: background .2s, color .2s;
+      cursor: pointer;
+    }
+    .btn-outline:hover { background: var(--white); color: var(--navy); }
+    .section-label {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-body {
+      font-size: 1.05rem;
+      color: var(--mid);
+      max-width: 640px;
+      line-height: 1.75;
+    }
+
+    /* ===== PAGE VISIBILITY ===== */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ===== NAV ===== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 8px rgba(0,0,0,.06);
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      background: var(--teal);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-mark svg { width: 22px; height: 22px; fill: #fff; }
+    .logo-text { font-size: 1.25rem; font-weight: 800; color: var(--navy); }
+    .logo-text span { color: var(--teal); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .nav-item {
+      position: relative;
+    }
+    .nav-item > a, .nav-item > button {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: .92rem;
+      font-weight: 500;
+      color: var(--navy);
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: background .15s, color .15s;
+      white-space: nowrap;
+    }
+    .nav-item > a:hover, .nav-item > button:hover { background: var(--accent); color: var(--teal); }
+    .nav-item > a.active-link, .nav-item > button.active-link { color: var(--teal); font-weight: 600; }
+
+    /* Green button-style nav tab */
+    .nav-item > a.nav-btn {
+      background: var(--teal);
+      color: var(--white);
+      font-weight: 600;
+      padding: 9px 18px;
+    }
+    .nav-item > a.nav-btn:hover { background: var(--teal-lt); color: var(--white); }
+
+    /* chevron */
+    .chevron {
+      width: 14px; height: 14px;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg) translateY(-3px);
+      display: inline-block;
+      transition: transform .2s;
+    }
+    .nav-item:hover .chevron, .nav-item.open .chevron {
+      transform: rotate(-135deg) translateY(-3px);
+    }
+
+    /* dropdown */
+    .dropdown {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      min-width: 200px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.12);
+      padding: 8px 0;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(6px);
+      transition: opacity .18s, transform .18s;
+      z-index: 200;
+    }
+    .nav-item:hover .dropdown, .nav-item.open .dropdown {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+    .dropdown a {
+      display: block;
+      padding: 10px 20px;
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--navy);
+      transition: background .12s, color .12s;
+    }
+    .dropdown a:hover { background: var(--accent); color: var(--teal); }
+    .dropdown a:hover span { color: var(--teal); }
+    /* Tall dropdown scroll */
+    .nav-item .dropdown {
+      max-height: 85vh;
+      overflow-y: auto;
+      scrollbar-width: thin;
+    }
+
+    /* nav CTA */
+    .nav-cta { display: flex; align-items: center; gap: 10px; }
+    .nav-cta .btn-primary { padding: 10px 22px; font-size: .88rem; }
+
+    /* hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: transform .25s, opacity .25s;
+    }
+
+    /* mobile menu */
+    .mobile-menu {
+      display: none;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 16px 24px 24px;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a, .mobile-menu button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 11px 0;
+      font-size: .95rem;
+      font-weight: 500;
+      color: var(--navy);
+      border: none;
+      background: none;
+      cursor: pointer;
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-submenu { padding-left: 16px; }
+    .mobile-submenu a { font-size: .9rem; color: var(--mid); }
+
+    /* ===== HOME PAGE ===== */
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a3460 55%, #0d4d40 100%);
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-blob {
+      position: absolute;
+      right: -100px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(10,126,110,.35) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 30px;
+      padding: 6px 16px;
+      font-size: .8rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.9);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .hero-tag::before {
+      content: '';
+      width: 8px; height: 8px;
+      background: #4ade80;
+      border-radius: 50%;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: #4dd9c4;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,.8);
+      max-width: 540px;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    /* Stats strip */
+    .stats-strip {
+      background: var(--navy);
+      padding: 32px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 12px 20px;
+      border-right: 1px solid rgba(255,255,255,.1);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #4dd9c4;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: .8rem;
+      color: rgba(255,255,255,.65);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    /* Why choose section */
+    .why-section { padding: 96px 0; background: var(--white); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      margin-top: 16px;
+    }
+    .why-left .section-body { margin-bottom: 32px; }
+    .why-features { display: flex; flex-direction: column; gap: 20px; }
+    .why-feature {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .feature-icon {
+      width: 44px; height: 44px;
+      min-width: 44px;
+      background: var(--accent);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .feature-icon svg { width: 22px; height: 22px; stroke: var(--teal); fill: none; stroke-width: 2; }
+    .feature-text h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .feature-text p { font-size: .9rem; color: var(--mid); }
+    .why-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .why-card {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 20px;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .why-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.08); transform: translateY(-2px); }
+    .why-card:first-child {
+      grid-column: span 2;
+      background: var(--teal);
+      color: var(--white);
+      border-color: var(--teal);
+    }
+    .why-card:first-child h4 { color: var(--white); }
+    .why-card:first-child p { color: rgba(255,255,255,.8); }
+    .why-card h4 { font-size: .95rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .why-card p { font-size: .85rem; color: var(--mid); line-height: 1.6; }
+    .card-num { font-size: 2rem; font-weight: 800; opacity: .15; float: right; line-height: 1; }
+
+    /* Services preview */
+    .services-section { padding: 96px 0; background: var(--light); }
+    .services-header { text-align: center; margin-bottom: 56px; }
+    .services-header .section-body { margin: 0 auto; text-align: center; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 24px;
+      cursor: pointer;
+      transition: box-shadow .2s, transform .2s, border-color .2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--teal);
+      transform: scaleX(0);
+      transition: transform .25s;
+    }
+    .service-card:hover { box-shadow: 0 10px 32px rgba(0,0,0,.1); transform: translateY(-3px); border-color: var(--teal); }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-icon {
+      width: 50px; height: 50px;
+      background: var(--accent);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .service-icon svg { width: 26px; height: 26px; stroke: var(--teal); fill: none; stroke-width: 1.8; }
+    .service-card h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .service-card p { font-size: .85rem; color: var(--mid); line-height: 1.6; }
+    .service-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--teal);
+      margin-top: 14px;
+    }
+    .service-arrow svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+
+    /* CTA strip */
+    .cta-strip {
+      background: linear-gradient(135deg, var(--teal) 0%, #0d4d40 100%);
+      padding: 80px 0;
+    }
+    .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .cta-inner h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; color: var(--white); max-width: 480px; line-height: 1.25; }
+    .cta-inner p { color: rgba(255,255,255,.8); margin-top: 10px; font-size: 1.02rem; }
+
+    /* Testimonials */
+    .testimonials-section { padding: 96px 0; background: var(--white); }
+    .testimonials-header { text-align: center; margin-bottom: 56px; }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .testimonial-card {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px 28px;
+    }
+    .stars { color: #f59e0b; font-size: 1rem; margin-bottom: 16px; }
+    .testimonial-card blockquote { font-size: .95rem; color: var(--mid); line-height: 1.7; font-style: italic; margin-bottom: 20px; }
+    .testimonial-card blockquote::before { content: '\201C'; font-size: 2.5rem; color: var(--teal); line-height: 0; vertical-align: -0.5em; margin-right: 4px; }
+    .author-name { font-weight: 700; color: var(--navy); font-size: .9rem; }
+    .author-role { font-size: .82rem; color: var(--mid); }
+
+    /* ===== ABOUT PAGE ===== */
+    .inner-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a3460 100%);
+      padding: 80px 0 72px;
+      text-align: center;
+    }
+    .inner-hero h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; color: var(--white); margin-bottom: 16px; }
+    .inner-hero p { font-size: 1.1rem; color: rgba(255,255,255,.75); max-width: 560px; margin: 0 auto; }
+
+    .about-overview { padding: 88px 0; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .about-text .section-body { margin-bottom: 24px; }
+    .about-values { display: flex; flex-direction: column; gap: 20px; margin-top: 32px; }
+    .value-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 18px;
+      background: var(--light);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    .value-dot {
+      width: 10px; height: 10px;
+      min-width: 10px;
+      background: var(--teal);
+      border-radius: 50%;
+      margin-top: 6px;
+    }
+    .value-item h4 { font-size: .95rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .value-item p { font-size: .88rem; color: var(--mid); }
+
+    .about-right-cards { display: flex; flex-direction: column; gap: 20px; }
+    .about-stat-card {
+      background: var(--navy);
+      border-radius: 14px;
+      padding: 28px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .about-stat-card .big-num { font-size: 2.8rem; font-weight: 800; color: #4dd9c4; line-height: 1; }
+    .about-stat-card .num-label { font-size: .82rem; color: rgba(255,255,255,.7); text-transform: uppercase; letter-spacing: .06em; margin-top: 4px; }
+    .about-stat-card .divider { width: 1px; background: rgba(255,255,255,.15); align-self: stretch; }
+    .about-stat-card p { font-size: .9rem; color: rgba(255,255,255,.75); line-height: 1.6; }
+
+    /* Founder section */
+    .founder-section { padding: 88px 0; background: var(--light); }
+    .founder-card {
+      background: var(--white);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      box-shadow: 0 4px 40px rgba(0,0,0,.07);
+    }
+    .founder-visual {
+      background: linear-gradient(160deg, var(--navy), #0d4d40);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 32px;
+      text-align: center;
+    }
+    .founder-avatar {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.12);
+      border: 3px solid rgba(255,255,255,.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .founder-avatar svg { width: 60px; height: 60px; stroke: rgba(255,255,255,.8); fill: none; stroke-width: 1.5; }
+    .founder-visual h2 { font-size: 1.4rem; font-weight: 800; color: var(--white); margin-bottom: 6px; }
+    .founder-visual span { font-size: .85rem; color: rgba(255,255,255,.65); font-weight: 500; }
+
+    .founder-info { padding: 48px 52px; }
+    .founder-info .section-label { margin-bottom: 8px; }
+    .founder-info h3 { font-size: 1.6rem; font-weight: 800; color: var(--navy); margin-bottom: 20px; }
+    .founder-info p { font-size: .98rem; color: var(--mid); line-height: 1.8; margin-bottom: 16px; }
+    .founder-highlights {
+      display: flex;
+      gap: 24px;
+      margin-top: 28px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .highlight-item { text-align: center; }
+    .highlight-item strong { font-size: 1.6rem; font-weight: 800; color: var(--teal); display: block; }
+    .highlight-item span { font-size: .78rem; color: var(--mid); text-transform: uppercase; letter-spacing: .06em; }
+
+    /* ===== SERVICES PAGE ===== */
+    .services-page { padding: 88px 0; }
+    .services-page-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .service-page-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 30px;
+      transition: box-shadow .2s, transform .2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-page-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,.1); transform: translateY(-4px); }
+    .service-page-card .service-icon { width: 56px; height: 56px; margin-bottom: 20px; }
+    .service-page-card .service-icon svg { width: 28px; height: 28px; }
+    .service-page-card h3 { font-size: 1.15rem; font-weight: 800; color: var(--navy); margin-bottom: 12px; }
+    .service-page-card p { font-size: .92rem; color: var(--mid); line-height: 1.7; }
+    .service-tag {
+      position: absolute;
+      top: 20px; right: 20px;
+      background: var(--accent);
+      color: var(--teal);
+      font-size: .72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    /* ===== CONSULTATION PAGE ===== */
+    .consult-page { padding: 88px 0; }
+    .consult-card {
+      max-width: 760px;
+      margin: 48px auto 0;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 40px rgba(0,0,0,.07);
+    }
+    .consult-card-top {
+      background: linear-gradient(135deg, var(--navy), #0d4d40);
+      padding: 48px 52px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .consult-icon-wrap {
+      width: 72px; height: 72px;
+      background: rgba(255,255,255,.1);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .consult-icon-wrap svg { width: 36px; height: 36px; stroke: #4dd9c4; fill: none; stroke-width: 1.7; }
+    .consult-card-top h2 { font-size: 1.7rem; font-weight: 800; color: var(--white); margin-bottom: 8px; }
+    .consult-card-top p { color: rgba(255,255,255,.75); font-size: .95rem; }
+
+    .consult-card-body { padding: 48px 52px; }
+    .consult-card-body p { font-size: .98rem; color: var(--mid); line-height: 1.75; margin-bottom: 28px; }
+    .consult-benefits { display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px; }
+    .benefit-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .check-icon {
+      width: 22px; height: 22px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .check-icon svg { width: 12px; height: 12px; stroke: var(--teal); fill: none; stroke-width: 3; }
+    .benefit-row span { font-size: .93rem; color: var(--navy); font-weight: 500; }
+    .consult-email-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--teal);
+      color: var(--white);
+      padding: 16px 28px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      width: fit-content;
+      transition: background .2s, transform .15s;
+    }
+    .consult-email-btn:hover { background: var(--teal-lt); transform: translateY(-2px); }
+    .consult-email-btn svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; }
+    .consult-note { font-size: .83rem; color: var(--mid); margin-top: 16px; }
+
+    /* ===== CONTACT PAGE ===== */
+    .contact-page { padding: 88px 0; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-top: 48px;
+      align-items: start;
+    }
+    .contact-info h3 { font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+    .contact-info p { font-size: .95rem; color: var(--mid); line-height: 1.75; margin-bottom: 32px; }
+    .contact-methods { display: flex; flex-direction: column; gap: 16px; }
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px;
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: box-shadow .2s;
+    }
+    .contact-method:hover { box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+    .method-icon {
+      width: 46px; height: 46px;
+      background: var(--accent);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .method-icon svg { width: 22px; height: 22px; stroke: var(--teal); fill: none; stroke-width: 2; }
+    .method-info .method-label { font-size: .78rem; font-weight: 600; color: var(--mid); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 2px; }
+    .method-info a { font-size: .98rem; font-weight: 600; color: var(--navy); }
+    .method-info a:hover { color: var(--teal); }
+    .contact-email-card {
+      background: linear-gradient(135deg, var(--navy), #0d4d40);
+      border-radius: 16px;
+      padding: 40px;
+      color: var(--white);
+    }
+    .contact-email-card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 12px; }
+    .contact-email-card p { color: rgba(255,255,255,.75); font-size: .95rem; margin-bottom: 28px; line-height: 1.7; }
+    .email-action {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 10px;
+      padding: 14px 20px;
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--white);
+      transition: background .2s;
+      margin-bottom: 12px;
+    }
+    .email-action:hover { background: rgba(255,255,255,.18); }
+    .email-action svg { width: 18px; height: 18px; stroke: #4dd9c4; fill: none; stroke-width: 2; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--navy);
+      padding: 64px 0 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 56px;
+    }
+    .footer-brand .logo-text { font-size: 1.2rem; margin-bottom: 16px; color: var(--white); }
+    .footer-brand .logo-text span { color: #4dd9c4; }
+    .footer-brand p { font-size: .88rem; color: rgba(255,255,255,.55); line-height: 1.7; max-width: 280px; }
+    .footer-col h4 { font-size: .85rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.5); margin-bottom: 16px; }
+    .footer-col a {
+      display: block;
+      font-size: .88rem;
+      color: rgba(255,255,255,.7);
+      padding: 5px 0;
+      transition: color .15s;
+      cursor: pointer;
+    }
+    .footer-col a:hover { color: #4dd9c4; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-size: .82rem; color: rgba(255,255,255,.4); }
+    .footer-bottom a { color: rgba(255,255,255,.5); font-size: .82rem; }
+    .footer-bottom a:hover { color: #4dd9c4; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .stat-item:nth-child(3) { border-top: 1px solid rgba(255,255,255,.1); }
+      .stat-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,.1); border-right: none; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+    }
+    @media (max-width: 768px) {
+      .hero-two-col { grid-template-columns: 1fr !important; }
+      .hero-two-col img { display: none; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .why-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .founder-card { grid-template-columns: 1fr; }
+      .founder-info { padding: 32px 28px; }
+      .consult-card-top, .consult-card-body { padding: 32px 28px; }
+      .services-page-grid { grid-template-columns: 1fr 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .cta-inner { flex-direction: column; text-align: center; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-right { grid-template-columns: 1fr; }
+      .why-card:first-child { grid-column: span 1; }
+    }
+    @media (max-width: 520px) {
+      .services-grid, .services-page-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="container">
+    <div class="logo" onclick="location.href='index.html'">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <div class="logo-text">Master<span>Health</span></div>
+    </div>
+
+    <ul class="nav-links">
+      <li class="nav-item">
+        <a href="index.html" id="nav-home">Home</a>
+      </li>
+      <li class="nav-item">
+        <button id="nav-about">About Us <span class="chevron"></span></button>
+        <div class="dropdown">
+          <a href="about-overview.html" >Overview</a>
+          <a href="about-founder.html" >Founder</a>
+          <a href="about-values.html" >Values</a>
+          <a href="about-mission.html" >Our Mission</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <button id="nav-services">Services <span class="chevron"></span></button>
+        <div class="dropdown" style="min-width:440px;padding:12px 0;">
+          <a href="rcm.html" style="padding:12px 20px;display:block;">
+            <span style="font-weight:700;color:var(--navy);font-size:.92rem;display:block;margin-bottom:3px;">Revenue Cycle Management (RCM)</span>
+            <span style="font-size:.8rem;color:var(--mid);font-weight:400;line-height:1.5;display:block;">End-to-end management of your entire revenue cycle from charge capture to final payment. We streamline every step to reduce denials, accelerate cash flow, and maximize collections.</span>
+          </a>
+          <a href="svc-medical-billing.html" style="padding:12px 20px;display:block;">
+            <span style="font-weight:700;color:var(--navy);font-size:.92rem;display:block;margin-bottom:3px;">Medical Billing</span>
+            <span style="font-size:.8rem;color:var(--mid);font-weight:400;line-height:1.5;display:block;">Accurate, compliant claim submission across all payer types and specialties. Our 95%+ clean claim rate means faster payments and fewer denials for your practice.</span>
+          </a>
+          <a href="svc-physician-billing.html" style="padding:12px 20px;display:block;">
+            <span style="font-weight:700;color:var(--navy);font-size:.92rem;display:block;margin-bottom:3px;">Physician Billing</span>
+            <span style="font-size:.8rem;color:var(--mid);font-weight:400;line-height:1.5;display:block;">Specialized billing tailored to physician practices with payer-specific rules, E/M guidelines, and modifier logic applied to every claim. We scale to fit solo or multi-physician groups.</span>
+          </a>
+          <a href="svc-medical-coding.html" style="padding:12px 20px;display:block;">
+            <span style="font-weight:700;color:var(--navy);font-size:.92rem;display:block;margin-bottom:3px;">Medical Coding</span>
+            <span style="font-size:.8rem;color:var(--mid);font-weight:400;line-height:1.5;display:block;">Certified ICD-10, CPT, and HCPCS coding across all major specialties. Our credentialed coders ensure every service is captured accurately and every claim is audit-ready.</span>
+          </a>
+          <a href="svc-charge-posting.html" style="padding:12px 20px;display:block;">
+            <span style="font-weight:700;color:var(--navy);font-size:.92rem;display:block;margin-bottom:3px;">Charge Posting</span>
+            <span style="font-size:.8rem;color:var(--mid);font-weight:400;line-height:1.5;display:block;">Timely capture of all billable services from encounter documentation, preventing revenue leakage at the source. Our workflows integrate with your EHR for same-day turnaround.</span>
+          </a>
+          <a href="svc-payment-posting.html" style="padding:12px 20px;display:block;">
+            <span style="font-weight:700;color:var(--navy);font-size:.92rem;display:block;margin-bottom:3px;">Payment Posting</span>
+            <span style="font-size:.8rem;color:var(--mid);font-weight:400;line-height:1.5;display:block;">Rapid, accurate posting of all insurance and patient payments with full reconciliation. We flag underpayments immediately and maintain a clean audit trail with daily posting cycles.</span>
+          </a>
+          <a href="svc-denial-management.html" style="padding:12px 20px;display:block;">
+            <span style="font-weight:700;color:var(--navy);font-size:.92rem;display:block;margin-bottom:3px;">Denial Management</span>
+            <span style="font-size:.8rem;color:var(--mid);font-weight:400;line-height:1.5;display:block;">Systematic identification, appeal, and resolution of denied claims to recover lost revenue. We fix root causes — not just individual claims — reducing your denial rate over time.</span>
+          </a>
+          <a href="svc-accounts-receivable.html" style="padding:12px 20px;display:block;">
+            <span style="font-weight:700;color:var(--navy);font-size:.92rem;display:block;margin-bottom:3px;">Accounts Receivable</span>
+            <span style="font-size:.8rem;color:var(--mid);font-weight:400;line-height:1.5;display:block;">Proactive follow-up on every open balance to keep your days in AR below 40. We pursue even the most difficult aged claims with real-time analytics giving you full visibility.</span>
+          </a>
+          <a href="svc-lab-billing.html" style="padding:12px 20px;display:block;">
+            <span style="font-weight:700;color:var(--navy);font-size:.92rem;display:block;margin-bottom:3px;">Laboratory Billing</span>
+            <span style="font-size:.8rem;color:var(--mid);font-weight:400;line-height:1.5;display:block;">High-volume, compliant billing for clinical and reference labs with strict medical necessity validation. We manage code assignment, payer routing, and ABN documentation for every test.</span>
+          </a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <button id="nav-expertise">Expertise <span class="chevron"></span></button>
+        <div class="dropdown">
+          <a href="services.html#svc-cardiology" >Cardiology</a>
+          <a href="services.html#svc-ophthalmology" >Ophthalmology</a>
+          <a href="services.html#svc-gi" >Gastroenterology (GI)</a>
+          <a href="services.html#svc-oncology" >Oncology</a>
+          <a href="services.html#svc-dermatology" >Dermatology</a>
+          <a href="services.html#svc-orthopedic" >Orthopedic</a>
+          <a href="services.html#svc-behavioral" >Mental &amp; Behavioral Health</a>
+        </div>
+      </li>
+    </ul>
+
+    <div class="nav-cta">
+      <a class="btn-primary" href="consult.html" style="cursor:pointer;">Free Consultation</a>
+      <a class="btn-primary" href="contact.html" style="cursor:pointer;">Contact</a>
+    </div>
+
+    <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" >Home</a>
+    <div>
+      <a>About Us</a>
+      <div class="mobile-submenu">
+        <a href="about-overview.html" >Overview</a>
+        <a href="about-founder.html" >Founder</a>
+        <a href="about-values.html" >Values</a>
+        <a href="about-mission.html" >Our Mission</a>
+      </div>
+    </div>
+    <div>
+      <a>Services</a>
+      <div class="mobile-submenu">
+        <a href="rcm.html" >Revenue Cycle Management (RCM)</a>
+        <a href="svc-medical-billing.html" >Medical Billing</a>
+        <a href="svc-physician-billing.html" >Physician Billing</a>
+        <a href="svc-medical-coding.html" >Medical Coding</a>
+        <a href="svc-charge-posting.html" >Charge Posting</a>
+        <a href="svc-payment-posting.html" >Payment Posting</a>
+        <a href="svc-denial-management.html" >Denial Management</a>
+        <a href="svc-accounts-receivable.html" >Accounts Receivable</a>
+        <a href="svc-lab-billing.html" >Laboratory Billing</a>
+      </div>
+    </div>
+    <div>
+      <a>Expertise</a>
+      <div class="mobile-submenu">
+        <a href="services.html" >Cardiology</a>
+        <a href="services.html" >Ophthalmology</a>
+        <a href="services.html" >Gastroenterology (GI)</a>
+        <a href="services.html" >Oncology</a>
+        <a href="services.html" >Dermatology</a>
+        <a href="services.html" >Orthopedic</a>
+        <a href="services.html" >Mental &amp; Behavioral Health</a>
+      </div>
+    </div>
+    <a href="consult.html" >Free Consultation</a>
+    <a href="contact.html" >Contact</a>
+  </div>
+</header>
+
+<div id="page-about-mission" class="page active">
+  <div class="inner-hero">
+    <div class="container">
+      <div class="section-label" style="color:#4dd9c4;">Why We Exist</div>
+      <h1>Our Mission</h1>
+      <p>Empowering healthcare organizations with precision-driven revenue cycle solutions.</p>
+    </div>
+  </div>
+
+  <section style="padding:88px 0;background:var(--white);">
+    <div class="container">
+
+      <!-- Mission statement block -->
+      <div style="max-width:860px;margin:0 auto;text-align:center;margin-bottom:72px;">
+        <div class="section-label" style="text-align:center;">Our Purpose</div>
+        <h2 class="section-title" style="text-align:center;font-size:clamp(1.6rem,3vw,2.4rem);">Driving Financial Health for Healthcare Organizations</h2>
+        <div style="width:60px;height:4px;background:var(--teal);border-radius:2px;margin:20px auto 32px;"></div>
+        <p style="font-size:1.15rem;color:var(--mid);line-height:1.85;margin-bottom:20px;">Our mission is to support and improve the financial health of healthcare organizations by delivering precision-driven revenue cycle management solutions.</p>
+        <p style="font-size:1.15rem;color:var(--mid);line-height:1.85;margin-bottom:20px;">We exist to minimize billing complexities, maximize reimbursements, and ensure regulatory compliance.</p>
+        <p style="font-size:1.15rem;color:var(--mid);line-height:1.85;">Our extensive industry knowledge empowers medical practices to achieve sustainable financial growth while maintaining the highest ethical billing standards.</p>
+      </div>
+
+      <!-- Three pillars -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;">
+
+        <div class="service-page-card" style="border-top:4px solid var(--teal);padding:40px 32px;text-align:center;">
+          <div class="service-icon" style="width:64px;height:64px;margin:0 auto 24px;">
+            <svg viewBox="0 0 24 24" stroke="var(--teal)" fill="none" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3 style="font-size:1.1rem;font-weight:800;color:var(--navy);margin-bottom:12px;">Minimize Complexity</h3>
+          <p style="font-size:.92rem;color:var(--mid);line-height:1.7;">We cut through the complexity of healthcare billing so your team can operate with clarity, confidence, and less administrative burden.</p>
+        </div>
+
+        <div class="service-page-card" style="border-top:4px solid var(--teal);padding:40px 32px;text-align:center;background:var(--teal);">
+          <div class="service-icon" style="width:64px;height:64px;margin:0 auto 24px;background:rgba(255,255,255,.15);">
+            <svg viewBox="0 0 24 24" stroke="white" fill="none" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3 style="font-size:1.1rem;font-weight:800;color:white;margin-bottom:12px;">Maximize Reimbursements</h3>
+          <p style="font-size:.92rem;color:rgba(255,255,255,.85);line-height:1.7;">We are relentless in ensuring every billable service is captured, every claim is clean, and every dollar owed to your practice is collected.</p>
+        </div>
+
+        <div class="service-page-card" style="border-top:4px solid var(--teal);padding:40px 32px;text-align:center;">
+          <div class="service-icon" style="width:64px;height:64px;margin:0 auto 24px;">
+            <svg viewBox="0 0 24 24" stroke="var(--teal)" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 style="font-size:1.1rem;font-weight:800;color:var(--navy);margin-bottom:12px;">Ensure Compliance</h3>
+          <p style="font-size:.92rem;color:var(--mid);line-height:1.7;">We uphold the highest ethical billing standards and stay current on regulatory requirements, protecting your practice from risk at every step.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-strip">
+    <div class="container">
+      <div class="cta-inner">
+        <div>
+          <h2>Let's Put Our Mission to Work for Your Practice</h2>
+          <p>Schedule a free consultation with Master Health today.</p>
+        </div>
+        <a class="btn-outline" href="consult.html" style="cursor:pointer;">Get Started</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text" style="display:block;margin-bottom:16px;">Master<span>Health</span></div>
+        <p>Your trusted RCM and medical billing partner. We help healthcare providers across the United States maximize revenue and reduce administrative burden.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about-overview.html" >About Us</a>
+        <a href="about-founder.html" >Founder</a>
+        <a href="services.html" >Services</a>
+      </div>
+      <div class="footer-col">
+        <h4>Specialties</h4>
+        <a href="services.html" >Cardiology</a>
+        <a href="services.html" >Ophthalmology</a>
+        <a href="services.html" >Gastroenterology</a>
+        <a href="services.html" >Oncology</a>
+        <a href="services.html" >Dermatology</a>
+        <a href="services.html" >Orthopedic</a>
+        <a href="services.html" >Behavioral Health</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="contact.html" style="cursor:pointer;">info@masterhealth.us</a>
+        <a href="contact.html" style="cursor:pointer;">operations@masterhealth.us</a>
+        <a href="consult.html" style="margin-top:12px;color:#4dd9c4;font-weight:600;cursor:pointer;">Free Consultation →</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Master Health. All rights reserved. HIPAA Compliant.</p>
+      <div style="display:flex;gap:20px;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+  function closeMobileMenu(){document.getElementById('mobileMenu').classList.remove('open');}
+  document.addEventListener('click',function(e){
+    var menu=document.getElementById('mobileMenu');
+    var hamburger=document.querySelector('.hamburger');
+    if(menu&&menu.classList.contains('open')&&!menu.contains(e.target)&&!hamburger.contains(e.target)){menu.classList.remove('open');}
+  });
+</script>
+
+</body>
+</html>
