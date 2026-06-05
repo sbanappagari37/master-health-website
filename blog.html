@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Master Health</title>
-  <meta name="description" content="Contact Master Health for medical billing and revenue cycle management support." />
+  <title>Blog & Resources | Master Health</title>
+  <meta name="description" content="Insights on medical billing, coding, denials, and revenue cycle best practices." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -1071,142 +1071,51 @@
   </div>
 </header>
 
-<div id="page-contact" class="page active">
+<div id="page-blog" class="page active">
   <div class="inner-hero">
     <div class="container">
-      <div class="section-label" style="color:#4dd9c4;">Get in Touch</div>
-      <h1>Contact Master Health</h1>
-      <p>Have questions or need assistance? We're here to help.</p>
+      <div class="section-label" style="color:#4dd9c4;">Insights</div>
+      <h1>Blog &amp; Resources</h1>
+      <p>Practical guidance on billing, coding, compliance, and getting paid faster.</p>
     </div>
   </div>
-  <section style="padding:80px 0;background:var(--light);">
+  <section class="blog-section">
     <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1.6fr;gap:64px;align-items:start;">
-
-        <!-- Left info panel -->
-        <div style="background:linear-gradient(160deg,var(--navy),#0d4d40);border-radius:16px;padding:48px 36px;color:var(--white);">
-          <h2 style="font-size:1.8rem;font-weight:800;margin-bottom:16px;line-height:1.2;">Contact Us Today!</h2>
-          <p style="color:rgba(255,255,255,.75);font-size:.98rem;line-height:1.75;margin-bottom:36px;">Have questions or need assistance? We're here to help. Reach out to our dedicated medical billing and coding team and let us provide the support you need to optimize your revenue cycle.</p>
-          <div style="display:flex;flex-direction:column;gap:20px;">
-            <div style="display:flex;align-items:center;gap:14px;">
-              <div style="width:40px;height:40px;background:rgba(255,255,255,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                <svg viewBox="0 0 24 24" width="20" height="20" stroke="#4dd9c4" fill="none" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <div>
-                <div style="font-size:.75rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px;">General Inquiries</div>
-                <a href="mailto:info@masterhealth.us" style="color:#4dd9c4;font-weight:600;font-size:.95rem;">info@masterhealth.us</a>
-              </div>
-            </div>
-            <div style="display:flex;align-items:center;gap:14px;">
-              <div style="width:40px;height:40px;background:rgba(255,255,255,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                <svg viewBox="0 0 24 24" width="20" height="20" stroke="#4dd9c4" fill="none" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              </div>
-              <div>
-                <div style="font-size:.75rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px;">Free Consultation</div>
-                <a href="mailto:operations@masterhealth.us" style="color:#4dd9c4;font-weight:600;font-size:.95rem;">operations@masterhealth.us</a>
-              </div>
-            </div>
+      <div class="blog-grid">
+        <div class="blog-card">
+          <div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+          <div class="blog-body">
+            <div class="blog-tag">Denials</div>
+            <h3>5 Reasons Clean Claims Still Get Denied</h3>
+            <p>The most common denial triggers we see across specialties — and how to stop them before submission.</p>
+            <div class="blog-meta">Coming soon</div>
           </div>
         </div>
-
-        <!-- Right form panel -->
-        <div style="background:var(--white);border-radius:16px;padding:48px 40px;box-shadow:0 4px 32px rgba(0,0,0,.07);border:1px solid var(--border);">
-          <h2 style="font-size:1.6rem;font-weight:800;color:var(--navy);margin-bottom:8px;">Let's Get in Touch</h2>
-          <p style="font-size:.9rem;color:var(--mid);margin-bottom:32px;">Please provide the required information so we can reach you.</p>
-          <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" onsubmit="submitContactForm(event)" style="display:flex;flex-direction:column;gap:20px;">
-            <input type="hidden" name="_subject" value="Contact Form Submission – masterhealth.us" />
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-              <div>
-                <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Full Name *</label>
-                <input type="text" id="cf-name" name="Full Name" placeholder="Full Name" required style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--navy);outline:none;transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'"/>
-              </div>
-              <div>
-                <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Business Name</label>
-                <input type="text" id="cf-business" name="Business Name" placeholder="Business Name" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--navy);outline:none;transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'"/>
-              </div>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-              <div>
-                <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Email *</label>
-                <input type="email" id="cf-email" name="Email" placeholder="Email" required style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--navy);outline:none;transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'"/>
-              </div>
-              <div>
-                <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Phone</label>
-                <input type="tel" id="cf-phone" name="Phone" placeholder="Phone" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--navy);outline:none;transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'"/>
-              </div>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-              <div>
-                <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Monthly Billing</label>
-                <select id="cf-billing" name="Monthly Billing" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--mid);outline:none;background:var(--white);transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'">
-                  <option value="">Select range</option>
-                  <option>$1k – $15k</option>
-                  <option>$15k – $30k</option>
-                  <option>$30k – $50k</option>
-                  <option>$50k – $75k</option>
-                  <option>$75k – $100k</option>
-                  <option>Above $100k</option>
-                </select>
-              </div>
-              <div>
-                <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">No. of Specialties</label>
-                <select id="cf-providers" name="No. of Specialties" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--mid);outline:none;background:var(--white);transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'">
-                  <option value="">Select range</option>
-                  <option>1</option>
-                  <option>2 – 3</option>
-                  <option>4 – 5</option>
-                  <option>Above 5</option>
-                </select>
-              </div>
-            </div>
-            <div>
-              <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Total AR</label>
-              <select id="cf-ar" name="Total AR" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--mid);outline:none;background:var(--white);transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'">
-                <option value="">Select range</option>
-                <option>Under $50k</option>
-                <option>$50k – $100k</option>
-                <option>$100k – $250k</option>
-                <option>$250k – $500k</option>
-                <option>Above $500k</option>
-              </select>
-            </div>
-            <div>
-              <label style="font-size:.82rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Your Message</label>
-              <textarea id="cf-message" name="Message" placeholder="Tell us about your practice and what you need help with..." rows="4" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--navy);outline:none;resize:vertical;font-family:inherit;transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'"></textarea>
-            </div>
-            <button type="submit" class="btn-primary" style="padding:15px;font-size:1rem;border-radius:8px;width:100%;justify-content:center;">Submit Message</button>
-            <p id="cf-success" style="display:none;text-align:center;color:var(--teal);font-weight:600;font-size:.95rem;">✓ Your message has been sent! We'll be in touch within one business day.</p>
-          </form>
+        <div class="blog-card">
+          <div class="blog-thumb"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+          <div class="blog-body">
+            <div class="blog-tag">Metrics</div>
+            <h3>The RCM KPIs Every Practice Should Track</h3>
+            <p>Clean claim rate, days in A/R, net collection rate — what they mean and what "good" looks like.</p>
+            <div class="blog-meta">Coming soon</div>
+          </div>
         </div>
-
+        <div class="blog-card">
+          <div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <div class="blog-body">
+            <div class="blog-tag">Eligibility</div>
+            <h3>Why Front-End Verification Saves Back-End Headaches</h3>
+            <p>How pre-visit eligibility checks reduce denials, write-offs, and surprise patient balances.</p>
+            <div class="blog-meta">Coming soon</div>
+          </div>
+        </div>
       </div>
+      <p class="ehr-note" style="margin-top:36px;"><em>Placeholder articles. Replace with real posts as you publish — a regularly updated blog is the single biggest driver of organic search traffic in this industry.</em></p>
     </div>
   </section>
+  <section class="cta-strip"><div class="container"><div class="cta-inner"><div><h2>Want These Insights for Your Practice?</h2><p>Get a free, specialty-specific revenue cycle assessment.</p></div><a class="btn-outline" href="consult.html" style="cursor:pointer;">Request Free Consultation</a></div></div></section>
 </div>
 
-<script>
-function submitContactForm(e) {
-  e.preventDefault();
-  var form = e.target;
-  var btn = form.querySelector('button[type="submit"]');
-  if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
-  fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
-    .then(function (r) {
-      if (r.ok) {
-        document.getElementById('cf-success').style.display = 'block';
-        form.reset();
-      } else {
-        alert('Sorry, something went wrong submitting the form. Please email us directly at info@masterhealth.us.');
-      }
-    })
-    .catch(function () {
-      alert('Network error. Please email us directly at info@masterhealth.us.');
-    })
-    .finally(function () {
-      if (btn) { btn.disabled = false; btn.textContent = 'Submit Message'; }
-    });
-}
-</script>
 
 <footer>
   <div class="container">
