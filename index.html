@@ -115,7 +115,7 @@
 
     /* ===== TRUST / COMPLIANCE ===== */
     .trust-section { padding: 88px 0; background: var(--light); }
-    .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 48px; }
+    .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; max-width: 940px; margin-left: auto; margin-right: auto; }
     .trust-card {
       background: var(--white); border: 1px solid var(--border); border-radius: 14px;
       padding: 28px 24px; text-align: center; transition: box-shadow .2s, transform .2s;
@@ -1374,11 +1374,6 @@
           <p>All workflows meet strict HIPAA privacy and security requirements end to end.</p>
         </div>
         <div class="trust-card">
-          <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-3.6 9.06-8.34 9.86a1.5 1.5 0 0 1-.66 0C7.6 21.06 4 16.97 4 12V6.5l8-3 8 3z"/></svg></div>
-          <h4>SOC 2 Type II</h4>
-          <p>Operations aligned to SOC 2 Type II controls for security and confidentiality.</p>
-        </div>
-        <div class="trust-card">
           <div class="trust-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
           <h4>256-bit Encryption</h4>
           <p>Patient data is encrypted in transit and at rest with industry-standard AES-256.</p>
@@ -1389,7 +1384,6 @@
           <p>Role-based access with multi-factor authentication, backed by a signed BAA.</p>
         </div>
       </div>
-      <p class="ehr-note"><em>(Placeholder — confirm which certifications and safeguards you actually carry before publishing.)</em></p>
     </div>
   </section>
 
